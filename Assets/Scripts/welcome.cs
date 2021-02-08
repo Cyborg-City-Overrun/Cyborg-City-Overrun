@@ -11,6 +11,7 @@ public class welcome : MonoBehaviour
         //please add a print("your_name"); line then save and push to your branch and post in the discord saying you have done this
         print("Welcome");
         print("Ben");
+        print("Dan");
     }
 
     // Update is called once per frame
