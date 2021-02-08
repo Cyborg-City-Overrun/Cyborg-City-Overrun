@@ -9,6 +9,7 @@ public class welcome : MonoBehaviour
     {
         print("Welcome");
         print("Ben");
+        print("Dan");
     }
 
     // Update is called once per frame
