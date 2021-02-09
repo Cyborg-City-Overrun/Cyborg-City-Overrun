@@ -8,7 +8,6 @@ public class welcome : MonoBehaviour
     void Start()
     {
         print("Welcome");
-        print("Ben");
         print("Dan");
     }
 
