@@ -13,6 +13,7 @@ public class welcome : MonoBehaviour
         print("Ben");
         print("Dan");
         print("Quinn");
+        print("Tim");
     }
 
     // Update is called once per frame
