@@ -12,6 +12,7 @@ public class welcome : MonoBehaviour
         print("Welcome");
         print("Ben");
         print("Dan");
+        print("Quinn");
         print("Tim");
     }
 
