@@ -1,103 +1,55 @@
 fileFormatVersion: 2
-guid: 3ce4088240bb7634c9ce01190219ecfb
+guid: cbf3b52818ea4b14dba78de32b18b3f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4285221854934182632
-    second: Basic_Player_0
+      213: -8490469307636474111
+    second: Basic_Sword_0
   - first:
-      213: 7728238410264530991
-    second: Basic_Player_1
+      213: 7654297771130178867
+    second: Basic_Sword_1
   - first:
-      213: -5673481381590960388
-    second: Basic_Player_2
+      213: 2744437692383366036
+    second: Basic_Sword_2
   - first:
-      213: 5835634834018390946
-    second: Basic_Player_3
+      213: -6751578891571754804
+    second: Basic_Sword_3
   - first:
-      213: 4722213564812443595
-    second: Basic_Player_4
+      213: -5273848005691998572
+    second: Basic_Sword_4
   - first:
-      213: -7430035191620544367
-    second: Basic_Player_5
+      213: 6041862307331430312
+    second: Basic_Sword_5
   - first:
-      213: -4810884300083672548
-    second: Basic_Player_6
+      213: 329696140290443009
+    second: Basic_Sword_6
   - first:
-      213: 3800902862823421393
-    second: Basic_Player_7
+      213: -7607085864488544425
+    second: Basic_Sword_7
   - first:
-      213: 1495691763039321609
-    second: Basic_Player_8
+      213: -7393942959937038695
+    second: Basic_Sword_8
   - first:
-      213: -2010882820314623488
-    second: Basic_Player_9
+      213: 1903195631252960233
+    second: Basic_Sword_9
   - first:
-      213: -71760000483158554
-    second: Basic_Player_10
+      213: -5791412885617245396
+    second: Basic_Sword_10
   - first:
-      213: -5476062879225784194
-    second: Basic_Player_11
+      213: -6320835010064746882
+    second: Basic_Sword_11
   - first:
-      213: 8683297050242678635
-    second: Basic_Player_12
+      213: 1761999628470169876
+    second: Basic_Sword_12
   - first:
-      213: 5060189675778168899
-    second: Basic_Player_13
+      213: -3264667759956194497
+    second: Basic_Sword_13
   - first:
-      213: 2540999711313028623
-    second: Basic_Player_14
+      213: -6142749043780547728
+    second: Basic_Sword_14
   - first:
-      213: -8020164647056592025
-    second: Basic_Player_15
-  - first:
-      213: -4414223786213793523
-    second: Basic_Player_16
-  - first:
-      213: -4683954216940145215
-    second: Basic_Player_17
-  - first:
-      213: 3303950431619315431
-    second: Basic_Player_18
-  - first:
-      213: 602297775209177795
-    second: Basic_Player_19
-  - first:
-      213: 3683534525552251050
-    second: Basic_Player_20
-  - first:
-      213: -8535274102273051605
-    second: Basic_Player_21
-  - first:
-      213: -2112057052112314689
-    second: Basic_Player_22
-  - first:
-      213: -5101339350756370880
-    second: Basic_Player_23
-  - first:
-      213: 1681476352221430520
-    second: Basic_Player_24
-  - first:
-      213: 8392724303487597797
-    second: Basic_Player_25
-  - first:
-      213: 6020497396200007060
-    second: Basic_Player_26
-  - first:
-      213: -8373562816776294189
-    second: Basic_Player_27
-  - first:
-      213: -7138194197188191663
-    second: Basic_Player_28
-  - first:
-      213: 116301776176562886
-    second: Basic_Player_29
-  - first:
-      213: -478464553160572988
-    second: Basic_Player_30
-  - first:
-      213: 5582182359005524526
-    second: Basic_Player_31
+      213: 2142439493063484937
+    second: Basic_Sword_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -195,7 +147,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Basic_Player_0
+      name: Basic_Sword_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f98fd262bcb2a80800000000000000
+      internalID: -8490469307636474111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Sword_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d4745c447893a60800000000000000
+      internalID: 7654297771130178867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Sword_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b04b26a83361620800000000000000
+      internalID: 2744437692383366036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Sword_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc807def4c29d42a0800000000000000
+      internalID: -6751578891571754804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Sword_4
       rect:
         serializedVersion: 2
         x: 0
@@ -209,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eaa71fa29a287b30800000000000000
-      internalID: 4285221854934182632
+      spriteID: 49e735d4e278fc6b0800000000000000
+      internalID: -5273848005691998572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_1
+      name: Basic_Sword_5
       rect:
         serializedVersion: 2
         x: 16
@@ -230,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f20d85f53e7304b60800000000000000
-      internalID: 7728238410264530991
+      spriteID: 8a7df42e1c109d350800000000000000
+      internalID: 6041862307331430312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_2
+      name: Basic_Sword_6
       rect:
         serializedVersion: 2
         x: 32
@@ -251,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf67a7a2ebeb341b0800000000000000
-      internalID: -5673481381590960388
+      spriteID: 10744dd84e0539400800000000000000
+      internalID: 329696140290443009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_3
+      name: Basic_Sword_7
       rect:
         serializedVersion: 2
         x: 48
@@ -272,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a3df8886f65cf050800000000000000
-      internalID: 5835634834018390946
+      spriteID: 757d347d5b33e6690800000000000000
+      internalID: -7607085864488544425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_4
+      name: Basic_Sword_8
       rect:
         serializedVersion: 2
         x: 0
@@ -293,14 +329,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcf3d24c73ca88140800000000000000
-      internalID: 4722213564812443595
+      spriteID: 996d37f7d00736990800000000000000
+      internalID: -7393942959937038695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_5
+      name: Basic_Sword_9
       rect:
         serializedVersion: 2
         x: 16
@@ -314,14 +350,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1985ec6fb5633e890800000000000000
-      internalID: -7430035191620544367
+      spriteID: 9e378e2d752896a10800000000000000
+      internalID: 1903195631252960233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_6
+      name: Basic_Sword_10
       rect:
         serializedVersion: 2
         x: 32
@@ -335,14 +371,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1a420ed73e4c3db0800000000000000
-      internalID: -4810884300083672548
+      spriteID: c230a2d2aa4c0afa0800000000000000
+      internalID: -5791412885617245396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_7
+      name: Basic_Sword_11
       rect:
         serializedVersion: 2
         x: 48
@@ -356,14 +392,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d5fa5404058fb430800000000000000
-      internalID: 3800902862823421393
+      spriteID: e76fc3d2c02e748a0800000000000000
+      internalID: -6320835010064746882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_8
+      name: Basic_Sword_12
       rect:
         serializedVersion: 2
         x: 0
@@ -377,14 +413,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90ebf65ebb3c1c410800000000000000
-      internalID: 1495691763039321609
+      spriteID: 411b55d9351e37810800000000000000
+      internalID: 1761999628470169876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_9
+      name: Basic_Sword_13
       rect:
         serializedVersion: 2
         x: 16
@@ -398,14 +434,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0021632aab8e714e0800000000000000
-      internalID: -2010882820314623488
+      spriteID: f3b042228f191b2d0800000000000000
+      internalID: -3264667759956194497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_10
+      name: Basic_Sword_14
       rect:
         serializedVersion: 2
         x: 32
@@ -419,14 +455,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e59e16e8ae010ff0800000000000000
-      internalID: -71760000483158554
+      spriteID: 07b07155a4290caa0800000000000000
+      internalID: -6142749043780547728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic_Player_11
+      name: Basic_Sword_15
       rect:
         serializedVersion: 2
         x: 48
@@ -440,8 +476,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e785b0423dd1104b0800000000000000
-      internalID: -5476062879225784194
+      spriteID: 90621d82e597bbd10800000000000000
+      internalID: 2142439493063484937
       vertices: []
       indices: 
       edges: []
