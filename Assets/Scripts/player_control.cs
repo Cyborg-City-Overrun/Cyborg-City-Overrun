@@ -13,6 +13,8 @@ public class player_control : MonoBehaviour
 
     private Vector2 myMovement = Vector2.zero;
 
+    public GameObject AttackArea;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class player_control : MonoBehaviour
         myMovement.y = Input.GetAxisRaw("Vertical");
         UpdateAnimation();
         Move();
+        determineArea();
     }
 
     void UpdateAnimation()
@@ -41,10 +44,46 @@ public class player_control : MonoBehaviour
         {
             myAnim.SetBool("moving", false);
         }
+
+        if(Input.GetKey(KeyCode.Z))
+        {
+            AttackArea.SetActive(true);
+            myAnim.SetBool("isAttacking", true);
+        }
+
+        else
+        {
+            AttackArea.SetActive(false);
+            myAnim.SetBool("isAttacking", false);
+        }
     }
 
     void Move()
     {
         myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
+    }
+
+    void determineArea()
+    {
+
+        if (myMovement.x == 0f && myMovement.y == 1f)
+        {
+            AttackArea.transform.localEulerAngles = new Vector3(0f, 0f, 180f);
+        }
+
+        else if (myMovement.x == 0f && myMovement.y == -1f)
+        {
+            AttackArea.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
+        }
+
+        else if (myMovement.x == 1f && myMovement.y == 0f)
+        {
+            AttackArea.transform.localEulerAngles = new Vector3(0f, 0f, 90f);
+        }
+
+        else if (myMovement.x == -1f && myMovement.y == 0f)
+        {
+            AttackArea.transform.localEulerAngles = new Vector3(0f, 0f, 270f);
+        }
     }
 }
