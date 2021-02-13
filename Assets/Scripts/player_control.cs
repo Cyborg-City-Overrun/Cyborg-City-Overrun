@@ -13,7 +13,7 @@ public class player_control : MonoBehaviour
 
     private Vector2 myMovement = Vector2.zero;
 
-    private float myAttackCooldown = 10f;
+    private float myAttackCooldown = 3f;
     private float timeSinceAttack = 0;
 
     // Start is called before the first frame update
