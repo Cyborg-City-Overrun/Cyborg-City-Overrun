@@ -13,7 +13,8 @@ public class player_control : MonoBehaviour
 
     private Vector2 myMovement = Vector2.zero;
 
-    public GameObject AttackArea;
+    private float myAttackCooldown = 10f;
+    private float timeSinceAttack = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -27,15 +28,15 @@ public class player_control : MonoBehaviour
     {
         myMovement.x = Input.GetAxisRaw("Horizontal");
         myMovement.y = Input.GetAxisRaw("Vertical");
-        UpdateAnimation();
         Move();
-        determineArea();
+        CheckAttack();
     }
 
-    void UpdateAnimation()
+    void Move()
     {
         if (myMovement != Vector2.zero)
         {
+            myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
             myAnim.SetFloat("moveX", myMovement.x);
             myAnim.SetFloat("moveY", myMovement.y);
             myAnim.SetBool("moving", true);
@@ -44,46 +45,21 @@ public class player_control : MonoBehaviour
         {
             myAnim.SetBool("moving", false);
         }
+    }
 
-        if(Input.GetKey(KeyCode.Z))
+
+    void CheckAttack()
+    {
+        timeSinceAttack += Time.fixedDeltaTime;
+        if (Input.GetKey(KeyCode.Space) && timeSinceAttack >= myAttackCooldown)
         {
-            AttackArea.SetActive(true);
             myAnim.SetBool("isAttacking", true);
+            timeSinceAttack = 0;
         }
-
         else
         {
-            AttackArea.SetActive(false);
             myAnim.SetBool("isAttacking", false);
-        }
-    }
 
-    void Move()
-    {
-        myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
-    }
-
-    void determineArea()
-    {
-
-        if (myMovement.x == 0f && myMovement.y == 1f)
-        {
-            AttackArea.transform.localEulerAngles = new Vector3(0f, 0f, 180f);
-        }
-
-        else if (myMovement.x == 0f && myMovement.y == -1f)
-        {
-            AttackArea.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
-        }
-
-        else if (myMovement.x == 1f && myMovement.y == 0f)
-        {
-            AttackArea.transform.localEulerAngles = new Vector3(0f, 0f, 90f);
-        }
-
-        else if (myMovement.x == -1f && myMovement.y == 0f)
-        {
-            AttackArea.transform.localEulerAngles = new Vector3(0f, 0f, 270f);
         }
     }
 }
