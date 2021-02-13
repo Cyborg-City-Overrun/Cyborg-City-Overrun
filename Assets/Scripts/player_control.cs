@@ -13,6 +13,9 @@ public class player_control : MonoBehaviour
 
     private Vector2 myMovement = Vector2.zero;
 
+    private float myAttackCooldown = 3f;
+    private float timeSinceAttack = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +28,15 @@ public class player_control : MonoBehaviour
     {
         myMovement.x = Input.GetAxisRaw("Horizontal");
         myMovement.y = Input.GetAxisRaw("Vertical");
-        UpdateAnimation();
         Move();
+        CheckAttack();
     }
 
-    void UpdateAnimation()
+    void Move()
     {
         if (myMovement != Vector2.zero)
         {
+            myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
             myAnim.SetFloat("moveX", myMovement.x);
             myAnim.SetFloat("moveY", myMovement.y);
             myAnim.SetBool("moving", true);
@@ -43,8 +47,19 @@ public class player_control : MonoBehaviour
         }
     }
 
-    void Move()
+
+    void CheckAttack()
     {
-        myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
+        timeSinceAttack += Time.fixedDeltaTime;
+        if (Input.GetKey(KeyCode.Space) && timeSinceAttack >= myAttackCooldown)
+        {
+            myAnim.SetBool("isAttacking", true);
+            timeSinceAttack = 0;
+        }
+        else
+        {
+            myAnim.SetBool("isAttacking", false);
+
+        }
     }
 }
