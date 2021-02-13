@@ -9,7 +9,7 @@ public class player_control : MonoBehaviour
 
     private Animator myAnim;
 
-    private float mySpeed = 4f;
+    private float mySpeed = 3f;
 
     private Vector2 myMovement = Vector2.zero;
 
