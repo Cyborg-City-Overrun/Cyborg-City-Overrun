@@ -5,6 +5,8 @@ using UnityEngine;
 public class enemy_hit : MonoBehaviour
 {
     private float myHealth = 20f;
+    private SpriteRenderer render;
+    //private float colorTimer = 0;
 
     private void OnTriggerEnter2D(Collider2D hit)
     {
