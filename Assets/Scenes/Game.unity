@@ -554,6 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21641a786fdf15442bf52e9c926cc513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camTF: {fileID: 551709420}
 --- !u!50 &174187510
 Rigidbody2D:
   serializedVersion: 4
