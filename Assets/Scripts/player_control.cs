@@ -16,6 +16,8 @@ public class player_control : MonoBehaviour
     private float myAttackCooldown = 1f;
     private float timeSinceAttack = 0;
 
+    public Transform camTF;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,8 @@ public class player_control : MonoBehaviour
         myMovement.y = Input.GetAxisRaw("Vertical");
         Move();
         CheckAttack();
+
+        camTF.position = new Vector3(this.transform.position.x, this.transform.position.y,-10f);
     }
 
     void Move()
