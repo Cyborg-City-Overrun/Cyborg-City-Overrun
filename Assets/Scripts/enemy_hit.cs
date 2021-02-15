@@ -4,27 +4,40 @@ using UnityEngine;
 
 public class enemy_hit : MonoBehaviour
 {
-    private float myHealth = 20f;
+    private float myMaxHealth = 20f;
+    private float myHealth;
     private SpriteRenderer render;
-    private float colorTimer = 0;
+    //private float colorTimer = 0;
+
+    public HealthBar myHealthBar;
 
 
     private void Start()
     {
         render = GetComponent<SpriteRenderer>();
+        myHealthBar.SetMaxHealth(myMaxHealth);
+        myHealth = myMaxHealth;
     }
 
     private void OnTriggerEnter2D(Collider2D hit)
     {
         if (hit.gameObject.tag == "Attack")
         {
-            myHealth -= 5;
-            render.color = new Color(1, render.color.b-.25f, render.color.g-.25f);
-            print(myHealth);
+            takeDamage(5);
+            
             if (myHealth <= 0)
             {
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void takeDamage(int damage)
+    {
+        myHealth -= damage;
+
+        //render.color = new Color(1, render.color.b - .25f, render.color.g - .25f);
+
+        myHealthBar.SetHealth(myHealth);
     }
 }
