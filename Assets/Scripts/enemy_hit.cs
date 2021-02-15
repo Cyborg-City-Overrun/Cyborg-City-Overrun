@@ -6,7 +6,7 @@ public class enemy_hit : MonoBehaviour
 {
     private float myMaxHealth = 20f;
     private float myHealth;
-    private SpriteRenderer render;
+    //private SpriteRenderer render;
     //private float colorTimer = 0;
 
     public HealthBar myHealthBar;
@@ -14,7 +14,7 @@ public class enemy_hit : MonoBehaviour
 
     private void Start()
     {
-        render = GetComponent<SpriteRenderer>();
+        //render = GetComponent<SpriteRenderer>();
         myHealthBar.SetMaxHealth(myMaxHealth);
         myHealth = myMaxHealth;
     }
