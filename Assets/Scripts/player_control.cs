@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player_control : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class player_control : MonoBehaviour
         CheckAttack();
 
         camTF.position = new Vector3(this.transform.position.x, this.transform.position.y,-10f);
+
+        //Code added by Tim to go back to Main menu if button M is pressed
+        if (Input.GetKey(KeyCode.M)){
+            SceneManager.LoadScene(0);
+        }
     }
 
     void Move()
