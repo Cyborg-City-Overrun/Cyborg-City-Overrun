@@ -15,7 +15,7 @@ public class player_control : MonoBehaviour
     private Vector2 myMovement = Vector2.zero;
 
     private float myAttackCooldown = 10f;
-    private float timeSinceAttack = 0;
+    private float myTimeSinceAttack;
 
     private float myMaxHealth = 100f;
     private float myHealth;
@@ -33,7 +33,7 @@ public class player_control : MonoBehaviour
         myHealthBar.SetMaxHealth(myMaxHealth);
         myHealth = myMaxHealth;
         myAttackBar.SetAttackCooldown(myAttackCooldown);
-        myAttackCooldown = myAttackCooldown;
+        myTimeSinceAttack = myAttackCooldown;
     }
 
     // Update is called once per frame
@@ -58,8 +58,9 @@ public class player_control : MonoBehaviour
         }
     }
 
-    void Move()
+    private void Move()
     {
+        myRigidBody.velocity = Vector2.zero;
         if (myMovement != Vector2.zero)
         {
             myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
@@ -74,24 +75,23 @@ public class player_control : MonoBehaviour
     }
 
 
-    void CheckAttack()
+    private void CheckAttack()
     {
-        timeSinceAttack += Time.fixedDeltaTime;
-        myAttackBar.SetTime(timeSinceAttack);
-        if (Input.GetKeyDown(KeyCode.Space) && timeSinceAttack >= myAttackCooldown)
+        myTimeSinceAttack += Time.fixedDeltaTime;
+        myAttackBar.SetTime(myTimeSinceAttack);
+        if (Input.GetKeyDown(KeyCode.Space) && myTimeSinceAttack >= myAttackCooldown)
         {
             myAnim.SetBool("isAttacking", true);
-            timeSinceAttack = 0;
-            myAttackBar.SetTime(timeSinceAttack);
+            myTimeSinceAttack = 0;
+            myAttackBar.SetTime(myTimeSinceAttack);
         }
         else
         {
             myAnim.SetBool("isAttacking", false);
-
         }
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         myHealth -= damage;
         myHealthBar.SetHealth(myHealth);
