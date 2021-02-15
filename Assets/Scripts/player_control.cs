@@ -14,16 +14,26 @@ public class player_control : MonoBehaviour
 
     private Vector2 myMovement = Vector2.zero;
 
-    private float myAttackCooldown = 1f;
+    private float myAttackCooldown = 10f;
     private float timeSinceAttack = 0;
 
+    private float myMaxHealth = 100f;
+    private float myHealth;
+
     public Transform camTF;
+
+    public HealthBar myHealthBar;
+    public AttackBar myAttackBar;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
+        myHealthBar.SetMaxHealth(myMaxHealth);
+        myHealth = myMaxHealth;
+        myAttackBar.SetAttackCooldown(myAttackCooldown);
+        myAttackCooldown = myAttackCooldown;
     }
 
     // Update is called once per frame
@@ -37,8 +47,14 @@ public class player_control : MonoBehaviour
         camTF.position = new Vector3(this.transform.position.x, this.transform.position.y,-10f);
 
         //Code added by Tim to go back to Main menu if button M is pressed
-        if (Input.GetKey(KeyCode.M)){
+        if (Input.GetKeyDown(KeyCode.M))
+        {
             SceneManager.LoadScene(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TakeDamage(5);
         }
     }
 
@@ -61,15 +77,23 @@ public class player_control : MonoBehaviour
     void CheckAttack()
     {
         timeSinceAttack += Time.fixedDeltaTime;
-        if (Input.GetKey(KeyCode.Space) && timeSinceAttack >= myAttackCooldown)
+        myAttackBar.SetTime(timeSinceAttack);
+        if (Input.GetKeyDown(KeyCode.Space) && timeSinceAttack >= myAttackCooldown)
         {
             myAnim.SetBool("isAttacking", true);
             timeSinceAttack = 0;
+            myAttackBar.SetTime(timeSinceAttack);
         }
         else
         {
             myAnim.SetBool("isAttacking", false);
 
         }
+    }
+
+    void TakeDamage(float damage)
+    {
+        myHealth -= damage;
+        myHealthBar.SetHealth(myHealth);
     }
 }
