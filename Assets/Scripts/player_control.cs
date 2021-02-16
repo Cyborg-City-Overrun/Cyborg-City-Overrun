@@ -25,6 +25,8 @@ public class player_control : MonoBehaviour
     public HealthBar myHealthBar;
     public AttackBar myAttackBar;
 
+    public Canvas myPauseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,7 @@ public class player_control : MonoBehaviour
         //Code added by Tim to go back to Main menu if button M is pressed
         if (Input.GetKeyDown(KeyCode.M))
         {
-            SceneManager.LoadScene(2);
+            myPauseMenu.gameObject.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.K))
