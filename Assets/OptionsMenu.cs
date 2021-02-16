@@ -7,6 +7,7 @@ public class OptionsMenu : MonoBehaviour
 {
     public void Restart()
     {
+        //Tim
         SceneManager.LoadScene(0);
     }
 
