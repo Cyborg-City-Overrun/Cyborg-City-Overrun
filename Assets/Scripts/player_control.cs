@@ -38,7 +38,7 @@ public class player_control : MonoBehaviour
 
         //Code added by Tim to go back to Main menu if button M is pressed
         if (Input.GetKey(KeyCode.M)){
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
     }
 
