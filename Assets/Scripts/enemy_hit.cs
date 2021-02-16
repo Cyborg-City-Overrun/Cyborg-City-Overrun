@@ -23,7 +23,7 @@ public class enemy_hit : MonoBehaviour
     {
         if (hit.gameObject.tag == "Attack")
         {
-            takeDamage(5);
+            takeDamage(4);
             
             if (myHealth <= 0)
             {
@@ -32,7 +32,7 @@ public class enemy_hit : MonoBehaviour
         }
     }
 
-    private void takeDamage(int damage)
+    private void takeDamage(float damage)
     {
         myHealth -= damage;
 

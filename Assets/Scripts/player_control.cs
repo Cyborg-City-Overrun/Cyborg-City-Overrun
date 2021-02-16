@@ -10,11 +10,11 @@ public class player_control : MonoBehaviour
 
     private Animator myAnim;
 
-    private float mySpeed = 3f;
+    private float mySpeed = 10f;
 
     private Vector2 myMovement = Vector2.zero;
 
-    private float myAttackCooldown = 10f;
+    private float myAttackCooldown = 1f;
     private float myTimeSinceAttack;
 
     private float myMaxHealth = 100f;
@@ -63,7 +63,7 @@ public class player_control : MonoBehaviour
         myRigidBody.velocity = Vector2.zero;
         if (myMovement != Vector2.zero)
         {
-            myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
+            myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.deltaTime);
             myAnim.SetFloat("moveX", myMovement.x);
             myAnim.SetFloat("moveY", myMovement.y);
             myAnim.SetBool("moving", true);
@@ -77,7 +77,7 @@ public class player_control : MonoBehaviour
 
     private void CheckAttack()
     {
-        myTimeSinceAttack += Time.fixedDeltaTime;
+        myTimeSinceAttack += Time.deltaTime;
         myAttackBar.SetTime(myTimeSinceAttack);
         if (Input.GetKeyDown(KeyCode.Space) && myTimeSinceAttack >= myAttackCooldown)
         {
