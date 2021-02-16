@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
+public class enemy_control : MonoBehaviour
 {
     private Animator myAnim;
 
@@ -19,18 +19,26 @@ public class EnemyFollow : MonoBehaviour
 
     public float myAttackCooldown = .4f;
     private float myTimeSinceAttack;
-    
 
-    // Start is called before the first frame update
+    public float myMaxHealth = 20f;
+    private float myHealth;
+    //private SpriteRenderer renders;
+    //private float colorTimer = 0;
+
+    public HealthBar myHealthBar;
+
+
     private void Start()
     {
+        //render = GetComponent<SpriteRenderer>();
+        myHealthBar.SetMaxHealth(myMaxHealth);
+        myHealth = myMaxHealth;
         myRigidBody = gameObject.GetComponent<Rigidbody2D>();
         myTarget = GameObject.FindGameObjectWithTag("Player");
         myTargetPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         myAnim = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
+    
     private void Update()
     {
         myRigidBody.velocity = Vector2.zero;
@@ -79,7 +87,7 @@ public class EnemyFollow : MonoBehaviour
     {
         float delta_x = myRigidBody.position.x - myTargetPos.position.x;
         float delta_y = myRigidBody.position.y - myTargetPos.position.y;
-        
+
         if (Mathf.Abs(delta_x) > Mathf.Abs(delta_y))
         {
             myAnim.SetFloat("moveY", 0);
@@ -110,5 +118,27 @@ public class EnemyFollow : MonoBehaviour
     private void Attack()
     {
         myTarget.GetComponent<player_control>().TakeDamage(myPower);
+    }
+
+    private void OnTriggerEnter2D(Collider2D hit)
+    {
+        if (hit.gameObject.tag == "Attack")
+        {
+            takeDamage(4);
+
+            if (myHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void takeDamage(float damage)
+    {
+        myHealth -= damage;
+
+        //render.color = new Color(1, render.color.b - .25f, render.color.g - .25f);
+
+        myHealthBar.SetHealth(myHealth);
     }
 }
