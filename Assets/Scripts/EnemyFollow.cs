@@ -14,7 +14,7 @@ public class EnemyFollow : MonoBehaviour
     private GameObject myTarget;
     private Transform myTargetPos;
 
-    private float myAttackCooldown = 4f;
+    private float myAttackCooldown = .4f;
     private float myTimeSinceAttack;
     
 
@@ -31,15 +31,19 @@ public class EnemyFollow : MonoBehaviour
     private void Update()
     {
         myRigidBody.velocity = Vector2.zero;
-        if (Vector2.Distance(transform.position, myTargetPos.position) > .5)
+        if (Vector2.Distance(transform.position, myTargetPos.position) > .75 && Vector2.Distance(transform.position, myTargetPos.position) < 3)
         {
             myAnim.SetBool("isMoving", true);
             Move();
         }
-        else
+        else if (Vector2.Distance(transform.position, myTargetPos.position) < .75)
         {
             myAnim.SetBool("isMoving", false);
             CheckAttack();
+        }
+        else
+        {
+            myAnim.SetBool("isMoving", false);
         }
         UpdateAnimation();
     }
@@ -84,7 +88,7 @@ public class EnemyFollow : MonoBehaviour
 
     private void CheckAttack()
     {
-        myTimeSinceAttack += Time.fixedDeltaTime;
+        myTimeSinceAttack += Time.deltaTime;
         if (myTimeSinceAttack >= myAttackCooldown)
         {
             Attack();
