@@ -11,7 +11,7 @@ public class player_control : MonoBehaviour
     private Animator myAnim;
 
     private float myBaseSpeed = 10f;
-    private float myRunningSpeed = 20f;
+    private float myRunningSpeed = 30f;
     private float mySpeed;
 
     private Vector2 myMovement = Vector2.zero;
@@ -19,7 +19,7 @@ public class player_control : MonoBehaviour
     private float myMaxEnergy = 20f;
     private float myEnergy;
     private float myAttackEnergy = 4f;
-    private float myRunEnergy = 8f;
+    private float myRunEnergy = 15f;
     private float myEnergyRegen = 2f;
 
     private float myMaxHealth = 100f;
@@ -27,26 +27,25 @@ public class player_control : MonoBehaviour
 
     public Transform camTF;
 
-    public HealthBar myHealthBar;
-    public EnergyBar myEnergyBar;
+    public HealthBar HealthBar;
+    public EnergyBar EnergyBar;
 
-    public Canvas myPauseMenu;
+    public Canvas PauseMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
-        myHealthBar.SetMaxHealth(myMaxHealth);
+        HealthBar.SetMaxHealth(myMaxHealth);
         myHealth = myMaxHealth;
-        myEnergyBar.SetEnergy(myMaxEnergy);
+        EnergyBar.SetEnergy(myMaxEnergy);
         myEnergy = myMaxEnergy;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckRunning();
         myMovement.x = Input.GetAxisRaw("Horizontal");
         myMovement.y = Input.GetAxisRaw("Vertical");
         Move();
@@ -57,12 +56,13 @@ public class player_control : MonoBehaviour
         //Code added by Tim to go back to Main menu if button M is pressed
         if (Input.GetKeyDown(KeyCode.M))
         {
-            myPauseMenu.gameObject.SetActive(true);
+            PauseMenu.gameObject.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K)) //just for testing, restores all health and energy
         {
-            TakeDamage(5);
+            RestoreHealth(10000);
+            RestoreEnergy(10000);
         }
     }
 
@@ -71,6 +71,7 @@ public class player_control : MonoBehaviour
         myRigidBody.velocity = Vector2.zero;
         if (myMovement != Vector2.zero)
         {
+            CheckRunning();
             myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.deltaTime);
             myAnim.SetFloat("moveX", myMovement.x);
             myAnim.SetFloat("moveY", myMovement.y);
@@ -84,7 +85,7 @@ public class player_control : MonoBehaviour
 
     private void CheckRunning()
     {
-        if (myEnergy >= 1 && Input.GetKey(KeyCode.LeftShift))
+        if (myEnergy > 0 && Input.GetKey(KeyCode.LeftShift))
         {
             myEnergy -= myRunEnergy * Time.deltaTime;
             mySpeed = myRunningSpeed;
@@ -98,17 +99,13 @@ public class player_control : MonoBehaviour
 
     private void CheckAttack()
     {
-        myEnergy += myEnergyRegen * Time.deltaTime;
-        if (myEnergy > myMaxEnergy)
-        {
-            myEnergy = myMaxEnergy;
-        }
-        myEnergyBar.SetEnergy(myEnergy);
+        RestoreEnergy(myEnergyRegen * Time.deltaTime);
+        EnergyBar.SetEnergy(myEnergy);
         if (Input.GetKeyDown(KeyCode.Space) && myEnergy >= myAttackEnergy)
         {
             myAnim.SetBool("isAttacking", true);
-            myEnergy -= myAttackEnergy;
-            myEnergyBar.SetEnergy(myEnergy);
+            DrainEnergy(myAttackEnergy);
+            EnergyBar.SetEnergy(myEnergy);
         }
         else
         {
@@ -119,10 +116,39 @@ public class player_control : MonoBehaviour
     public void TakeDamage(float damage)
     {
         myHealth -= damage;
-        myHealthBar.SetHealth(myHealth);
         if (myHealth <= 0)
         {
             SceneManager.LoadScene(0);
         }
+        HealthBar.SetHealth(myHealth);
     }
+    
+    public void RestoreHealth(float health)
+    {
+        myHealth += health;
+        if (myHealth > myMaxHealth)
+        {
+            myHealth = myMaxHealth;
+        }
+        HealthBar.SetHealth(myHealth);
+    }
+
+    public void DrainEnergy(float energy)
+    {
+        myEnergy -= energy;
+        if (myEnergy < 0)
+        {
+            myHealth = 0;
+        }
+    }
+
+    public void RestoreEnergy(float energy)
+    {
+        myEnergy += energy;
+        if (myEnergy > myMaxEnergy)
+        {
+            myEnergy = myMaxEnergy;
+        }
+    }
+    
 }

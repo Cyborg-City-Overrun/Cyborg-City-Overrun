@@ -430,9 +430,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTF: {fileID: 551709420}
-  myHealthBar: {fileID: 1079098451}
-  myEnergyBar: {fileID: 754292387}
-  myPauseMenu: {fileID: 706901209}
+  HealthBar: {fileID: 1079098451}
+  EnergyBar: {fileID: 754292387}
+  PauseMenu: {fileID: 706901209}
 --- !u!50 &174187510
 Rigidbody2D:
   serializedVersion: 4
