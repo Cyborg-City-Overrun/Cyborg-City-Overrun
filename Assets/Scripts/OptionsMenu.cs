@@ -10,19 +10,4 @@ public class OptionsMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
-    public void Save()
-    {
-       
-    }
-
-    public void Load()
-    {
-        
-    }
-
-    public void Back()
-    {
-
-    }
 }

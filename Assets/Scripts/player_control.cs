@@ -32,6 +32,11 @@ public class player_control : MonoBehaviour
 
     public Canvas PauseMenu;
 
+    public BoxCollider2D InteractHitbox;
+
+    public int money;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +55,7 @@ public class player_control : MonoBehaviour
         myMovement.y = Input.GetAxisRaw("Vertical");
         Move();
         CheckAttack();
+        Interact();
 
         camTF.position = new Vector3(this.transform.position.x, this.transform.position.y,-10f);
 
@@ -110,6 +116,19 @@ public class player_control : MonoBehaviour
         else
         {
             myAnim.SetBool("isAttacking", false);
+        }
+    }
+
+    private void Interact()
+    {
+        //make a hitbox to interact with things in the world
+        if (Input.GetKey(KeyCode.E))
+        {
+            InteractHitbox.gameObject.SetActive(true);
+        }
+        else
+        {
+            InteractHitbox.gameObject.SetActive(false);
         }
     }
 
