@@ -10,12 +10,17 @@ public class player_control : MonoBehaviour
 
     private Animator myAnim;
 
-    private float mySpeed = 10f;
+    private float myBaseSpeed = 10f;
+    private float myRunningSpeed = 20f;
+    private float mySpeed;
 
     private Vector2 myMovement = Vector2.zero;
 
-    private float myAttackCooldown = 1f;
-    private float myTimeSinceAttack;
+    private float myMaxEnergy = 20f;
+    private float myEnergy;
+    private float myAttackEnergy = 4f;
+    private float myRunEnergy = 8f;
+    private float myEnergyRegen = 2f;
 
     private float myMaxHealth = 100f;
     private float myHealth;
@@ -23,7 +28,7 @@ public class player_control : MonoBehaviour
     public Transform camTF;
 
     public HealthBar myHealthBar;
-    public AttackBar myAttackBar;
+    public EnergyBar myEnergyBar;
 
     public Canvas myPauseMenu;
 
@@ -34,13 +39,14 @@ public class player_control : MonoBehaviour
         myAnim = GetComponent<Animator>();
         myHealthBar.SetMaxHealth(myMaxHealth);
         myHealth = myMaxHealth;
-        myAttackBar.SetAttackCooldown(myAttackCooldown);
-        myTimeSinceAttack = myAttackCooldown;
+        myEnergyBar.SetEnergy(myMaxEnergy);
+        myEnergy = myMaxEnergy;
     }
 
     // Update is called once per frame
     void Update()
     {
+        CheckRunning();
         myMovement.x = Input.GetAxisRaw("Horizontal");
         myMovement.y = Input.GetAxisRaw("Vertical");
         Move();
@@ -76,16 +82,33 @@ public class player_control : MonoBehaviour
         }
     }
 
+    private void CheckRunning()
+    {
+        if (myEnergy >= 1 && Input.GetKey(KeyCode.LeftShift))
+        {
+            myEnergy -= myRunEnergy * Time.deltaTime;
+            mySpeed = myRunningSpeed;
+        }
+        else 
+        {
+            mySpeed = myBaseSpeed;
+        }
+    }
+
 
     private void CheckAttack()
     {
-        myTimeSinceAttack += Time.deltaTime;
-        myAttackBar.SetTime(myTimeSinceAttack);
-        if (Input.GetKeyDown(KeyCode.Space) && myTimeSinceAttack >= myAttackCooldown)
+        myEnergy += myEnergyRegen * Time.deltaTime;
+        if (myEnergy > myMaxEnergy)
+        {
+            myEnergy = myMaxEnergy;
+        }
+        myEnergyBar.SetEnergy(myEnergy);
+        if (Input.GetKeyDown(KeyCode.Space) && myEnergy >= myAttackEnergy)
         {
             myAnim.SetBool("isAttacking", true);
-            myTimeSinceAttack = 0;
-            myAttackBar.SetTime(myTimeSinceAttack);
+            myEnergy -= myAttackEnergy;
+            myEnergyBar.SetEnergy(myEnergy);
         }
         else
         {
@@ -97,5 +120,9 @@ public class player_control : MonoBehaviour
     {
         myHealth -= damage;
         myHealthBar.SetHealth(myHealth);
+        if (myHealth <= 0)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
