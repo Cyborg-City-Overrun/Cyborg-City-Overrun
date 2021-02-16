@@ -145,7 +145,7 @@ public class player_control : MonoBehaviour
         else
         {
             myAnim.SetBool("isAttacking", false);
-            if (hitBoxes[boxIndex].active==true && HBActive<.18f)
+            if (hitBoxes[boxIndex].activeSelf==true && HBActive<.18f)
             {
                 HBActive += Time.deltaTime;
             }
