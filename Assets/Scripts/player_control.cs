@@ -10,8 +10,8 @@ public class player_control : MonoBehaviour
 
     private Animator myAnim;
 
-    private float myBaseSpeed = 10f;
-    private float myRunningSpeed = 30f;
+    public  float myBaseSpeed = 10f;
+    public float myRunningSpeed = 30f;
     private float mySpeed;
 
     private Vector2 myMovement = Vector2.zero;
@@ -34,12 +34,20 @@ public class player_control : MonoBehaviour
 
     public BoxCollider2D InteractHitbox;
 
+    public GameObject[] hitBoxes;
+    public int boxIndex;
+    private float HBActive = 0;
+  
     public int money;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        foreach(GameObject go in hitBoxes)
+        {
+            go.SetActive(false);
+        }
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
         HealthBar.SetMaxHealth(myMaxHealth);
@@ -112,10 +120,41 @@ public class player_control : MonoBehaviour
             myAnim.SetBool("isAttacking", true);
             DrainEnergy(myAttackEnergy);
             EnergyBar.SetEnergy(myEnergy);
+
+            if(myAnim.GetFloat("moveX")==0 && myAnim.GetFloat("moveY") == 1)
+            {
+                hitBoxes[boxIndex].transform.localEulerAngles = new Vector3(0, 0, 0);
+            }
+
+            else if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == -1)
+            {
+                hitBoxes[boxIndex].transform.localEulerAngles = new Vector3(0, 0, 180);
+            }
+
+            else if (myAnim.GetFloat("moveX") == 1 && myAnim.GetFloat("moveY") == 0)
+            {
+                hitBoxes[boxIndex].transform.localEulerAngles = new Vector3(0, 0, -90);
+            }
+
+            else if (myAnim.GetFloat("moveX") == -1 && myAnim.GetFloat("moveY") == 0)
+            {
+                hitBoxes[boxIndex].transform.localEulerAngles = new Vector3(0, 0, 90);
+            }
+            hitBoxes[boxIndex].SetActive(true);
         }
         else
         {
             myAnim.SetBool("isAttacking", false);
+            if (hitBoxes[boxIndex].active==true && HBActive<.18f)
+            {
+                HBActive += Time.deltaTime;
+            }
+            else
+            {
+                hitBoxes[boxIndex].SetActive(false);
+                HBActive = 0;
+            }
+
         }
     }
 
