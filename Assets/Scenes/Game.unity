@@ -911,7 +911,7 @@ MonoBehaviour:
   InteractHitbox: {fileID: 2022874385}
   hitBoxes:
   - {fileID: 492696001}
-  boxIndex: 1
+  boxIndex: 0
   money: 100
 --- !u!50 &174187510
 Rigidbody2D:
@@ -2587,7 +2587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492696001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 174187512}
@@ -2620,8 +2620,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.51575804, y: 0.17549753}
       - {x: 0.52370596, y: 0.3434415}
-      - {x: 0.26817274, y: 0.45813894}
-      - {x: -0.14231253, y: 0.46772337}
+      - {x: 0.28, y: 0.62}
+      - {x: -0.28, y: 0.62}
       - {x: -0.42345238, y: 0.33187914}
       - {x: -0.42214394, y: 0.21616316}
       - {x: -0.18755388, y: 0.00979948}
