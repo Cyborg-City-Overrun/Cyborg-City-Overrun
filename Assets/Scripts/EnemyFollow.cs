@@ -6,7 +6,7 @@ public class EnemyFollow : MonoBehaviour
 {
     private Animator myAnim;
 
-    private float mySpeed = 5f;
+    private float mySpeed = 8f;
     private float myPower = 5f;
 
     private Rigidbody2D myRigidBody;
@@ -14,7 +14,10 @@ public class EnemyFollow : MonoBehaviour
     private GameObject myTarget;
     private Transform myTargetPos;
 
-    private float myAttackCooldown = .4f;
+    private float myFollowRange = 3f;
+    private float myAttackRange = .75f;
+
+    private float myAttackCooldown = .3f;
     private float myTimeSinceAttack;
     
 
@@ -31,25 +34,42 @@ public class EnemyFollow : MonoBehaviour
     private void Update()
     {
         myRigidBody.velocity = Vector2.zero;
-        if (Vector2.Distance(transform.position, myTargetPos.position) > .75 && Vector2.Distance(transform.position, myTargetPos.position) < 3)
-        {
-            myAnim.SetBool("isMoving", true);
-            Move();
-        }
-        else if (Vector2.Distance(transform.position, myTargetPos.position) < .75)
+        CheckAttackAndMove();
+    }
+
+    private void CheckAttackAndMove()
+    {
+        myTimeSinceAttack += Time.deltaTime;
+        if (Vector2.Distance(transform.position, myTargetPos.position) < myAttackRange)
         {
             myAnim.SetBool("isMoving", false);
-            CheckAttack();
+
+            if (myTimeSinceAttack >= myAttackCooldown)
+            {
+                myTimeSinceAttack = 0;
+                Attack();
+            }
+        }
+        else
+        {
+            CheckMove();
+        }
+    }
+
+    private void CheckMove()
+    {
+        if (Vector2.Distance(transform.position, myTargetPos.position) < myFollowRange)
+        {
+            Move();
         }
         else
         {
             myAnim.SetBool("isMoving", false);
         }
-        UpdateAnimation();
     }
-
     private void Move()
     {
+        myAnim.SetBool("isMoving", true);
         myRigidBody.MovePosition(Vector2.MoveTowards(transform.position, myTargetPos.position, mySpeed * Time.deltaTime));
         //transform.position = Vector2.MoveTowards(transform.position, myTarget.position, mySpeed * Time.deltaTime);
         UpdateAnimation();
@@ -86,15 +106,6 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-    private void CheckAttack()
-    {
-        myTimeSinceAttack += Time.deltaTime;
-        if (myTimeSinceAttack >= myAttackCooldown)
-        {
-            Attack();
-            myTimeSinceAttack = 0;
-        }
-    }
 
     private void Attack()
     {
