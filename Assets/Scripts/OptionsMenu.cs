@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class OptionsMenu : MonoBehaviour
 {
+
     public void Restart()
     {
-        //Tim
         SceneManager.LoadScene(0);
     }
 
@@ -23,6 +23,6 @@ public class OptionsMenu : MonoBehaviour
 
     public void Back()
     {
-        SceneManager.LoadScene(1);
+
     }
 }
