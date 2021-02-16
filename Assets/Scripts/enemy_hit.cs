@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemy_hit : MonoBehaviour
 {
-    private float myMaxHealth = 20f;
+    public float myMaxHealth = 20f;
     private float myHealth;
     //private SpriteRenderer render;
     //private float colorTimer = 0;

@@ -6,18 +6,18 @@ public class EnemyFollow : MonoBehaviour
 {
     private Animator myAnim;
 
-    private float mySpeed = 8f;
-    private float myPower = 5f;
+    public float mySpeed = 8f;
+    public float myPower = 5f;
 
     private Rigidbody2D myRigidBody;
 
     private GameObject myTarget;
     private Transform myTargetPos;
 
-    private float myFollowRange = 3f;
-    private float myAttackRange = .75f;
+    public float myFollowRange = 3f;
+    public float myAttackRange = .75f;
 
-    private float myAttackCooldown = .3f;
+    public float myAttackCooldown = .4f;
     private float myTimeSinceAttack;
     
 
