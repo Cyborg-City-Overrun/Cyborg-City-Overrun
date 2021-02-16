@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AttackBar : MonoBehaviour
+public class EnergyBar : MonoBehaviour
 {
     public Slider slider;
 
-    public void SetAttackCooldown(float coolDown)
+    public void SetMaxEnergy(float coolDown)
     {
         slider.maxValue = coolDown;
         slider.value = coolDown;
     }
-    public void SetTime(float time)
+    public void SetEnergy(float time)
     {
         slider.value = time;
     }
