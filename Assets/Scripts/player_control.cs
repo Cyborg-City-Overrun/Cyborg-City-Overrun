@@ -38,7 +38,7 @@ public class player_control : MonoBehaviour
     public int boxIndex;
     private float HBActive = 0;
   
-    public int money;
+    public int myMoney = 100;
 
 
     // Start is called before the first frame update
@@ -209,4 +209,17 @@ public class player_control : MonoBehaviour
         }
     }
     
+    public bool Transaction(int amount)
+    {
+        if (myMoney + amount > 0)
+        {
+            myMoney += amount;
+            return true;
+        }
+        else
+        {
+            print("not enough money");
+            return false;
+        }
+    }
 }
