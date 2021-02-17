@@ -30,16 +30,10 @@ public class ShopMenu : MonoBehaviour
     public void HealthPotion()
     {
         print("Health Potion: 10");
-        if (myPlayer.GetComponent<player_control>().money >= 10)
+        
+        if (myPlayer.GetComponent<player_control>().Transaction(-20))
         {
-            myPlayer.GetComponent<player_control>().money -= 10;
-            print("Purchased");
-            print(myPlayer.GetComponent<player_control>().money);
             myPlayer.GetComponent<player_control>().RestoreHealth(25);
-        }
-        else
-        {
-            print("Not enough money");
         }
     }
 }
