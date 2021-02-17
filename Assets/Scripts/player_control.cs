@@ -16,11 +16,11 @@ public class player_control : MonoBehaviour
 
     private Vector2 myMovement = Vector2.zero;
 
-    private float myMaxEnergy = 20f;
+    public float myMaxEnergy = 20f;
     private float myEnergy;
-    private float myAttackEnergy = 4f;
-    private float myRunEnergy = 15f;
-    private float myEnergyRegen = 2f;
+    public float myAttackEnergy = 4f;
+    public float myRunEnergy = 15f;
+    public float myEnergyRegen = 3f;
 
     private float myMaxHealth = 100f;
     private float myHealth;
@@ -36,6 +36,7 @@ public class player_control : MonoBehaviour
 
     public GameObject[] hitBoxes;
     public int boxIndex;
+    public int boxIndexMax;
     private float HBActive = 0;
   
     public int myMoney = 100;
@@ -115,9 +116,24 @@ public class player_control : MonoBehaviour
     {
         RestoreEnergy(myEnergyRegen * Time.deltaTime);
         EnergyBar.SetEnergy(myEnergy);
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (boxIndex < boxIndexMax)
+            {
+                boxIndex++;
+            }
+            else
+            {
+                boxIndex = 0;
+            }
+            print("current swordID: " + boxIndex);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && myEnergy >= myAttackEnergy)
         {
             myAnim.SetBool("isAttacking", true);
+            myAnim.SetInteger("swordID", boxIndex);
             DrainEnergy(myAttackEnergy);
             EnergyBar.SetEnergy(myEnergy);
 
@@ -214,6 +230,7 @@ public class player_control : MonoBehaviour
         if (myMoney + amount > 0)
         {
             myMoney += amount;
+            print(amount);
             print("you now have " + myMoney);
             return true;
         }
