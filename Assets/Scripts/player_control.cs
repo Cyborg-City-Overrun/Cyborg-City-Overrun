@@ -176,7 +176,7 @@ public class player_control : MonoBehaviour
         myHealth -= damage;
         if (myHealth <= 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
         }
         HealthBar.SetHealth(myHealth);
     }
