@@ -27,6 +27,9 @@ public class enemy_control : MonoBehaviour
 
     public HealthBar myHealthBar;
 
+    public int deathRewardMin;
+    public int deathRewardMax;
+
 
     private void Start()
     {
@@ -128,6 +131,7 @@ public class enemy_control : MonoBehaviour
 
             if (myHealth <= 0)
             {
+                myTarget.GetComponent<player_control>().Transaction(Random.Range(deathRewardMin, deathRewardMax + 1));
                 Destroy(gameObject);
             }
         }

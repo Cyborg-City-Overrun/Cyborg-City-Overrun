@@ -40,6 +40,8 @@ public class player_control : MonoBehaviour
   
     public int myMoney = 100;
 
+    public int currentEquipped = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,7 @@ public class player_control : MonoBehaviour
         Move();
         CheckAttack();
         Interact();
+        ChangeWeapon();
 
         camTF.position = new Vector3(this.transform.position.x, this.transform.position.y,-10f);
 
@@ -118,6 +121,7 @@ public class player_control : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && myEnergy >= myAttackEnergy)
         {
             myAnim.SetBool("isAttacking", true);
+            myAnim.SetInteger("swordID", currentEquipped);
             DrainEnergy(myAttackEnergy);
             EnergyBar.SetEnergy(myEnergy);
 
@@ -214,6 +218,7 @@ public class player_control : MonoBehaviour
         if (myMoney + amount > 0)
         {
             myMoney += amount;
+            print(amount);
             print("you now have " + myMoney);
             return true;
         }
@@ -221,6 +226,21 @@ public class player_control : MonoBehaviour
         {
             print("not enough money");
             return false;
+        }
+    }
+
+    private void ChangeWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (currentEquipped == 0)
+            {
+                currentEquipped = 1;
+            }
+            else
+            {
+                currentEquipped = 0;
+            }
         }
     }
 }
