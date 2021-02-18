@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopMenu : MonoBehaviour
 {
     private GameObject myPlayer;
+
+    private GameObject myHealth;
+
+    private GameObject myEnergy;
     public GameObject shop;
+
+    public Slider slider;
 
     public void Start()
     {
         myPlayer = GameObject.FindGameObjectWithTag("Player");
+        myHealth = GameObject.FindGameObjectWithTag("PlayerHealthBar");
+        myEnergy = GameObject.FindGameObjectWithTag("PlayerEnergyBar");
     }
 
     private void Update()
@@ -39,4 +48,7 @@ public class ShopMenu : MonoBehaviour
     {
         print("Current Money: " + myPlayer.GetComponent<player_control>().myMoney);
     }
+
+    
+    
 }
