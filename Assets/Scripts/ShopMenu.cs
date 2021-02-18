@@ -16,6 +16,7 @@ public class ShopMenu : MonoBehaviour
 
     public void Start()
     {
+        gameObject.SetActive(true);
         myPlayer = GameObject.FindGameObjectWithTag("Player");
         myHealth = GameObject.FindGameObjectWithTag("PlayerHealthBar");
         myEnergy = GameObject.FindGameObjectWithTag("PlayerEnergyBar");
