@@ -1439,7 +1439,7 @@ GameObject:
   - component: {fileID: 259238505}
   - component: {fileID: 259238504}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CoinDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3887,7 +3887,7 @@ GameObject:
   - component: {fileID: 703127858}
   - component: {fileID: 703127857}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CoinImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3909,7 +3909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -49.1, y: 33}
+  m_AnchoredPosition: {x: -46.2, y: 0}
   m_SizeDelta: {x: 33.032852, y: 33.66845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &703127857
@@ -4766,7 +4766,7 @@ GameObject:
   - component: {fileID: 819581661}
   - component: {fileID: 819581660}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CoinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4789,8 +4789,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -459.1, y: 227}
-  m_SizeDelta: {x: 203.78821, y: 97.0618}
+  m_AnchoredPosition: {x: -512.3, y: 258.56}
+  m_SizeDelta: {x: 76.82028, y: 36.87578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819581660
 MonoBehaviour:
