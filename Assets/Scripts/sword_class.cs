@@ -10,20 +10,28 @@ public class sword_class
     private float myAttackEnergy;
     private int mySize; //0, 1, 2 = small, med, large
 
+    public sword_class()
+    {
+        myID = -1;
+        myName = "Default";
+        myDamage = 1;
+        myAttackEnergy = 1;
+        mySize = 1;
+    }
+
     public sword_class(int id, string name, float damage, float energy, int size)
     {
         myID = id;
         myName = name;
         myDamage = damage;
         myAttackEnergy = energy;
-        setSize(size);
-    }
-
-    private void setSize(int size)
-    {
         if (size >= 0 && size <= 2)
         {
             mySize = size;
+        }
+        else
+        {
+            mySize = 1;
         }
     }
 

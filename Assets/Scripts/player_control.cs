@@ -40,7 +40,7 @@ public class player_control : MonoBehaviour
     public int myMoney = 100;
 
     private sword_list swordList;
-    private sword_class mySword;
+    private sword_class mySword = new sword_class(); //init will be overridden
 
 
     // Start is called before the first frame update
@@ -59,7 +59,6 @@ public class player_control : MonoBehaviour
         EnergyBar.SetEnergy(myMaxEnergy);
         myEnergy = myMaxEnergy;
         swordList = GetComponent<sword_list>();
-        SetWeapon(0);
     }
 
     // Update is called once per frame
@@ -122,7 +121,7 @@ public class player_control : MonoBehaviour
         RestoreEnergy(myEnergyRegen * Time.deltaTime);
         EnergyBar.SetEnergy(myEnergy);
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) || mySword.getID() < 0)
         {
             SwitchWeapon();
         }
@@ -252,12 +251,6 @@ public class player_control : MonoBehaviour
             mySword = swordList.getSword(0);
         }
         print("current swordID: " + mySword.getID());
-        boxIndex = mySword.getSize();
-    }
-
-    public void SetWeapon(int id)
-    {
-        mySword = swordList.getSword(id);
         boxIndex = mySword.getSize();
     }
 
