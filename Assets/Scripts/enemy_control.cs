@@ -8,6 +8,7 @@ public class enemy_control : MonoBehaviour
 
     public float mySpeed = 8f;
     public float myPower = 5f;
+    public item[] drops;
 
     private Rigidbody2D myRigidBody;
 
@@ -133,6 +134,14 @@ public class enemy_control : MonoBehaviour
             {
                 myTarget.GetComponent<player_control>().Transaction(Random.Range(deathRewardMin, deathRewardMax + 1));
                 Destroy(gameObject);
+                GameObject drop;
+                int randomItemIndex = Random.Range(-2,2);
+
+                if(randomItemIndex>=0)
+                {
+                    drop = Instantiate(drops[randomItemIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y-1,-1), Quaternion.identity);
+                }
+                print(randomItemIndex);
             }
         }
     }
