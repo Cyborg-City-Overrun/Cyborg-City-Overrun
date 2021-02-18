@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sword_class : MonoBehaviour
+public class sword_class
 {
     private int myID;
     private string myName;
     private float myDamage;
     private float myAttackEnergy;
-    private int mySize; //small, med, large
+    private int mySize; //0, 1, 2 = small, med, large
 
     public sword_class(int id, string name, float damage, float energy, int size)
     {
