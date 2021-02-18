@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class shop : MonoBehaviour
 {
-    public Canvas ShopMenu;
+    public Canvas TheBetterShop;
 
     private void OnTriggerEnter2D(Collider2D hit)
     {
         if (hit.gameObject.tag == "Interact")
         {
             print("hello");
-            ShopMenu.gameObject.SetActive(true);
+            TheBetterShop.gameObject.SetActive(true);
         }
+    }
+    public void HideMe()
+    {
+        TheBetterShop.gameObject.SetActive(false);
     }
 }
