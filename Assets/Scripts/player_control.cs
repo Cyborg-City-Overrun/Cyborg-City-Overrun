@@ -16,11 +16,10 @@ public class player_control : MonoBehaviour
 
     private Vector2 myMovement = Vector2.zero;
 
-    public float myMaxEnergy = 20f;
+    private float myMaxEnergy = 50f;
     private float myEnergy;
-    public float myAttackEnergy = 4f;
-    public float myRunEnergy = 15f;
-    public float myEnergyRegen = 3f;
+    private float myRunEnergy = 20f;
+    private float myEnergyRegen = 8f;
 
     private float myMaxHealth = 100f;
     private float myHealth;
@@ -36,10 +35,12 @@ public class player_control : MonoBehaviour
 
     public GameObject[] hitBoxes;
     public int boxIndex;
-    public int boxIndexMax;
     private float HBActive = 0;
   
     public int myMoney = 100;
+
+    private sword_list swordList;
+    private sword_class mySword = new sword_class(); //init will be overridden
 
 
     // Start is called before the first frame update
@@ -52,9 +53,12 @@ public class player_control : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
         HealthBar.SetMaxHealth(myMaxHealth);
+        HealthBar.SetHealth(myMaxHealth);
         myHealth = myMaxHealth;
+        EnergyBar.SetMaxEnergy(myMaxEnergy);
         EnergyBar.SetEnergy(myMaxEnergy);
         myEnergy = myMaxEnergy;
+        swordList = GetComponent<sword_list>();
     }
 
     // Update is called once per frame
@@ -117,24 +121,17 @@ public class player_control : MonoBehaviour
         RestoreEnergy(myEnergyRegen * Time.deltaTime);
         EnergyBar.SetEnergy(myEnergy);
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) || mySword.getID() < 0)
         {
-            if (boxIndex < boxIndexMax)
-            {
-                boxIndex++;
-            }
-            else
-            {
-                boxIndex = 0;
-            }
-            print("current swordID: " + boxIndex);
+            SwitchWeapon();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && myEnergy >= myAttackEnergy)
+        if (Input.GetKeyDown(KeyCode.Space) && myEnergy >= mySword.getAttackEnergy() 
+                && !myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             myAnim.SetBool("isAttacking", true);
-            myAnim.SetInteger("swordID", boxIndex);
-            DrainEnergy(myAttackEnergy);
+            myAnim.SetInteger("swordID", mySword.getID());
+            DrainEnergy(mySword.getAttackEnergy());
             EnergyBar.SetEnergy(myEnergy);
 
             if(myAnim.GetFloat("moveX")==0 && myAnim.GetFloat("moveY") == 1)
@@ -214,6 +211,7 @@ public class player_control : MonoBehaviour
         {
             myHealth = 0;
         }
+        EnergyBar.SetEnergy(energy);
     }
 
     public void RestoreEnergy(float energy)
@@ -223,6 +221,7 @@ public class player_control : MonoBehaviour
         {
             myEnergy = myMaxEnergy;
         }
+        EnergyBar.SetEnergy(energy);
     }
     
     public bool Transaction(int amount)
@@ -239,5 +238,24 @@ public class player_control : MonoBehaviour
             print("not enough money");
             return false;
         }
+    }
+
+    public void SwitchWeapon()
+    {
+        if (mySword.getID() < swordList.getNumSwords() - 1)
+        {
+            mySword = swordList.getSword(mySword.getID() + 1);
+        }
+        else
+        {
+            mySword = swordList.getSword(0);
+        }
+        print("current swordID: " + mySword.getID());
+        boxIndex = mySword.getSize();
+    }
+
+    public sword_class GetSword()
+    {
+        return mySword;
     }
 }
