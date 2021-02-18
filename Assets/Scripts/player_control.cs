@@ -41,6 +41,9 @@ public class player_control : MonoBehaviour
   
     public int myMoney = 100;
 
+    private sword_list swordList;
+    private sword_class mySword;
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +58,7 @@ public class player_control : MonoBehaviour
         myHealth = myMaxHealth;
         EnergyBar.SetEnergy(myMaxEnergy);
         myEnergy = myMaxEnergy;
+        mySword = swordList.getSword(0);
     }
 
     // Update is called once per frame
@@ -239,5 +243,10 @@ public class player_control : MonoBehaviour
             print("not enough money");
             return false;
         }
+    }
+
+    public void setSword(sword_class sword)
+    {
+        mySword = sword;
     }
 }
