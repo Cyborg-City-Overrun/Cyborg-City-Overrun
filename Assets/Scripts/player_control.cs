@@ -32,6 +32,8 @@ public class player_control : MonoBehaviour
 
     public Canvas PauseMenu;
 
+    public Canvas DeathMenu;
+
     public BoxCollider2D InteractHitbox;
 
     public GameObject[] hitBoxes;
@@ -190,7 +192,8 @@ public class player_control : MonoBehaviour
         myHealth -= damage;
         if (myHealth <= 0)
         {
-            SceneManager.LoadScene(3);
+            //Time.timeScale = 0;
+            DeathMenu.gameObject.SetActive(true);
         }
         HealthBar.SetHealth(myHealth);
     }
