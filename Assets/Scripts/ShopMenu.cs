@@ -36,20 +36,26 @@ public class ShopMenu : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D hit)
+    {
+        if (hit.gameObject.tag == "Interact")
+        {
+            print("hello");
+            shop.gameObject.SetActive(true);
+        }
+    }
+    public void HideMe()
+    {
+        shop.gameObject.SetActive(false);
+    }
     public void HealthPotion()
     {
         print("Health Potion: 20");
-        
+
         if (myPlayer.GetComponent<player_control>().Transaction(-20))
         {
             myPlayer.GetComponent<player_control>().RestoreHealth(25);
         }
     }
-    public void DisplayMoney()
-    {
-        print("Current Money: " + myPlayer.GetComponent<player_control>().myMoney);
-    }
 
-    
-    
 }
