@@ -11,8 +11,8 @@ public class player_control : MonoBehaviour
 
     private Animator myAnim;
 
-    public  float myBaseSpeed = 10f;
-    public float myRunningSpeed = 30f;
+    private  float myBaseSpeed = 3f;
+    private float myRunningSpeed = 6f;
     private float mySpeed;
 
     private Vector2 myMovement = Vector2.zero;
@@ -20,7 +20,7 @@ public class player_control : MonoBehaviour
     private float myMaxEnergy = 50f;
     private float myEnergy;
     private float myRunEnergy = 20f;
-    private float myEnergyRegen = 8f;
+    private float myEnergyRegen = 10f;
 
     private float myMaxHealth = 100f;
     private float myHealth;
@@ -63,7 +63,7 @@ public class player_control : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         myMovement.x = Input.GetAxisRaw("Horizontal");
         myMovement.y = Input.GetAxisRaw("Vertical");
@@ -74,12 +74,12 @@ public class player_control : MonoBehaviour
         camTF.position = new Vector3(this.transform.position.x, this.transform.position.y,-10f);
 
         //Code added by Tim to go back to Main menu if button M is pressed
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKey(KeyCode.M))
         {
             PauseMenu.gameObject.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.K)) //just for testing, restores all health and energy
+        if (Input.GetKey(KeyCode.K)) //just for testing, restores all health and energy
         {
             RestoreHealth(10000);
             RestoreEnergy(10000);
@@ -92,7 +92,7 @@ public class player_control : MonoBehaviour
         if (myMovement != Vector2.zero)
         {
             CheckRunning();
-            myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.deltaTime);
+            myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
             myAnim.SetFloat("moveX", myMovement.x);
             myAnim.SetFloat("moveY", myMovement.y);
             myAnim.SetBool("moving", true);
@@ -107,7 +107,7 @@ public class player_control : MonoBehaviour
     {
         if (myEnergy > 0 && Input.GetKey(KeyCode.LeftShift))
         {
-            myEnergy -= myRunEnergy * Time.deltaTime;
+            myEnergy -= myRunEnergy * Time.fixedDeltaTime;
             mySpeed = myRunningSpeed;
         }
         else 
@@ -119,15 +119,15 @@ public class player_control : MonoBehaviour
 
     private void CheckAttack()
     {
-        RestoreEnergy(myEnergyRegen * Time.deltaTime);
+        RestoreEnergy(myEnergyRegen * Time.fixedDeltaTime);
         EnergyBar.SetEnergy(myEnergy);
 
-        if (Input.GetKeyDown(KeyCode.Z) || mySword.getID() < 0)
+        if (Input.GetKey(KeyCode.Z) || mySword.getID() < 0)
         {
             SwitchWeapon();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && myEnergy >= mySword.getAttackEnergy() 
+        if (Input.GetKey(KeyCode.Space) && myEnergy >= mySword.getAttackEnergy() 
                 && !myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             myAnim.SetBool("isAttacking", true);
@@ -161,7 +161,7 @@ public class player_control : MonoBehaviour
             myAnim.SetBool("isAttacking", false);
             if (hitBoxes[boxIndex].activeSelf==true && HBActive<.18f)
             {
-                HBActive += Time.deltaTime;
+                HBActive += Time.fixedDeltaTime;
             }
             else
             {
