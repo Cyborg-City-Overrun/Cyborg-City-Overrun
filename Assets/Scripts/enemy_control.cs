@@ -7,7 +7,7 @@ public class enemy_control : MonoBehaviour
     private Animator myAnim;
 
     public float mySpeed = 8f;
-    public float myPower = 5f;
+    public float myPower = 2f;
     public item[] drops;
 
     private Rigidbody2D myRigidBody;
@@ -43,7 +43,7 @@ public class enemy_control : MonoBehaviour
         myAnim = GetComponent<Animator>();
     }
     
-    private void Update()
+    void FixedUpdate()
     {
         myRigidBody.velocity = Vector2.zero;
         CheckAttackAndMove();
@@ -51,7 +51,7 @@ public class enemy_control : MonoBehaviour
 
     private void CheckAttackAndMove()
     {
-        myTimeSinceAttack += Time.deltaTime;
+        myTimeSinceAttack += Time.fixedDeltaTime;
         if (Vector2.Distance(transform.position, myTargetPos.position) < myAttackRange)
         {
             myAnim.SetBool("isMoving", false);
@@ -82,8 +82,7 @@ public class enemy_control : MonoBehaviour
     private void Move()
     {
         myAnim.SetBool("isMoving", true);
-        myRigidBody.MovePosition(Vector2.MoveTowards(transform.position, myTargetPos.position, mySpeed * Time.deltaTime));
-        //transform.position = Vector2.MoveTowards(transform.position, myTarget.position, mySpeed * Time.deltaTime);
+        myRigidBody.MovePosition(Vector2.MoveTowards(transform.position, myTargetPos.position, mySpeed * Time.fixedDeltaTime));
         UpdateAnimation();
     }
 
