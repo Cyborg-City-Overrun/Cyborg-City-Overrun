@@ -45,6 +45,7 @@ public class player_control : MonoBehaviour
     private sword_list swordList;
     private sword_class mySword = new sword_class(); //init will be overridden
 
+    private float timeSinceSwitch;
 
     // Start is called before the first frame update
     void Start()
@@ -124,8 +125,10 @@ public class player_control : MonoBehaviour
         RestoreEnergy(myEnergyRegen * Time.fixedDeltaTime);
         EnergyBar.SetEnergy(myEnergy);
 
-        if (Input.GetKey(KeyCode.Z) || mySword.getID() < 0)
+        timeSinceSwitch += Time.fixedDeltaTime;
+        if ((Input.GetKey(KeyCode.Z) && timeSinceSwitch > .25f) || mySword.getID() < 0)
         {
+            timeSinceSwitch = 0;
             SwitchWeapon();
         }
 
