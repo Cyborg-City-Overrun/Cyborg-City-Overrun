@@ -18,16 +18,7 @@ public class shop : MonoBehaviour
 
     private void Update()
     {
-        CheckPlayerDistance();
-    }
 
-    private void CheckPlayerDistance()
-    {
-        if (Vector2.Distance(gameObject.transform.position, myPlayer.GetComponent<Transform>().position) > 1)
-        {
-            print("Too far. Leaving shop.");
-            menu.gameObject.SetActive(false);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D hit)
