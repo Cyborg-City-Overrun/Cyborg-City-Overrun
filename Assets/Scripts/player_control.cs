@@ -95,10 +95,17 @@ public class player_control : MonoBehaviour
         if (myMovement != Vector2.zero)
         {
             CheckRunning();
-            myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
             myAnim.SetFloat("moveX", myMovement.x);
             myAnim.SetFloat("moveY", myMovement.y);
             myAnim.SetBool("moving", true);
+            if (myMovement.x * myMovement.y == 0) //not moving at a diagonal
+            {
+                myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
+            }
+            else //moving at a diagonal
+            {
+                myRigidBody.MovePosition(myRigidBody.position + myMovement * (mySpeed / 2) * Time.fixedDeltaTime);
+            }
         }
         else
         {
