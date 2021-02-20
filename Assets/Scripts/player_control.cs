@@ -264,7 +264,7 @@ public class player_control : MonoBehaviour
         {
             mySword = swordList.getSword(0);
         }
-        print("current swordID: " + mySword.getID());
+        print("current sword: " + mySword.getName());
         boxIndex = mySword.getSize();
     }
 

@@ -9,6 +9,8 @@ public class sword_class
     private float myDamage;
     private float myAttackEnergy;
     private int mySize; //0, 1, 2 = small, med, large
+    private int myPrice;
+    private bool myUnlocked;
 
     public sword_class()
     {
@@ -17,9 +19,11 @@ public class sword_class
         myDamage = 1;
         myAttackEnergy = 1;
         mySize = 1;
+        myPrice = 0;
+        myUnlocked = true;
     }
 
-    public sword_class(int id, string name, float damage, float energy, int size)
+    public sword_class(int id, string name, float damage, float energy, int size, int price, bool unlocked)
     {
         myID = id;
         myName = name;
@@ -33,6 +37,8 @@ public class sword_class
         {
             mySize = 1;
         }
+        myPrice = price;
+        myUnlocked = unlocked;
     }
 
     public int getID()
@@ -58,5 +64,15 @@ public class sword_class
     public int getSize()
     {
         return mySize;
+    }
+
+    public int getPrice()
+    {
+        return myPrice;
+    }
+
+    public bool getUnlocked()
+    {
+        return myUnlocked;
     }
 }
