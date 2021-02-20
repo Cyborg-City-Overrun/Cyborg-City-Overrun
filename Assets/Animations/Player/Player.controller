@@ -57,7 +57,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sword1
+  m_Name: StarterSword
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -113,7 +113,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sword3
+  m_Name: Dagger
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -271,7 +271,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: f3ec9337e388c41448f2b741fa6d5476, type: 2}
+    m_Motion: {fileID: 7400000, guid: c65edbf1e993381438390b3a9415e7e7, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -279,7 +279,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 1d40dff9405f0fb4d8b6e42ca27c8459, type: 2}
+    m_Motion: {fileID: 7400000, guid: a4afa671a7e673b40a492d7f05c80599, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -287,7 +287,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: d956b3cdd7f66bc46ba6b498b06e1495, type: 2}
+    m_Motion: {fileID: 7400000, guid: 30e30f5c933261a4397c84d1db5820f0, type: 2}
     m_Threshold: 0.6666667
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -295,7 +295,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: be568c10da600a04897b8571103a23b6, type: 2}
+    m_Motion: {fileID: 7400000, guid: 2d953feb6a98d714180dfbb365de5716, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -566,7 +566,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sword2
+  m_Name: GreatSword
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
