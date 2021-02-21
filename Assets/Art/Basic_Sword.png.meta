@@ -71,6 +71,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -93,7 +94,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,9 +103,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -150,12 +154,12 @@ TextureImporter:
       name: Basic_Sword_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 77
+        y: 113
+        width: 22
+        height: 34
+      alignment: 9
+      pivot: {x: 0.3659949, y: 0.5457829}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,12 +175,12 @@ TextureImporter:
       name: Basic_Sword_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 50
+        y: 113
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.32966462, y: 0.5192687}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,12 +196,12 @@ TextureImporter:
       name: Basic_Sword_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 24
+        y: 113
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.32966462, y: 0.5192687}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,12 +217,12 @@ TextureImporter:
       name: Basic_Sword_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2
+        y: 113
+        width: 20
+        height: 34
+      alignment: 9
+      pivot: {x: 0.38535118, y: 0.53743637}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -234,12 +238,12 @@ TextureImporter:
       name: Basic_Sword_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1
+        y: 77
+        width: 22
+        height: 34
+      alignment: 9
+      pivot: {x: 0.54466844, y: 0.50935906}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,12 +259,12 @@ TextureImporter:
       name: Basic_Sword_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 26
+        y: 77
+        width: 21
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,12 +280,12 @@ TextureImporter:
       name: Basic_Sword_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 51
+        y: 77
+        width: 20
+        height: 34
+      alignment: 9
+      pivot: {x: 0.4508648, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,12 +301,12 @@ TextureImporter:
       name: Basic_Sword_7
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 75
+        y: 77
+        width: 24
+        height: 34
+      alignment: 9
+      pivot: {x: 0.34986433, y: 0.5096344}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -318,12 +322,12 @@ TextureImporter:
       name: Basic_Sword_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1
+        y: 40
+        width: 24
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5545947, y: 0.4999998}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -339,12 +343,12 @@ TextureImporter:
       name: Basic_Sword_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 27
+        y: 40
+        width: 22
+        height: 34
+      alignment: 9
+      pivot: {x: 0.440442, y: 0.54549533}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -360,12 +364,12 @@ TextureImporter:
       name: Basic_Sword_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 52
+        y: 40
+        width: 20
+        height: 34
+      alignment: 9
+      pivot: {x: 0.48362178, y: 0.5385372}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -381,12 +385,12 @@ TextureImporter:
       name: Basic_Sword_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 74
+        y: 40
+        width: 23
+        height: 34
+      alignment: 9
+      pivot: {x: 0.45727372, y: 0.53743637}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -402,12 +406,12 @@ TextureImporter:
       name: Basic_Sword_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2
+        y: 3
+        width: 21
+        height: 34
+      alignment: 9
+      pivot: {x: 0.53119695, y: 0.557806}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -423,12 +427,12 @@ TextureImporter:
       name: Basic_Sword_13
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
+        x: 24
+        y: 3
+        width: 23
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -444,12 +448,12 @@ TextureImporter:
       name: Basic_Sword_14
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 50
+        y: 3
+        width: 24
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5818922, y: 0.53853726}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -465,12 +469,12 @@ TextureImporter:
       name: Basic_Sword_15
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 76
+        y: 3
+        width: 20
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5491352, y: 0.53743625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
