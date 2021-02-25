@@ -41,6 +41,7 @@ public class sword_class
         myUnlocked = unlocked;
     }
 
+
     public int getID()
     {
         return myID;

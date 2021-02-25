@@ -11,7 +11,7 @@ public class player_control : MonoBehaviour
 
     private Animator myAnim;
 
-    private  float myBaseSpeed = 3f;
+    private float myBaseSpeed = 3f;
     private float myRunningSpeed = 6f;
     private float mySpeed;
 
@@ -39,18 +39,21 @@ public class player_control : MonoBehaviour
     public GameObject[] hitBoxes;
     public int boxIndex;
     private float HBActive = 0;
-  
+
     public int myMoney = 100;
 
     private sword_list swordList;
     private sword_class mySword = new sword_class(); //init will be overridden
 
-    private float timeSinceSwitch;
+    private float timeSinceSwitch = 0;
+
+    public GameObject[] myPotions;
+    private float timeSinceConsumption = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject go in hitBoxes)
+        foreach (GameObject go in hitBoxes)
         {
             go.SetActive(false);
         }
@@ -65,7 +68,12 @@ public class player_control : MonoBehaviour
         swordList = GetComponent<sword_list>();
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        SwitchWeapon();
+        ConsumePotions();
+    }
+
     void FixedUpdate()
     {
         myMovement.x = Input.GetAxisRaw("Horizontal");
@@ -74,7 +82,7 @@ public class player_control : MonoBehaviour
         CheckAttack();
         Interact();
 
-        camTF.position = new Vector3(this.transform.position.x, this.transform.position.y,-10f);
+        camTF.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
 
         //Code added by Tim to go back to Main menu if button M is pressed
         if (Input.GetKey(KeyCode.M))
@@ -120,7 +128,7 @@ public class player_control : MonoBehaviour
             myEnergy -= myRunEnergy * Time.fixedDeltaTime;
             mySpeed = myRunningSpeed;
         }
-        else 
+        else
         {
             mySpeed = myBaseSpeed;
         }
@@ -132,14 +140,7 @@ public class player_control : MonoBehaviour
         RestoreEnergy(myEnergyRegen * Time.fixedDeltaTime);
         EnergyBar.SetEnergy(myEnergy);
 
-        timeSinceSwitch += Time.fixedDeltaTime;
-        if ((Input.GetKey(KeyCode.Z) && timeSinceSwitch > .25f) || mySword.getID() < 0)
-        {
-            timeSinceSwitch = 0;
-            SwitchWeapon();
-        }
-
-        if (Input.GetKey(KeyCode.Space) && myEnergy >= mySword.getAttackEnergy() 
+        if (Input.GetKey(KeyCode.Space) && myEnergy >= mySword.getAttackEnergy()
                 && !myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             myAnim.SetBool("isAttacking", true);
@@ -147,7 +148,7 @@ public class player_control : MonoBehaviour
             DrainEnergy(mySword.getAttackEnergy());
             EnergyBar.SetEnergy(myEnergy);
 
-            if(myAnim.GetFloat("moveX")==0 && myAnim.GetFloat("moveY") == 1)
+            if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == 1)
             {
                 hitBoxes[boxIndex].transform.localEulerAngles = new Vector3(0, 0, 0);
             }
@@ -171,7 +172,7 @@ public class player_control : MonoBehaviour
         else
         {
             myAnim.SetBool("isAttacking", false);
-            if (hitBoxes[boxIndex].activeSelf==true && HBActive<.18f)
+            if (hitBoxes[boxIndex].activeSelf == true && HBActive < .18f)
             {
                 HBActive += Time.fixedDeltaTime;
             }
@@ -182,6 +183,20 @@ public class player_control : MonoBehaviour
             }
 
         }
+    }
+
+    private void ConsumePotions()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            myPotions[0].GetComponent<potions>().ConsumePotion();
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            myPotions[1].GetComponent<potions>().ConsumePotion();
+        }
+        
     }
 
     private void Interact()
@@ -240,7 +255,7 @@ public class player_control : MonoBehaviour
     
     public bool Transaction(int amount)
     {
-        if (myMoney + amount > 0)
+        if (myMoney + amount >= 0)
         {
             myMoney += amount;
             print(amount);
@@ -256,16 +271,19 @@ public class player_control : MonoBehaviour
 
     public void SwitchWeapon()
     {
-        if (mySword.getID() < swordList.getNumSwords() - 1)
+        if (Input.GetKeyDown(KeyCode.Z) || mySword.getID() < 0)
         {
-            mySword = swordList.getSword(mySword.getID() + 1);
+            if (mySword.getID() < swordList.getNumSwords() - 1)
+            {
+                mySword = swordList.getSword(mySword.getID() + 1);
+            }
+            else
+            {
+                mySword = swordList.getSword(0);
+            }
+            print("current sword: " + mySword.getName());
+            boxIndex = mySword.getSize();
         }
-        else
-        {
-            mySword = swordList.getSword(0);
-        }
-        print("current sword: " + mySword.getName());
-        boxIndex = mySword.getSize();
     }
 
     public sword_class GetSword()
