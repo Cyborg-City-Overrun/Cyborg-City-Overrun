@@ -45,10 +45,7 @@ public class player_control : MonoBehaviour
     private sword_list swordList;
     private sword_class mySword = new sword_class(); //init will be overridden
 
-    private float timeSinceSwitch = 0;
-
     public GameObject[] myPotions;
-    private float timeSinceConsumption = 0;
 
     // Start is called before the first frame update
     void Start()
