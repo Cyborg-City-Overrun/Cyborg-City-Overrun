@@ -47,6 +47,9 @@ public class player_control : MonoBehaviour
 
     public GameObject[] myPotions;
 
+    private float myAttackModifier = 1;
+    private float myAttackModifierPotion = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -184,7 +187,7 @@ public class player_control : MonoBehaviour
 
     private void ConsumePotions()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             myPotions[0].GetComponent<potions>().ConsumePotion();
         }
@@ -193,7 +196,12 @@ public class player_control : MonoBehaviour
         {
             myPotions[1].GetComponent<potions>().ConsumePotion();
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            myPotions[2].GetComponent<potions>().ConsumePotion();
+        }
+
     }
 
     private void Interact()
@@ -286,5 +294,20 @@ public class player_control : MonoBehaviour
     public sword_class GetSword()
     {
         return mySword;
+    }
+
+    public void setAttackModifier(float modifier)
+    {
+        myAttackModifier = modifier;
+    }
+
+    public void setAttackModifierPotion(float modifier)
+    {
+        myAttackModifierPotion = modifier;
+    }
+    
+    public float getDamage()
+    {
+        return mySword.getDamage() * myAttackModifier * myAttackModifierPotion;
     }
 }
