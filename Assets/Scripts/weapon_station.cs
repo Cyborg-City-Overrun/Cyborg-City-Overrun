@@ -1,15 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class shop : MonoBehaviour
+public class weapon_station : MonoBehaviour
 {
     private GameObject myPlayer;
 
     public Canvas menu;
-
-    public GameObject[] myPotions;
 
     public void Start()
     {
@@ -21,7 +18,7 @@ public class shop : MonoBehaviour
     {
         if (hit.gameObject.tag == "Interact")
         {
-            print("hello");
+            print("weapon station");
             menu.gameObject.SetActive(true);
         }
     }
@@ -29,14 +26,9 @@ public class shop : MonoBehaviour
     {
         menu.gameObject.SetActive(false);
     }
-    public void buyPotion(int id)
+    public void openGreatSwordMenu()
     {
-        print("Health Potion: 20");
-
-        if (myPlayer.GetComponent<player_control>().Transaction(-myPotions[id].GetComponent<potions>().getPrice()))
-        {
-            myPotions[id].GetComponent<potions>().addPotion(1);
-        }
+        menu.gameObject.SetActive(false);
+        
     }
-
 }

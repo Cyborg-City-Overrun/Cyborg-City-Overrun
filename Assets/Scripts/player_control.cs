@@ -140,12 +140,12 @@ public class player_control : MonoBehaviour
         RestoreEnergy(myEnergyRegen * Time.fixedDeltaTime);
         EnergyBar.SetEnergy(myEnergy);
 
-        if (Input.GetKey(KeyCode.Space) && myEnergy >= mySword.getAttackEnergy()
+        if (Input.GetKey(KeyCode.Space) && myEnergy >= mySword.getAttackEnergyWithModifier()
                 && !myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             myAnim.SetBool("isAttacking", true);
             myAnim.SetInteger("swordID", mySword.getID());
-            DrainEnergy(mySword.getAttackEnergy());
+            DrainEnergy(mySword.getAttackEnergyWithModifier());
             EnergyBar.SetEnergy(myEnergy);
 
             if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == 1)
@@ -308,6 +308,6 @@ public class player_control : MonoBehaviour
     
     public float getDamage()
     {
-        return mySword.getDamage() * myAttackModifier * myAttackModifierPotion;
+        return mySword.getDamageWithModifier() * myAttackModifier * myAttackModifierPotion;
     }
 }

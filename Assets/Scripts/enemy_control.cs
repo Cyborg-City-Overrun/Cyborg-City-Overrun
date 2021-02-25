@@ -127,7 +127,7 @@ public class enemy_control : MonoBehaviour
     {
         if (hit.gameObject.tag == "Attack")
         {
-            takeDamage(myTarget.GetComponent<player_control>().GetSword().getDamage());
+            takeDamage(myTarget.GetComponent<player_control>().getDamage());
 
             if (myHealth <= 0)
             {
