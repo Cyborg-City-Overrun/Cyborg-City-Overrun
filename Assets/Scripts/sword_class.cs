@@ -70,6 +70,11 @@ public class sword_class
         return mySize;
     }
 
+    public void setUnlocked(bool isLocked)
+    {
+        myUnlocked = isLocked;
+    }
+
     public bool getUnlocked()
     {
         return myUnlocked;

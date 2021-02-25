@@ -30,4 +30,9 @@ public class sword_list : MonoBehaviour
         return swords.Length;
     }
 
+    public void unlockWeapon(int id)
+    {
+        swords[id].setUnlocked(true);
+    }
+
 }

@@ -31,8 +31,6 @@ public class shop : MonoBehaviour
     }
     public void buyPotion(int id)
     {
-        print("Health Potion: 20");
-
         if (myPlayer.GetComponent<player_control>().Transaction(-myPotions[id].GetComponent<potions>().getPrice()))
         {
             myPotions[id].GetComponent<potions>().addPotion(1);
