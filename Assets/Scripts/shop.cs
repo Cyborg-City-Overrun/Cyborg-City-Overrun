@@ -9,6 +9,7 @@ public class shop : MonoBehaviour
 
     public Canvas menu;
 
+    public GameObject[] myPotions;
 
     public void Start()
     {
@@ -33,13 +34,13 @@ public class shop : MonoBehaviour
     {
         menu.gameObject.SetActive(false);
     }
-    public void HealthPotion()
+    public void buyPotion(int id)
     {
         print("Health Potion: 20");
 
-        if (myPlayer.GetComponent<player_control>().Transaction(-20))
+        if (myPlayer.GetComponent<player_control>().Transaction(-myPotions[id].GetComponent<potions>().getPrice()))
         {
-            myPlayer.GetComponent<player_control>().RestoreHealth(25);
+            myPotions[id].GetComponent<potions>().addPotion(1);
         }
     }
 
