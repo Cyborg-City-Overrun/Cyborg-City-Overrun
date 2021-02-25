@@ -4,41 +4,44 @@ using UnityEngine;
 
 public class sword_class
 {
+    //constructor variables
     private int myID;
     private string myName;
     private float myDamage;
     private float myAttackEnergy;
     private int mySize; //0, 1, 2 = small, med, large
-    private int myPrice;
     private bool myUnlocked;
 
-    public sword_class()
+    //other variables
+    private float myDamageModifier;
+    private float myAttackEnergyModifier;
+
+
+    public sword_class() //default constructor, only uesd at start.
     {
         myID = -1;
         myName = "Default";
         myDamage = 1;
         myAttackEnergy = 1;
         mySize = 1;
-        myPrice = 0;
         myUnlocked = true;
+
+        myDamageModifier = 1;
+        myAttackEnergyModifier = 1;
     }
 
-    public sword_class(int id, string name, float damage, float energy, int size, int price, bool unlocked)
+    public sword_class(int id, string name, float damage, float energy, int size, bool unlocked)
     {
         myID = id;
         myName = name;
         myDamage = damage;
         myAttackEnergy = energy;
-        if (size >= 0 && size <= 2)
-        {
-            mySize = size;
-        }
-        else
-        {
-            mySize = 1;
-        }
-        myPrice = price;
+        mySize = size;       
         myUnlocked = unlocked;
+
+        //always 1 at start
+        myDamageModifier = 1;
+        myAttackEnergyModifier = 1;
     }
 
 
@@ -67,13 +70,39 @@ public class sword_class
         return mySize;
     }
 
-    public int getPrice()
-    {
-        return myPrice;
-    }
-
     public bool getUnlocked()
     {
         return myUnlocked;
     }
+
+    public void setDamageModifier(float modifier)
+    {
+        myDamageModifier = modifier;
+    }
+
+    public float getDamageModifier()
+    {
+        return myDamageModifier;
+    }
+
+    public void setAttackEnergyModifier(float modifier)
+    {
+        myAttackEnergyModifier = modifier;
+    }
+    public float getAttackEnergyModifier()
+    {
+        return myAttackEnergyModifier;
+    }
+
+    public float getDamageWithModifier()
+    {
+        return myDamage * myDamageModifier;
+    }
+
+    public float getAttackEnergyWithModifier()
+    {
+        return myAttackEnergy * myAttackEnergyModifier;
+    }
+
 }
+
