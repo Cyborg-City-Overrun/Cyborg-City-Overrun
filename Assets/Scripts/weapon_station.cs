@@ -8,6 +8,8 @@ public class weapon_station : MonoBehaviour
 
     public Canvas menu;
 
+    public Canvas[] weaponMenus;
+
     public void Start()
     {
         gameObject.SetActive(true);
@@ -26,9 +28,16 @@ public class weapon_station : MonoBehaviour
     {
         menu.gameObject.SetActive(false);
     }
-    public void openGreatSwordMenu()
+    public void openWeaponMenu(int weaponID)
     {
         menu.gameObject.SetActive(false);
-        
+        weaponMenus[weaponID].gameObject.SetActive(true);
     }
+    public void closeWeaponMenu(int weaponID)
+    {
+        weaponMenus[weaponID].gameObject.SetActive(false);
+        menu.gameObject.SetActive(true);
+    }
+
+
 }
