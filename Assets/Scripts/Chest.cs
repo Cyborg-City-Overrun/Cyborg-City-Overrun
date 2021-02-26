@@ -27,7 +27,7 @@ public class Chest : MonoBehaviour
             int lootIndex = Random.Range(-1, maxLoot+1);
             if(lootIndex>=0)
             {
-                Instantiate(loot[lootIndex].gameObject, new Vector2(this.transform.position.x, this.transform.position.y + 1), Quaternion.identity);
+                Instantiate(loot[lootIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y + 1,-1), Quaternion.identity);
             }
             print("Loot index: " + lootIndex);
             Destroy(this.GetComponent<BoxCollider2D>());

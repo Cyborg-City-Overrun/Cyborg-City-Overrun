@@ -9683,7 +9683,7 @@ PrefabInstance:
     - target: {fileID: 5703932402557288652, guid: c2b2b048ba4a9a944afc5024fe95a1ad,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5703932402557288652, guid: c2b2b048ba4a9a944afc5024fe95a1ad,
         type: 3}
@@ -9725,6 +9725,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest
       objectReference: {fileID: 0}
+    - target: {fileID: 6699185572526978315, guid: c2b2b048ba4a9a944afc5024fe95a1ad,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: be4d46f3fc0f17647a57dd74b87c49c5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b2b048ba4a9a944afc5024fe95a1ad, type: 3}
 --- !u!1 &1982000397
