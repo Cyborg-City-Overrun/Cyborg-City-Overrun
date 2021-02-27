@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: c54923cf89b98854c8498647319156b9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7401095886933173759
+    second: enemyD_0
+  - first:
+      213: -1557310249819970338
+    second: enemyD_1
+  - first:
+      213: 6648926445305153477
+    second: enemyD_2
+  - first:
+      213: -5295209470367171727
+    second: enemyD_3
+  - first:
+      213: -1106026314663277601
+    second: enemyD_4
+  - first:
+      213: 9217494172200257569
+    second: enemyD_5
+  - first:
+      213: -1374693697622787412
+    second: enemyD_6
+  - first:
+      213: 814569246891574275
+    second: enemyD_7
+  - first:
+      213: -5475070840138053874
+    second: enemyD_8
+  - first:
+      213: -4133986668619571540
+    second: enemyD_9
+  - first:
+      213: -4865620091167348898
+    second: enemyD_10
+  - first:
+      213: -2019832536366709401
+    second: enemyD_11
+  - first:
+      213: 2727590653570540999
+    second: enemyD_12
+  - first:
+      213: -533802579158514127
+    second: enemyD_13
+  - first:
+      213: 2934774580081403017
+    second: enemyD_14
+  - first:
+      213: 1899709327621317850
+    second: enemyD_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +89,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +123,357 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: enemyD_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 59
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5a1491f79f5b660800000000000000
+      internalID: 7401095886933173759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 57
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4e76a2492536ae0800000000000000
+      internalID: -1557310249819970338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 59
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c74d1edf5bb54c50800000000000000
+      internalID: 6648926445305153477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_3
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 59
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17bfa7bba03a386b0800000000000000
+      internalID: -5295209470367171727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 43
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbc2424dea96a0f0800000000000000
+      internalID: -1106026314663277601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_5
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 43
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128ca3dfc1e1bef70800000000000000
+      internalID: 9217494172200257569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_6
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 41
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caab93e8d5b1cece0800000000000000
+      internalID: -1374693697622787412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 41
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3040eed0a6eed4b00800000000000000
+      internalID: 814569246891574275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 28
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07c87d3414a404b0800000000000000
+      internalID: -5475070840138053874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_9
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 28
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caedab6170121a6c0800000000000000
+      internalID: -4133986668619571540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 28
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5767f56e48d97cb0800000000000000
+      internalID: -4865620091167348898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_11
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 28
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765061c720d18f3e0800000000000000
+      internalID: -2019832536366709401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 8
+        width: 9
+        height: 16
+      alignment: 9
+      pivot: {x: 0.52327347, y: 0.34290415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c56fbe7f395ad520800000000000000
+      internalID: 2727590653570540999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_13
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 6
+        width: 9
+        height: 18
+      alignment: 9
+      pivot: {x: 0.47672653, y: 0.34872267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136c119e16d8798f0800000000000000
+      internalID: -533802579158514127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 8
+        width: 11
+        height: 16
+      alignment: 9
+      pivot: {x: 0.51904196, y: 0.31672144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98429957ee96ab820800000000000000
+      internalID: 2934774580081403017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyD_15
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 8
+        width: 11
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5761677, y: 0.31672144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad46d51819f1d5a10800000000000000
+      internalID: 1899709327621317850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
