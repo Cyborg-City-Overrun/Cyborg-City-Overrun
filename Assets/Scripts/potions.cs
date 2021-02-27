@@ -18,6 +18,10 @@ public class potions : MonoBehaviour
 
     public GameObject player;
 
+    private void Start()
+    {
+        
+    }
     private void FixedUpdate()
     {
         myTimer -= Time.fixedDeltaTime;
@@ -77,5 +81,15 @@ public class potions : MonoBehaviour
     public int getPrice()
     {
         return price;
+    }
+
+    public int getMyNumberInInventory()
+    {
+        return myNumberInInventory;
+    }
+
+    public void setMyNumberInInventory(int newNum)
+    {
+        this.myNumberInInventory = newNum;
     }
 }

@@ -21,16 +21,18 @@ public class Chest : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag=="Player")
-        {
+        if(collision.tag=="Interact")
+        { 
             Anim.SetBool("isOpened", true);
-            int lootIndex = Random.Range(-1, maxLoot+1);
-            if(lootIndex>=0)
+            int lootIndex = Random.Range(-1, maxLoot + 1);
+            if (lootIndex >= 0)
             {
-                Instantiate(loot[lootIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y + 1,-1), Quaternion.identity);
+                Instantiate(loot[lootIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y + 1, -1), Quaternion.identity);
             }
             print("Loot index: " + lootIndex);
             Destroy(this.GetComponent<BoxCollider2D>());
+
+            
         }
     }
 }
