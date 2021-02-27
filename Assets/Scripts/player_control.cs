@@ -227,7 +227,7 @@ public class player_control : MonoBehaviour
         }
         HealthBar.SetHealth(myHealth);
     }
-    
+
     public void RestoreHealth(float health)
     {
         myHealth += health;
@@ -257,7 +257,7 @@ public class player_control : MonoBehaviour
         }
         EnergyBar.SetEnergy(energy);
     }
-    
+
     public bool Transaction(int amount)
     {
         if (myMoney + amount >= 0)
@@ -305,9 +305,30 @@ public class player_control : MonoBehaviour
     {
         myAttackModifierPotion = modifier;
     }
-    
+
     public float getDamage()
     {
         return mySword.getDamageWithModifier() * myAttackModifier * myAttackModifierPotion;
     }
+
+    public float getMyHealth()
+    {
+        return myHealth;
+    }
+    public void setMyHealth(float newHealth)
+    {
+         this.myHealth = newHealth;
+    }
+
+    public float getMyEnergy()
+    {
+        return myEnergy;
+    }
+
+    public void setMyEnergy(float newEnergy)
+    {
+        this.myEnergy = newEnergy;
+    }
+
+
 }
