@@ -10,6 +10,9 @@ public class sword_class
     private float myDamage;
     private float myAttackEnergy;
     private int mySize; //0, 1, 2 = small, med, large
+    private float myVariance;
+    private float myCritChance;
+    private float myCritDamage;
     private bool myUnlocked;
 
     //other variables
@@ -28,6 +31,7 @@ public class sword_class
 
         myDamageModifier = 1;
         myAttackEnergyModifier = 1;
+        myCritDamage = 2;
     }
 
     public sword_class(int id, string name, float damage, float energy, int size, bool unlocked)
@@ -39,9 +43,11 @@ public class sword_class
         mySize = size;       
         myUnlocked = unlocked;
 
-        //always 1 at start
+        //always same at start
         myDamageModifier = 1;
         myAttackEnergyModifier = 1;
+        myVariance = myDamage / 4;
+        myCritChance = 1;
     }
 
 
@@ -101,12 +107,29 @@ public class sword_class
 
     public float getDamageWithModifier()
     {
-        return myDamage * myDamageModifier;
+        return (getDamage() + getVariance()) * getDamageModifier() * getCrit();
     }
 
     public float getAttackEnergyWithModifier()
     {
         return myAttackEnergy * myAttackEnergyModifier;
+    }
+
+    private float getVariance()
+    {
+        return Random.Range(-myVariance, myVariance + 1);
+    }
+
+    private float getCrit()
+    {
+        if (Random.Range(0, 100) < myCritChance)
+        {
+            return myCritDamage;
+        }
+        else
+        {
+            return 1;
+        }
     }
 
 }
