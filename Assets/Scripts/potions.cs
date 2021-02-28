@@ -92,4 +92,9 @@ public class potions : MonoBehaviour
     {
         this.myNumberInInventory = newNum;
     }
+
+    public int getTimer()
+    {
+        return (int)(myTimer+1);
+    }
 }
