@@ -475,10 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpeed: 5
   myPower: 5
-  drops:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  drops: []
   myFollowRange: 2
   myAttackRange: 0.75
   myAttackCooldown: 0.4

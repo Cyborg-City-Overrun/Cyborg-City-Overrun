@@ -192,13 +192,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySpeed: 2
   myPower: 10
-  drops:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  drops: []
   myFollowRange: 4
   myAttackRange: 0.75
-  myAttackCooldown: 0.4
+  myAttackCooldown: 0.6
   myMaxHealth: 15
   myHealthBar: {fileID: 94144521209568833}
   deathRewardMin: 10

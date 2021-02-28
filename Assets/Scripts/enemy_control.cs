@@ -134,7 +134,7 @@ public class enemy_control : MonoBehaviour
                 myTarget.GetComponent<player_control>().Transaction(Random.Range(deathRewardMin, deathRewardMax + 1));
                 Destroy(gameObject);
                 GameObject drop;
-                int randomItemIndex = Random.Range(-3,3);
+                int randomItemIndex = Random.Range(-3, drops.Length);
 
                 if(randomItemIndex>=0)
                 {
