@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 94144520107257337}
   - component: {fileID: 94144520107257336}
   m_Layer: 0
-  m_Name: enemyA_0
+  m_Name: enemyA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94144520107257319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.67, y: -19.08, z: 0}
+  m_LocalPosition: {x: -6.67, y: -19.08, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 94144520667769735}
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySpeed: 2
-  myPower: 10
+  myPower: 8
   drops: []
   myFollowRange: 4
   myAttackRange: 0.75

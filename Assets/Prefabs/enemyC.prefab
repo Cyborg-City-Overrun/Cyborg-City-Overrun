@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 16277122522726690}
   - component: {fileID: 1009495721710894655}
   m_Layer: 0
-  m_Name: enemyC_0
+  m_Name: enemyC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3099751327505854101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.707, y: -18.68, z: 0}
+  m_LocalPosition: {x: -4.707, y: -18.68, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7659957893039772462}
@@ -286,7 +286,7 @@ MonoBehaviour:
   drops: []
   myFollowRange: 3
   myAttackRange: 0.75
-  myAttackCooldown: 0.4
+  myAttackCooldown: 0.3
   myMaxHealth: 30
   myHealthBar: {fileID: 8034214247537582892}
   deathRewardMin: 15
