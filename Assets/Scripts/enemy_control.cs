@@ -148,6 +148,7 @@ public class enemy_control : MonoBehaviour
     private void takeDamage(float damage)
     {
         myHealth -= damage;
+        print(damage);
 
         //render.color = new Color(1, render.color.b - .25f, render.color.g - .25f);
 

@@ -39,5 +39,4 @@ public class weapon_station : MonoBehaviour
         menu.gameObject.SetActive(true);
     }
 
-
 }
