@@ -140,7 +140,7 @@ public class enemy_control : MonoBehaviour
                 {
                     drop = Instantiate(drops[randomItemIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y-1,-1), Quaternion.identity);
                 }
-                print(randomItemIndex);
+                //print(randomItemIndex);
             }
         }
     }

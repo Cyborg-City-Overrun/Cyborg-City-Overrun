@@ -284,13 +284,13 @@ MonoBehaviour:
   mySpeed: 3
   myPower: 4
   drops: []
-  myFollowRange: 3
+  myFollowRange: 5
   myAttackRange: 0.75
   myAttackCooldown: 0.3
   myMaxHealth: 30
   myHealthBar: {fileID: 8034214247537582892}
-  deathRewardMin: 15
-  deathRewardMax: 25
+  deathRewardMin: 8
+  deathRewardMax: 20
 --- !u!1 &4124061329829617727
 GameObject:
   m_ObjectHideFlags: 0

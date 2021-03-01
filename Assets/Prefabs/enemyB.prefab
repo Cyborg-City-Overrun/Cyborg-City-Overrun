@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 2885142294526974811}
   - component: {fileID: 600411103935573819}
   m_Layer: 0
-  m_Name: enemyB_0
+  m_Name: enemyB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,13 +476,13 @@ MonoBehaviour:
   mySpeed: 5
   myPower: 5
   drops: []
-  myFollowRange: 2
+  myFollowRange: 3.5
   myAttackRange: 0.75
   myAttackCooldown: 0.4
   myMaxHealth: 18
   myHealthBar: {fileID: 6053328960409231134}
-  deathRewardMin: 1
-  deathRewardMax: 20
+  deathRewardMin: 4
+  deathRewardMax: 12
 --- !u!50 &2178657336708043645
 Rigidbody2D:
   serializedVersion: 4

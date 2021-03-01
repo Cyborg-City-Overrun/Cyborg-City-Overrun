@@ -72,6 +72,7 @@ public class player_control : MonoBehaviour
     {
         SwitchWeapon();
         ConsumePotions();
+        Interact();
     }
 
     void FixedUpdate()
@@ -80,7 +81,6 @@ public class player_control : MonoBehaviour
         myMovement.y = Input.GetAxisRaw("Vertical");
         Move();
         CheckAttack();
-        Interact();
 
         camTF.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
 
@@ -207,11 +207,11 @@ public class player_control : MonoBehaviour
     private void Interact()
     {
         //make a hitbox to interact with things in the world
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             InteractHitbox.gameObject.SetActive(true);
         }
-        else
+        else if (!Input.GetKey(KeyCode.E))
         {
             InteractHitbox.gameObject.SetActive(false);
         }
