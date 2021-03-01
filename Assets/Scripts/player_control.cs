@@ -270,7 +270,7 @@ public class player_control : MonoBehaviour
         if (myMoney + amount >= 0)
         {
             myMoney += amount;
-            print(amount);
+            print("Money Added: " + amount);
             print("you now have " + myMoney);
             return true;
         }
