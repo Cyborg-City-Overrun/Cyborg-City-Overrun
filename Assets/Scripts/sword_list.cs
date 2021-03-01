@@ -8,7 +8,7 @@ public class sword_list : MonoBehaviour
                                 //int size, int price, bool unlocked) size is 0, 1, or 2
     private sword_class starterSword = new sword_class(0, "Starter Sword", 4f, 10f, 1, true);
     private sword_class greatSword = new sword_class(1, "Great Sword", 12f, 20f, 2, false);
-    private sword_class dagger = new sword_class(2, "dagger", 3f, 4f, 0, false);
+    private sword_class dagger = new sword_class(2, "Dagger", 3f, 4f, 0, false);
 
     private sword_class[] swords = new sword_class[3]; //Change this to be equal to the number of swords
 
@@ -32,7 +32,14 @@ public class sword_list : MonoBehaviour
 
     public void unlockWeapon(int id)
     {
-        swords[id].setUnlocked(true);
+        if (swords[id].getUnlocked() == false)
+        {
+            swords[id].setUnlocked(true);
+            print("Sword Unlocked");
+        }
+        else
+        {
+            print("Sword was already unlocked");
+        }
     }
-
 }

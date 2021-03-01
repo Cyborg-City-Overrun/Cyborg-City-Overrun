@@ -285,16 +285,33 @@ public class player_control : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z) || mySword.getID() < 0)
         {
-            if (mySword.getID() < swordList.getNumSwords() - 1)
+            do
             {
-                mySword = swordList.getSword(mySword.getID() + 1);
-            }
-            else
-            {
-                mySword = swordList.getSword(0);
-            }
+                if (mySword.getID() < swordList.getNumSwords() - 1)
+                {
+                    mySword = swordList.getSword(mySword.getID() + 1);
+                }
+                else
+                {
+                    mySword = swordList.getSword(0);
+                }
+            } while (mySword.getUnlocked() == false);
+            
             print("current sword: " + mySword.getName());
             boxIndex = mySword.getSize();
+        }
+    }
+
+    public void SetWeapon(int id)
+    {
+        if (swordList.getSword(id).getUnlocked() == true)
+        {
+            mySword = swordList.getSword(id);
+            print("current sword: " + mySword.getName());
+        }
+        else
+        {
+            print("That Sword is not unlocked yet");
         }
     }
 
