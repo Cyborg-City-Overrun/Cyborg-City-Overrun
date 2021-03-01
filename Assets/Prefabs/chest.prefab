@@ -123,9 +123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec820f96023af1b4ebdcd12ac0180ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot:
-  - {fileID: 6752601396693549708, guid: 04c5f418a73fb4c46bd7b27f350f0b8e, type: 3}
-  maxLoot: 0
+  garunteedLoot:
+  - {fileID: -6813998838189736089, guid: 04c5f418a73fb4c46bd7b27f350f0b8e, type: 3}
+  randomLoot:
+  - {fileID: -6813998838189736089, guid: 04c5f418a73fb4c46bd7b27f350f0b8e, type: 3}
+  randomMin: 10
 --- !u!95 &6699185572526978315
 Animator:
   serializedVersion: 3
@@ -136,7 +138,7 @@ Animator:
   m_GameObject: {fileID: 5703932402557288655}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be4d46f3fc0f17647a57dd74b87c49c5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
