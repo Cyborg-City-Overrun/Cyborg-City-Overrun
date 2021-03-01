@@ -125,8 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   garunteedLoot:
   - {fileID: -6813998838189736089, guid: 04c5f418a73fb4c46bd7b27f350f0b8e, type: 3}
-  randomLoot: []
-  maxLoot: 0
+  randomLoot:
+  - {fileID: -6813998838189736089, guid: 04c5f418a73fb4c46bd7b27f350f0b8e, type: 3}
   randomMin: 10
 --- !u!95 &6699185572526978315
 Animator:

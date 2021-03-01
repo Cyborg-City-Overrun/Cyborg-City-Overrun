@@ -7,7 +7,6 @@ public class Chest : MonoBehaviour
     // Start is called before the first frame update
     public item[] garunteedLoot;
     public item[] randomLoot;
-    public int maxLoot;
     public int randomMin;
     private Animator Anim;
     void Start()
