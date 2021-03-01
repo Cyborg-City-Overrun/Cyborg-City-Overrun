@@ -34,6 +34,8 @@ public class player_control : MonoBehaviour
 
     public Canvas DeathMenu;
 
+    public Canvas Inventory;
+
     public BoxCollider2D InteractHitbox;
 
     public GameObject[] hitBoxes;
@@ -88,6 +90,11 @@ public class player_control : MonoBehaviour
         if (Input.GetKey(KeyCode.M))
         {
             PauseMenu.gameObject.SetActive(true);
+        }
+
+        if (Input.GetKey(KeyCode.T))
+        {
+            Inventory.gameObject.SetActive(true);
         }
 
         if (Input.GetKey(KeyCode.K)) //just for testing, restores all health and energy
