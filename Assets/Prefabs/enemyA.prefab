@@ -200,6 +200,8 @@ MonoBehaviour:
   myHealthBar: {fileID: 94144521209568833}
   deathRewardMin: 10
   deathRewardMax: 15
+  floatingDamage: {fileID: 5029739836458082092, guid: 9ce279d4ba5cbbe4c8acc4b14afba600,
+    type: 3}
 --- !u!95 &94144520107257336
 Animator:
   serializedVersion: 3

@@ -291,6 +291,8 @@ MonoBehaviour:
   myHealthBar: {fileID: 8034214247537582892}
   deathRewardMin: 8
   deathRewardMax: 20
+  floatingDamage: {fileID: 5029739836458082092, guid: 9ce279d4ba5cbbe4c8acc4b14afba600,
+    type: 3}
 --- !u!1 &4124061329829617727
 GameObject:
   m_ObjectHideFlags: 0

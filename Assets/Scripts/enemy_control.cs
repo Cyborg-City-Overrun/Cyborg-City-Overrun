@@ -31,6 +31,7 @@ public class enemy_control : MonoBehaviour
     public int deathRewardMin;
     public int deathRewardMax;
 
+    public GameObject floatingDamage;
 
     private void Start()
     {
@@ -140,7 +141,6 @@ public class enemy_control : MonoBehaviour
                 {
                     drop = Instantiate(drops[randomItemIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y-1,-1), Quaternion.identity);
                 }
-                //print(randomItemIndex);
             }
         }
     }
@@ -148,9 +148,9 @@ public class enemy_control : MonoBehaviour
     private void takeDamage(float damage)
     {
         myHealth -= damage;
-        print("Damage: " + (int)damage);
 
-        //render.color = new Color(1, render.color.b - .25f, render.color.g - .25f);
+        GameObject FP = Instantiate(floatingDamage, new Vector3(this.transform.position.x + Random.Range(-.2f, .2f), this.transform.position.y + Random.Range(-.2f, .2f), -2), Quaternion.identity);
+        FP.GetComponent<TextMesh>().text = ("-" + ((int)damage).ToString());
 
         myHealthBar.SetHealth(myHealth);
     }
