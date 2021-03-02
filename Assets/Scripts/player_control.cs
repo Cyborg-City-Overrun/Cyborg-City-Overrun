@@ -11,16 +11,16 @@ public class player_control : MonoBehaviour
 
     private Animator myAnim;
 
-    private float myBaseSpeed = 3f;
-    private float myRunningSpeed = 6f;
+    private float myBaseSpeed = 3.5f;
+    private float myRunningSpeed = 8f;
     private float mySpeed;
 
     private Vector2 myMovement = Vector2.zero;
 
-    private float myMaxEnergy = 50f;
+    private float myMaxEnergy = 100f;
     private float myEnergy;
-    private float myRunEnergy = 20f;
-    private float myEnergyRegen = 10f;
+    private float myRunEnergy = 50f;
+    private float myEnergyRegen = 25f;
 
     private float myMaxHealth = 100f;
     private float myHealth;
