@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class floating_damage : MonoBehaviour
+public class destroy_after_sec : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
