@@ -128,7 +128,7 @@ public class enemy_control : MonoBehaviour
     {
         if (hit.gameObject.tag == "Attack")
         {
-            takeDamage(myTarget.GetComponent<player_control>().getDamage());
+            TakeDamage(myTarget.GetComponent<player_control>().getDamage());
 
             if (myHealth <= 0)
             {
@@ -145,7 +145,7 @@ public class enemy_control : MonoBehaviour
         }
     }
 
-    private void takeDamage(float damage)
+    private void TakeDamage(float damage)
     {
         myHealth -= damage;
 

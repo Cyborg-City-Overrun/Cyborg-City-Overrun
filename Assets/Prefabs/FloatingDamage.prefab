@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5059359609954258263}
   - component: {fileID: 6889884375639383741}
   - component: {fileID: 1448529827656950549}
+  - component: {fileID: -2488394095384602324}
   m_Layer: 0
   m_Name: FloatingDamage
   m_TagString: Untagged
@@ -115,3 +116,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2488394095384602324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5029739836458082092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eede1d54dd5bcd248ac91419afc29438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

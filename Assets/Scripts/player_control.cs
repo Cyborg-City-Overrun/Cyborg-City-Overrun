@@ -48,6 +48,8 @@ public class player_control : MonoBehaviour
     private sword_class mySword = new sword_class(); //init will be overridden
 
     public GameObject[] myPotions;
+    public GameObject[] myMaterials;
+    public GameObject[] myHilts;
 
     private float myAttackModifier = 1;
     private float myAttackModifierPotion = 1;
@@ -270,8 +272,6 @@ public class player_control : MonoBehaviour
         if (myMoney + amount >= 0)
         {
             myMoney += amount;
-            print("Money Added: " + amount);
-            print("you now have " + myMoney);
             return true;
         }
         else
