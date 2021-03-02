@@ -333,6 +333,7 @@ GameObject:
   - component: {fileID: 17423055}
   - component: {fileID: 17423057}
   - component: {fileID: 17423056}
+  - component: {fileID: 17423058}
   m_Layer: 0
   m_Name: AttackHitboxLarge
   m_TagString: Attack
@@ -408,6 +409,18 @@ PolygonCollider2D:
       - {x: -0.5256548, y: 0.14368916}
       - {x: -0.24448489, y: -0.010907173}
       - {x: 0.2795997, y: -0.040144444}
+--- !u!114 &17423058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17423054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887dca2fb5e9e140b9b396320b06c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &19128573
 GameObject:
   m_ObjectHideFlags: 0
@@ -18101,6 +18114,7 @@ GameObject:
   - component: {fileID: 492696002}
   - component: {fileID: 492696003}
   - component: {fileID: 492696004}
+  - component: {fileID: 492696005}
   m_Layer: 0
   m_Name: AttackHitboxMed
   m_TagString: Attack
@@ -18176,6 +18190,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &492696005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492696001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887dca2fb5e9e140b9b396320b06c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &494279603
 GameObject:
   m_ObjectHideFlags: 0
@@ -26392,6 +26418,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1513442276}
     m_Modifications:
+    - target: {fileID: 5703932402557288651, guid: c2b2b048ba4a9a944afc5024fe95a1ad,
+        type: 3}
+      propertyPath: randomMin
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 5703932402557288652, guid: c2b2b048ba4a9a944afc5024fe95a1ad,
         type: 3}
       propertyPath: m_RootOrder
@@ -30128,6 +30159,7 @@ GameObject:
   - component: {fileID: 1729499417}
   - component: {fileID: 1729499419}
   - component: {fileID: 1729499418}
+  - component: {fileID: 1729499420}
   m_Layer: 0
   m_Name: AttackHitboxSmall
   m_TagString: Attack
@@ -30203,6 +30235,18 @@ PolygonCollider2D:
       - {x: -0.27722833, y: 0.13851261}
       - {x: -0.14614962, y: 0.00979948}
       - {x: 0.2019663, y: 0.021975517}
+--- !u!114 &1729499420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729499416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887dca2fb5e9e140b9b396320b06c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1732935292
 GameObject:
   m_ObjectHideFlags: 0

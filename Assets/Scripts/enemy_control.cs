@@ -35,7 +35,6 @@ public class enemy_control : MonoBehaviour
 
     private void Start()
     {
-        //render = GetComponent<SpriteRenderer>();
         myHealthBar.SetMaxHealth(myMaxHealth);
         myHealth = myMaxHealth;
         myRigidBody = gameObject.GetComponent<Rigidbody2D>();
@@ -124,28 +123,8 @@ public class enemy_control : MonoBehaviour
         myTarget.GetComponent<player_control>().TakeDamage(myPower);
     }
 
-    private void OnTriggerEnter2D(Collider2D hit)
-    {
-        if (hit.gameObject.tag == "Attack")
-        {
-            TakeDamage(myTarget.GetComponent<player_control>().getDamage());
 
-            if (myHealth <= 0)
-            {
-                myTarget.GetComponent<player_control>().Transaction(Random.Range(deathRewardMin, deathRewardMax + 1));
-                Destroy(gameObject);
-                GameObject drop;
-                int randomItemIndex = Random.Range(-3, drops.Length);
-
-                if(randomItemIndex>=0)
-                {
-                    drop = Instantiate(drops[randomItemIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y-1,-1), Quaternion.identity);
-                }
-            }
-        }
-    }
-
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         myHealth -= damage;
 
@@ -153,5 +132,18 @@ public class enemy_control : MonoBehaviour
         FP.GetComponent<TextMesh>().text = ("-" + ((int)damage).ToString());
 
         myHealthBar.SetHealth(myHealth);
+
+        if (myHealth <= 0)
+        {
+            myTarget.GetComponent<player_control>().Transaction(Random.Range(deathRewardMin, deathRewardMax + 1));
+            Destroy(gameObject);
+            GameObject drop;
+            int randomItemIndex = Random.Range(-3, drops.Length);
+
+            if (randomItemIndex >= 0)
+            {
+                drop = Instantiate(drops[randomItemIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y - 1, -1), Quaternion.identity);
+            }
+        }
     }
 }
