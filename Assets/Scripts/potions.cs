@@ -6,7 +6,8 @@ public class potions : MonoBehaviour
 {
     public int myID;
 
-    private int myNumberInInventory = 2;
+    private int myNumberInInventory;
+    public string saveName;
     
     public float effectAmount;
     public int price;
@@ -20,7 +21,7 @@ public class potions : MonoBehaviour
 
     private void Start()
     {
-        
+        myNumberInInventory = PlayerPrefs.GetInt(saveName);
     }
     private void FixedUpdate()
     {
