@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 6786468827001120355}
   - component: {fileID: 8231007461522179756}
   m_Layer: 0
-  m_Name: enemyD_0
+  m_Name: enemyD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,6 +491,8 @@ MonoBehaviour:
   myHealthBar: {fileID: 6339640189537224018}
   deathRewardMin: 0
   deathRewardMax: 40
+  floatingDamage: {fileID: 5029739836458082092, guid: 9ce279d4ba5cbbe4c8acc4b14afba600,
+    type: 3}
 --- !u!1 &7268647706502452958
 GameObject:
   m_ObjectHideFlags: 0
