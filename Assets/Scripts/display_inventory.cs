@@ -54,6 +54,8 @@ public class display_inventory : MonoBehaviour
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = weapons[i - startingIndex].gameObject.GetComponent<inventory_item>().displayName;
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
 
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
+                slots[i].transform.GetComponent<Button>().onClick.AddListener(weapons[i - startingIndex].gameObject.GetComponent<inventory_item>().buttonAction);
             }
             else
             {
@@ -62,6 +64,8 @@ public class display_inventory : MonoBehaviour
 
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
+
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
             }
         }
     }
@@ -77,6 +81,9 @@ public class display_inventory : MonoBehaviour
 
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = potions[i - startingIndex].gameObject.GetComponent<inventory_item>().displayName;
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = potions[i - startingIndex].gameObject.GetComponent<inventory_item>().displayNumber.ToString();
+
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
+                slots[i].transform.GetComponent<Button>().onClick.AddListener(potions[i - startingIndex].gameObject.GetComponent<inventory_item>().buttonAction);
             }
             else
             {
@@ -86,6 +93,7 @@ public class display_inventory : MonoBehaviour
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
 
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
             }
         }
     }
