@@ -10,8 +10,6 @@ public class display_inventory : MonoBehaviour
     public GameObject[] weapons;
     public GameObject[] potions;
 
-    private int index = 0;
-
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +17,7 @@ public class display_inventory : MonoBehaviour
         
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         DisplayAll();
     }
