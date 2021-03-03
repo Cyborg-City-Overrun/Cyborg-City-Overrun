@@ -1825,7 +1825,7 @@ MonoBehaviour:
   - {fileID: 492696001}
   - {fileID: 17423054}
   boxIndex: 1
-  myMoney: 100
+  myMoney: 0
   myPotions:
   - {fileID: 1964950332}
   - {fileID: 1834114243}
