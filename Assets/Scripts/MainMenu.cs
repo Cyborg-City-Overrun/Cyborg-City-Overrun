@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour{
 
+    private Saver saver = new Saver();
     //Function to load the game
    public void PlayGame()
     {
+        saver.newGame();
         SceneManager.LoadScene(1);
     }
 
