@@ -20,18 +20,21 @@ public class display_inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Display_Items(weapons);
+            DisplayWeapons();
         }
     }
 
-    private void Display_Items(GameObject[] list)
+    public void something(GameObject[] hi) { }
+
+    public void DisplayWeapons()
     {
-        for (int i = 0; i < slots.Length && i < list.Length; i++)
+        for (int i = 0; i < slots.Length && i < weapons.Length; i++)
         {
-            slots[i].transform.GetChild(0).GetComponent<Image>().sprite = list[i].transform.GetComponent<SpriteRenderer>().sprite;
+            slots[i].transform.GetChild(0).GetComponent<Image>().sprite = weapons[i].transform.GetComponent<SpriteRenderer>().sprite;
             slots[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
 
-            slots[i].transform.GetChild(1).GetComponent<Text>().text = list[i].gameObject.name;
+            slots[i].transform.GetChild(1).GetComponent<Text>().text = weapons[i].gameObject.name;
         }
     }
+
 }
