@@ -9,6 +9,8 @@ public class inventory_item : MonoBehaviour
     public string displayName;
     public int displayNumber = 0;
 
+    private GameObject myPlayer;
+
     private void Update()
     {
         if (this.gameObject.tag == "Potion")
@@ -19,6 +21,16 @@ public class inventory_item : MonoBehaviour
 
     public void buttonAction()
     {
-        print(displayName);
+        switch (this.gameObject.tag)
+        {
+            case "Potion":
+                this.gameObject.GetComponent<potions>().ConsumePotion();
+                break;
+            case "Weapon":
+                myPlayer.GetComponent<player_control>().SetWeapon(displayNumber);
+                break;
+
+
+        }
     }
 }
