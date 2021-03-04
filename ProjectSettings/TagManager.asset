@@ -9,6 +9,7 @@ TagManager:
   - Interact
   - Chest
   - Potion
+  - Weapon
   layers:
   - Default
   - TransparentFX

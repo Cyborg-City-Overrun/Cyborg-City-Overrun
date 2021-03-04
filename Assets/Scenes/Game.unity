@@ -2313,7 +2313,7 @@ GameObject:
   - component: {fileID: 183355211}
   m_Layer: 0
   m_Name: GreatSword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2346,7 +2346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 21300000, guid: 33400808f280a404b826ed075be34670, type: 3}
   displayName: Great Sword
-  displayNumber: 0
+  displayNumber: 1
 --- !u!1 &193343294
 GameObject:
   m_ObjectHideFlags: 0
@@ -19369,7 +19369,7 @@ GameObject:
   - component: {fileID: 507491342}
   m_Layer: 0
   m_Name: StarterSword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26857,7 +26857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1061735885
 Transform:
   m_ObjectHideFlags: 0
@@ -33567,7 +33567,7 @@ GameObject:
   - component: {fileID: 1677921423}
   m_Layer: 0
   m_Name: Dagger
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33600,7 +33600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 21300000, guid: 80261a21f47c0124f852ecc6aaf42665, type: 3}
   displayName: Dagger
-  displayNumber: 0
+  displayNumber: 2
 --- !u!1 &1679585389
 GameObject:
   m_ObjectHideFlags: 0

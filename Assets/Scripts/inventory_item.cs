@@ -7,9 +7,14 @@ public class inventory_item : MonoBehaviour
 {
     public Sprite displayImage;
     public string displayName;
-    public int displayNumber = 0;
+    public int displayNumber;
 
     private GameObject myPlayer;
+
+    private void Start()
+    {
+        myPlayer = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void Update()
     {
@@ -29,8 +34,6 @@ public class inventory_item : MonoBehaviour
             case "Weapon":
                 myPlayer.GetComponent<player_control>().SetWeapon(displayNumber);
                 break;
-
-
         }
     }
 }
