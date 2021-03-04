@@ -104,6 +104,13 @@ public class display_inventory : MonoBehaviour
                     //dont display number
                     slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
 
+                    //if equipped Sword
+                    if (myPlayer.GetComponent<player_control>().GetSword().getID() == list[i - startingIndex].gameObject.GetComponent<inventory_item>().displayNumber)
+                    {
+                        //show equipped
+                        slots[i].transform.GetChild(2).GetComponent<Text>().text = "[E]";
+                    }
+                    
                     //if it is locked
                     if (myPlayer.GetComponent<sword_list>().getSword(list[i - startingIndex].gameObject.GetComponent<inventory_item>().displayNumber).getUnlocked() == false)
                     {
