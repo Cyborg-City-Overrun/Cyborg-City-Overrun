@@ -2206,7 +2206,10 @@ MonoBehaviour:
   - {fileID: 1964950332}
   - {fileID: 1834114243}
   - {fileID: 2080344718}
-  myMaterials: []
+  myMaterials:
+  - {fileID: 1747528827}
+  - {fileID: 829301928}
+  - {fileID: 761932726}
   myHilts: []
 --- !u!50 &174187510
 Rigidbody2D:
@@ -57546,6 +57549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myID: 1
+  saveName: EnergyPotionAmt
   effectAmount: 50
   price: 20
   modifierDurration: 0
@@ -59091,6 +59095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myID: 0
+  saveName: HealthPotionAmt
   effectAmount: 20
   price: 50
   modifierDurration: 0
@@ -60583,6 +60588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myID: 2
+  saveName: AttackPotionAmt
   effectAmount: 1.5
   price: 80
   modifierDurration: 8

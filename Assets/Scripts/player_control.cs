@@ -42,7 +42,7 @@ public class player_control : MonoBehaviour
     public int boxIndex;
     private float HBActive = 0;
 
-    public int myMoney = 100;
+    public int myMoney;
 
     private sword_list swordList;
     private sword_class mySword = new sword_class(); //init will be overridden
@@ -65,11 +65,12 @@ public class player_control : MonoBehaviour
         myAnim = GetComponent<Animator>();
         HealthBar.SetMaxHealth(myMaxHealth);
         HealthBar.SetHealth(myMaxHealth);
-        myHealth = myMaxHealth;
+        myHealth = PlayerPrefs.GetFloat("Health");
         EnergyBar.SetMaxEnergy(myMaxEnergy);
-        EnergyBar.SetEnergy(myMaxEnergy);
+        EnergyBar.SetEnergy(PlayerPrefs.GetFloat("Energy"));
         myEnergy = myMaxEnergy;
         swordList = GetComponent<sword_list>();
+        myMoney = PlayerPrefs.GetInt("MoneyAmt");
     }
 
     private void Update()
