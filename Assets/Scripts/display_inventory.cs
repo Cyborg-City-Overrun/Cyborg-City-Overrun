@@ -10,6 +10,10 @@ public class display_inventory : MonoBehaviour
     public GameObject[] weapons;
     public GameObject[] potions;
 
+    public Sprite locked;
+
+    public GameObject myPlayer;
+
     public enum Displays { all, potions, weapons };
     public Displays currentDisplay;
 
@@ -17,7 +21,7 @@ public class display_inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        myPlayer = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnEnable()
@@ -49,62 +53,16 @@ public class display_inventory : MonoBehaviour
 
     public void DisplayWeapons(int startingIndex)
     {
-        for (int i = startingIndex; i < slots.Length; i++)
-        {
-            currentDisplay = Displays.weapons;
+        currentDisplay = Displays.weapons;
 
-            if (i < weapons.Length + startingIndex)
-            {
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = weapons[i - startingIndex].gameObject.GetComponent<inventory_item>().displayImage;
-                slots[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
-
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = weapons[i - startingIndex].gameObject.GetComponent<inventory_item>().displayName;
-                slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
-
-                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
-                slots[i].transform.GetComponent<Button>().onClick.AddListener(weapons[i - startingIndex].gameObject.GetComponent<inventory_item>().buttonAction);
-            }
-            else
-            {
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-                slots[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
-
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
-                slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
-
-                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
-            }
-        }
+        DisplayMenu(weapons, startingIndex);
     }
 
     public void DisplayPotions(int startingIndex)
     {
         currentDisplay = Displays.potions;
 
-        for (int i = startingIndex; i < slots.Length; i++)
-        {
-            if (i < potions.Length + startingIndex)
-            {
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = potions[i - startingIndex].gameObject.GetComponent<inventory_item>().displayImage;
-                slots[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
-
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = potions[i - startingIndex].gameObject.GetComponent<inventory_item>().displayName;
-                slots[i].transform.GetChild(2).GetComponent<Text>().text = potions[i - startingIndex].gameObject.GetComponent<inventory_item>().displayNumber.ToString();
-
-                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
-                slots[i].transform.GetComponent<Button>().onClick.AddListener(potions[i - startingIndex].gameObject.GetComponent<inventory_item>().buttonAction);
-            }
-            else
-            {
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-                slots[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
-
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
-                slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
-
-                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
-            }
-        }
+        DisplayMenu(potions, startingIndex);
     }
 
     public void updateDisplay()
@@ -123,6 +81,48 @@ public class display_inventory : MonoBehaviour
                 DisplayPotions(0);
                 break;
         }
+    }
 
+    public void DisplayMenu(GameObject[] list, int startingIndex)
+    {
+        for (int i = startingIndex; i < slots.Length; i++)
+        {
+            if (i < list.Length + startingIndex)
+            {
+                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = list[i - startingIndex].gameObject.GetComponent<inventory_item>().displayImage;
+                slots[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+
+                slots[i].transform.GetChild(1).GetComponent<Text>().text = list[i - startingIndex].gameObject.GetComponent<inventory_item>().displayName;
+                slots[i].transform.GetChild(2).GetComponent<Text>().text = list[i - startingIndex].gameObject.GetComponent<inventory_item>().displayNumber.ToString();
+
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
+                slots[i].transform.GetComponent<Button>().onClick.AddListener(list[i - startingIndex].gameObject.GetComponent<inventory_item>().buttonAction);
+
+                //if it is weapon
+                if (list[i - startingIndex].gameObject.tag == "Weapon")
+                {
+                    //dont display number
+                    slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
+
+                    //if it is locked
+                    if (myPlayer.GetComponent<sword_list>().getSword(list[i - startingIndex].gameObject.GetComponent<inventory_item>().displayNumber).getUnlocked() == false)
+                    {
+                        slots[i].transform.GetChild(0).GetComponent<Image>().sprite = locked;
+                        slots[i].transform.GetChild(1).GetComponent<Text>().text = "Locked";
+                    }
+                }
+
+            }
+            else
+            {
+                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
+                slots[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
+
+                slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
+                slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
+
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
+            }
+        }
     }
 }
