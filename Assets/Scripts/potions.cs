@@ -6,7 +6,7 @@ public class potions : MonoBehaviour
 {
     public int myID;
 
-    private int myNumberInInventory = 2;
+    private int myNumberInInventory = 0;
     
     public float effectAmount;
     public int price;
