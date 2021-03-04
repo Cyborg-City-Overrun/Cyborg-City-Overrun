@@ -10,6 +10,9 @@ public class display_inventory : MonoBehaviour
     public GameObject[] weapons;
     public GameObject[] potions;
 
+    public enum Displays { all, potions, weapons };
+    public Displays currentDisplay;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,8 @@ public class display_inventory : MonoBehaviour
 
     private void Update()
     {
+        updateDisplay();
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             close();
@@ -39,13 +44,15 @@ public class display_inventory : MonoBehaviour
     {
         DisplayWeapons(0);
         DisplayPotions(weapons.Length);
-
+        currentDisplay = Displays.all;
     }
 
     public void DisplayWeapons(int startingIndex)
     {
         for (int i = startingIndex; i < slots.Length; i++)
         {
+            currentDisplay = Displays.weapons;
+
             if (i < weapons.Length + startingIndex)
             {
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = weapons[i - startingIndex].gameObject.GetComponent<inventory_item>().displayImage;
@@ -54,6 +61,8 @@ public class display_inventory : MonoBehaviour
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = weapons[i - startingIndex].gameObject.GetComponent<inventory_item>().displayName;
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
 
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
+                slots[i].transform.GetComponent<Button>().onClick.AddListener(weapons[i - startingIndex].gameObject.GetComponent<inventory_item>().buttonAction);
             }
             else
             {
@@ -62,12 +71,16 @@ public class display_inventory : MonoBehaviour
 
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
+
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
             }
         }
     }
 
     public void DisplayPotions(int startingIndex)
     {
+        currentDisplay = Displays.potions;
+
         for (int i = startingIndex; i < slots.Length; i++)
         {
             if (i < potions.Length + startingIndex)
@@ -77,6 +90,9 @@ public class display_inventory : MonoBehaviour
 
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = potions[i - startingIndex].gameObject.GetComponent<inventory_item>().displayName;
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = potions[i - startingIndex].gameObject.GetComponent<inventory_item>().displayNumber.ToString();
+
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
+                slots[i].transform.GetComponent<Button>().onClick.AddListener(potions[i - startingIndex].gameObject.GetComponent<inventory_item>().buttonAction);
             }
             else
             {
@@ -86,7 +102,27 @@ public class display_inventory : MonoBehaviour
                 slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
 
+                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
             }
         }
+    }
+
+    public void updateDisplay()
+    {
+        switch (currentDisplay)
+        {
+            case Displays.all:
+                DisplayAll();
+                break;
+
+            case Displays.weapons:
+                DisplayWeapons(0);
+                break;
+
+            case Displays.potions:
+                DisplayPotions(0);
+                break;
+        }
+
     }
 }

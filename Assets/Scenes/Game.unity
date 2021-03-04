@@ -2313,7 +2313,7 @@ GameObject:
   - component: {fileID: 183355211}
   m_Layer: 0
   m_Name: GreatSword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2346,7 +2346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 21300000, guid: 33400808f280a404b826ed075be34670, type: 3}
   displayName: Great Sword
-  displayNumber: 0
+  displayNumber: 1
 --- !u!1 &193343294
 GameObject:
   m_ObjectHideFlags: 0
@@ -19369,7 +19369,7 @@ GameObject:
   - component: {fileID: 507491342}
   m_Layer: 0
   m_Name: StarterSword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19449,6 +19449,7 @@ GameObject:
   - component: {fileID: 510027335}
   - component: {fileID: 510027334}
   - component: {fileID: 510027333}
+  - component: {fileID: 510027337}
   m_Layer: 5
   m_Name: InventoryMenu
   m_TagString: Untagged
@@ -19509,6 +19510,7 @@ MonoBehaviour:
   - {fileID: 1964950332}
   - {fileID: 1834114243}
   - {fileID: 2080344718}
+  currentDisplay: 0
 --- !u!114 &510027334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19570,6 +19572,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
+--- !u!114 &510027337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510027331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972e178fffbcc3f43a5ca67e8de0e3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &512687409
 GameObject:
   m_ObjectHideFlags: 0
@@ -26843,7 +26857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1061735885
 Transform:
   m_ObjectHideFlags: 0
@@ -33553,7 +33567,7 @@ GameObject:
   - component: {fileID: 1677921423}
   m_Layer: 0
   m_Name: Dagger
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33586,7 +33600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 21300000, guid: 80261a21f47c0124f852ecc6aaf42665, type: 3}
   displayName: Dagger
-  displayNumber: 0
+  displayNumber: 2
 --- !u!1 &1679585389
 GameObject:
   m_ObjectHideFlags: 0
