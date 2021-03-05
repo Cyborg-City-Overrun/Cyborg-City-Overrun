@@ -118,7 +118,6 @@ public class display_inventory : MonoBehaviour
                         slots[i].transform.GetChild(1).GetComponent<Text>().text = "Locked";
                     }
                 }
-
             }
             else
             {

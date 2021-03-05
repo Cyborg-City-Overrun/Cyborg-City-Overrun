@@ -17,7 +17,7 @@ public class player_control : MonoBehaviour
 
     private Vector2 myMovement = Vector2.zero;
 
-    private float myMaxEnergy = 100f;
+    private float myMaxEnergy = 50f;
     private float myEnergy;
     private float myRunEnergy = 50f;
     private float myEnergyRegen = 25f;
@@ -253,7 +253,7 @@ public class player_control : MonoBehaviour
         myEnergy -= energy;
         if (myEnergy < 0)
         {
-            myHealth = 0;
+            myEnergy = 0;
         }
         EnergyBar.SetEnergy(energy);
     }
