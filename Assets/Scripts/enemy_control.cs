@@ -23,8 +23,6 @@ public class enemy_control : MonoBehaviour
 
     public float myMaxHealth = 20f;
     private float myHealth;
-    //private SpriteRenderer renders;
-    //private float colorTimer = 0;
 
     public HealthBar myHealthBar;
 
@@ -32,6 +30,9 @@ public class enemy_control : MonoBehaviour
     public int deathRewardMax;
 
     public GameObject floatingDamage;
+
+    public GameObject hitBox;
+
 
     private void Start()
     {
@@ -51,30 +52,43 @@ public class enemy_control : MonoBehaviour
 
     private void CheckAttackAndMove()
     {
-        myTimeSinceAttack += Time.fixedDeltaTime;
-        if (Vector2.Distance(transform.position, myTargetPos.position) < myAttackRange)
+        if (!myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && !myAnim.GetCurrentAnimatorStateInfo(0).IsTag("PreAttack")) //if not currently attacking
         {
-            myAnim.SetBool("isMoving", false);
+            hitBox.SetActive(false); //remove hitbox from last attack
 
-            if (myTimeSinceAttack >= myAttackCooldown)
+            myTimeSinceAttack += Time.fixedDeltaTime;
+            if (Vector2.Distance(transform.position, myTargetPos.position) < myAttackRange) //if within range to attack
             {
-                myTimeSinceAttack = 0;
-                Attack();
+                myAnim.SetBool("isMoving", false);
+
+                if (myTimeSinceAttack >= myAttackCooldown) //if time to attack
+                {
+                    myTimeSinceAttack = 0;
+                    AttackStart();
+                }
             }
+            else //not within range ot attack
+            {
+                CheckMove();
+            }
+        }
+        else if (myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && hitBox.activeSelf == false)
+        {
+            Attack();
         }
         else
         {
-            CheckMove();
+            myAnim.SetBool("isAttacking", false);
         }
     }
 
     private void CheckMove()
     {
-        if (Vector2.Distance(transform.position, myTargetPos.position) < myFollowRange)
+        if (Vector2.Distance(transform.position, myTargetPos.position) < myFollowRange) //if close enough to follow player
         {
             Move();
         }
-        else
+        else //enemy too far from player
         {
             myAnim.SetBool("isMoving", false);
         }
@@ -117,14 +131,38 @@ public class enemy_control : MonoBehaviour
         }
     }
 
-
-    private void Attack()
+    private void AttackStart() //attack start is called to show animation that the enemy is about to attack
     {
-        myTarget.GetComponent<player_control>().TakeDamage(myPower);
+        myAnim.SetBool("isAttacking", true);
     }
 
+    private void Attack() //attack is called when the hitbox should appear and the main attack starts
+    {
+        //set hitbox direction
+        if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == 1)
+        {
+            hitBox.transform.localEulerAngles = new Vector3(0, 0, 0);
+        }
 
-    public void TakeDamage(float damage)
+        else if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == -1)
+        {
+            hitBox.transform.localEulerAngles = new Vector3(0, 0, 180);
+        }
+
+        else if (myAnim.GetFloat("moveX") == 1 && myAnim.GetFloat("moveY") == 0)
+        {
+            hitBox.transform.localEulerAngles = new Vector3(0, 0, -90);
+        }
+
+        else if (myAnim.GetFloat("moveX") == -1 && myAnim.GetFloat("moveY") == 0)
+        {
+            hitBox.transform.localEulerAngles = new Vector3(0, 0, 90);
+        }
+        //set hitbox active
+        hitBox.SetActive(true);
+    }
+
+    public void TakeDamage(float damage) //called when enemy is hit by players attack
     {
         myHealth -= damage;
 
@@ -145,5 +183,10 @@ public class enemy_control : MonoBehaviour
                 drop = Instantiate(drops[randomItemIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y - 1, -1), Quaternion.identity);
             }
         }
+    }
+
+    public float getDamage()
+    {
+        return myPower;
     }
 }

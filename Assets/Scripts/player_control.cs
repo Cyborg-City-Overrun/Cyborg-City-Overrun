@@ -107,6 +107,14 @@ public class player_control : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D hit)
+    {
+        if (hit.tag == "EnemyAttack") //if the player is hit by an enemy
+        {
+            TakeDamage(hit.GetComponentInParent<enemy_control>().getDamage());
+        }
+    }
+
     private void Move()
     {
         myRigidBody.velocity = Vector2.zero;
@@ -191,7 +199,6 @@ public class player_control : MonoBehaviour
                 hitBoxes[boxIndex].SetActive(false);
                 HBActive = 0;
             }
-
         }
     }
 
