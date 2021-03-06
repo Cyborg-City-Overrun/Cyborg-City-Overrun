@@ -10,6 +10,7 @@ TagManager:
   - Chest
   - Potion
   - Weapon
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
