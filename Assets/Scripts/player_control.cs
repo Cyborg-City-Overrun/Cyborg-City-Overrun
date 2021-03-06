@@ -45,7 +45,7 @@ public class player_control : MonoBehaviour
     public int myMoney;
 
     private sword_list swordList;
-    private sword_class mySword = new sword_class(); //init will be overridden
+    private sword_class mySword;
 
     public GameObject[] myPotions;
     public GameObject[] myMaterials;
@@ -75,6 +75,11 @@ public class player_control : MonoBehaviour
 
     private void Update()
     {
+        if (mySword == null)
+        {
+            mySword = swordList.getSword(0);//
+        }
+
         SwitchWeapon();
         ConsumePotions();
         Interact();
@@ -82,6 +87,8 @@ public class player_control : MonoBehaviour
 
     void FixedUpdate()
     {
+        transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+
         myMovement.x = Input.GetAxisRaw("Horizontal");
         myMovement.y = Input.GetAxisRaw("Vertical");
         Move();
@@ -291,7 +298,7 @@ public class player_control : MonoBehaviour
 
     public void SwitchWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Z) || mySword.getID() < 0)
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             do
             {
