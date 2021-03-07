@@ -5,17 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class OptionsMenu : MonoBehaviour
 {
+    private Saver saver = new Saver();
     public Canvas PauseMenu;
-
+    public Canvas ControlsMenu;
+    //Function to load the game
     //Function to bring to Main menu
     public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
-    }
-
-    public void Load()
-    {
-        SceneManager.LoadScene(1);
     }
     
     //Function to hide the Pause Menu
@@ -23,4 +20,23 @@ public class OptionsMenu : MonoBehaviour
     {
         PauseMenu.gameObject.SetActive(false);
     }
+
+    public void LoadGame()
+    {
+        //load game
+        SceneManager.LoadScene(1);
+    }
+
+    public void Controls()
+    {
+        //open the controls menu
+        ControlsMenu.gameObject.SetActive(true);
+    }
+
+    public void Options()
+    {
+        //open the options menu
+        print("This tab isnt set up yet");
+    }
+
 }
