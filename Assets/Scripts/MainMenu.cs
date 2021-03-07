@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour{
 
     private Saver saver = new Saver();
+
+    public Canvas ControlsMenu;
+    public Canvas CreditsMenu;
+    public Canvas MainMenuCanvas;
     //Function to load the game
    public void NewGame()
     {
@@ -22,7 +26,8 @@ public class MainMenu : MonoBehaviour{
     public void Controls()
     {
         //open the controls menu
-        print("This tab isnt set up yet");
+        MainMenuCanvas.gameObject.SetActive(false);
+        ControlsMenu.gameObject.SetActive(true);
     }
 
     public void Options()
@@ -33,7 +38,8 @@ public class MainMenu : MonoBehaviour{
     public void Creadits()
     {
         //open the credits menu
-        print("This tab isnt set up yet");
+        MainMenuCanvas.gameObject.SetActive(false);
+        CreditsMenu.gameObject.SetActive(true);
     }
 
     //Function to Quit the Game
