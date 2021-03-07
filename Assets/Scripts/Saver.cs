@@ -6,7 +6,7 @@ public class Saver : MonoBehaviour
 {
     public player_control player;
     private string[] potionSaveNames = { "HealthPotionAmt", "EnergyPotionAmt", "AttackPotionAmt" };
-    private string[] materialSaveNames = { "IronAmt", "SteelAmt", "CopperAmt" };
+    private string[] materialSaveNames = { "IronAmt" };
     // Start is called before the first frame update
     void Start()
     {

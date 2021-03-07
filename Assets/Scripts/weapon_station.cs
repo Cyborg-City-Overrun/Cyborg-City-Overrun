@@ -8,11 +8,11 @@ public class weapon_station : MonoBehaviour
 
     public Canvas menu;
 
-    public Canvas[] weaponMenus;
 
     public void Start()
     {
         gameObject.SetActive(true);
+        menu.gameObject.SetActive(false);
         myPlayer = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -28,15 +28,4 @@ public class weapon_station : MonoBehaviour
     {
         menu.gameObject.SetActive(false);
     }
-    public void openWeaponMenu(int weaponID)
-    {
-        menu.gameObject.SetActive(false);
-        weaponMenus[weaponID].gameObject.SetActive(true);
-    }
-    public void closeWeaponMenu(int weaponID)
-    {
-        weaponMenus[weaponID].gameObject.SetActive(false);
-        menu.gameObject.SetActive(true);
-    }
-
 }

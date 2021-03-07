@@ -18,9 +18,21 @@ public class inventory_item : MonoBehaviour
 
     private void Update()
     {
+        switch (this.gameObject.tag)
+        {
+            case "Potion":
+                displayNumber = this.gameObject.GetComponent<potions>().getMyNumberInInventory();
+                break;
+            case "Weapon":
+                break;
+            case "Material":
+                displayNumber = this.gameObject.GetComponent<number_in_inventory>().getNum();
+                break;
+        }
+
         if (this.gameObject.tag == "Potion")
         {
-            displayNumber = this.gameObject.GetComponent<potions>().getMyNumberInInventory();
+            
         }
     }
 
@@ -33,6 +45,9 @@ public class inventory_item : MonoBehaviour
                 break;
             case "Weapon":
                 myPlayer.GetComponent<player_control>().SetWeapon(displayNumber);
+                break;
+            case "Material":
+                //no button action
                 break;
         }
     }
