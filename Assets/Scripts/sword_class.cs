@@ -14,6 +14,7 @@ public class sword_class
     private float myCritChance;
     private float myCritDamage;
     private bool myUnlocked;
+    private int myPrice;
 
     //other variables
     private float myDamageModifier;
@@ -28,13 +29,14 @@ public class sword_class
         myAttackEnergy = 1;
         mySize = 1;
         myUnlocked = true;
+        myPrice = 0;
 
         myDamageModifier = 1;
         myAttackEnergyModifier = 1;
         myCritDamage = 2;
     }
 
-    public sword_class(int id, string name, float damage, float energy, int size, bool unlocked)
+    public sword_class(int id, string name, float damage, float energy, int size, bool unlocked, int price)
     {
         myID = id;
         myName = name;
@@ -42,6 +44,7 @@ public class sword_class
         myAttackEnergy = energy;
         mySize = size;       
         myUnlocked = unlocked;
+        myPrice = price;
 
         //always same at start
         myDamageModifier = 1;
@@ -84,6 +87,11 @@ public class sword_class
     public bool getUnlocked()
     {
         return myUnlocked;
+    }
+
+    public int getPrice()
+    {
+        return myPrice;
     }
 
     public void setDamageModifier(float modifier)
