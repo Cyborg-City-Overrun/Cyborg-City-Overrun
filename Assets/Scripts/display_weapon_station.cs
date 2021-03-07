@@ -42,30 +42,29 @@ public class display_weapon_station : MonoBehaviour
     private void updateDisplay()
     {
         weaponName.text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getName();
-        displayMaterials();
-        updateBuildButton();
+        //display();
+        updateButton();
     }
-    public void updateBuildButton()
+    public void updateButton()
     {
         if (myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getUnlocked() == true)
         {
-            buildButton.transform.GetChild(2).GetComponent<Text>().text = "Built";
+            buildButton.transform.GetChild(2).GetComponent<Text>().text = "Owned";
         }
         else
         {
-            buildButton.transform.GetChild(2).GetComponent<Text>().text = "";
+            buildButton.transform.GetChild(2).GetComponent<Text>().text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getPrice().ToString();
         }
 
         buildButton.transform.GetComponent<Button>().onClick.RemoveAllListeners();
-        buildButton.transform.GetComponent<Button>().onClick.AddListener(buildButtonCommand);
+        buildButton.transform.GetComponent<Button>().onClick.AddListener(buttonCommand);
     }
 
-    public void buildButtonCommand()
+    public void buttonCommand()
     {
-        if (weapons[currentWeapon].GetComponent<weapon_build_requirements>().num[0] <= materials[0].gameObject.GetComponent<number_in_inventory>().getNum() && myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getUnlocked() == false)
+        if (myPlayer.GetComponent<player_control>().myMoney >= myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getPrice() && myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getUnlocked() == false)
         {
-
-            materials[0].gameObject.GetComponent<number_in_inventory>().setNum(materials[0].gameObject.GetComponent<number_in_inventory>().getNum() - weapons[currentWeapon].GetComponent<weapon_build_requirements>().num[0]);
+            myPlayer.GetComponent<player_control>().myMoney -= myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getPrice();
 
             myPlayer.GetComponent<sword_list>().unlockWeapon(currentWeapon);
 
@@ -74,7 +73,7 @@ public class display_weapon_station : MonoBehaviour
 
 
     
-    public void displayMaterials()
+    public void display()
     {
         for (int i = 0; i < slots.Length; i++)
         {
