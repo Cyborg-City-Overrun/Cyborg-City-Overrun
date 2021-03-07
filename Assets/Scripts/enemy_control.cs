@@ -31,7 +31,11 @@ public class enemy_control : MonoBehaviour
 
     public GameObject floatingDamage;
 
-    public GameObject hitBox;
+    public GameObject hitBox; //set to parent that holds hitboxes
+    private bool attacked; //used to trigger Attack() call once
+
+    public enum Attacks { directional, area, variable};
+    public Attacks attackPattern;
 
 
     private void Start()
@@ -54,7 +58,14 @@ public class enemy_control : MonoBehaviour
     {
         if (!myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && !myAnim.GetCurrentAnimatorStateInfo(0).IsTag("PreAttack")) //if not currently attacking
         {
-            hitBox.SetActive(false); //remove hitbox from last attack
+            //remove hitbox from last attack
+            for (int i = 0; i < hitBox.transform.childCount; i++)
+            {
+                hitBox.transform.GetChild(i).gameObject.SetActive(false);
+            }
+
+            //reset attacked trigger
+            attacked = false;
 
             myTimeSinceAttack += Time.fixedDeltaTime;
             if (Vector2.Distance(transform.position, myTargetPos.position) < myAttackRange) //if within range to attack
@@ -67,14 +78,14 @@ public class enemy_control : MonoBehaviour
                     AttackStart();
                 }
             }
-            else //not within range ot attack
+            else //not within range of attack
             {
                 CheckMove();
             }
         }
-        else if (myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && hitBox.activeSelf == false)
+        else if (myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && !attacked)
         {
-            Attack();
+            Attack(attackPattern);
         }
         else
         {
@@ -133,33 +144,83 @@ public class enemy_control : MonoBehaviour
 
     private void AttackStart() //attack start is called to show animation that the enemy is about to attack
     {
+        UpdateAnimation(); //point toward player
         myAnim.SetBool("isAttacking", true);
     }
 
-    private void Attack() //attack is called when the hitbox should appear and the main attack starts
+    private void Attack(Attacks pattern) //attack is called when the hitbox should appear and the main attack starts
     {
-        //set hitbox direction
-        if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == 1)
+        attacked = true;
+        switch (pattern)
         {
-            hitBox.transform.localEulerAngles = new Vector3(0, 0, 0);
+            case Attacks.directional:
+                //set hitbox direction
+                if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == 1)
+                {
+                    hitBox.transform.localEulerAngles = new Vector3(0, 0, 0);
+                }
+
+                else if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == -1)
+                {
+                    hitBox.transform.localEulerAngles = new Vector3(0, 0, 180);
+                }
+
+                else if (myAnim.GetFloat("moveX") == 1 && myAnim.GetFloat("moveY") == 0)
+                {
+                    hitBox.transform.localEulerAngles = new Vector3(0, 0, -90);
+                }
+
+                else if (myAnim.GetFloat("moveX") == -1 && myAnim.GetFloat("moveY") == 0)
+                {
+                    hitBox.transform.localEulerAngles = new Vector3(0, 0, 90);
+                }
+
+                //set hitbox active
+                hitBox.transform.GetChild(0).gameObject.SetActive(true);
+                break;
+
+            case Attacks.area:
+                //hitbox does not need to be adjusted
+
+                //set hitbox active
+                hitBox.transform.GetChild(0).gameObject.SetActive(true);
+                break;
+
+            case Attacks.variable:
+                //remove hitbox from last attack
+                for (int i = 0; i < hitBox.transform.childCount; i++)
+                {
+                    hitBox.transform.GetChild(i).gameObject.SetActive(false);
+                }
+
+                //setcorrect hitbox (make surre order in hierarchy goes Up, Down, Right, Left
+                if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == 1)
+                {
+                    hitBox.transform.GetChild(0).gameObject.SetActive(true);
+                }
+
+                else if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == -1)
+                {
+                    hitBox.transform.GetChild(1).gameObject.SetActive(true);
+
+                }
+
+                else if (myAnim.GetFloat("moveX") == 1 && myAnim.GetFloat("moveY") == 0)
+                {
+                    hitBox.transform.GetChild(2).gameObject.SetActive(true);
+
+                }
+
+                else if (myAnim.GetFloat("moveX") == -1 && myAnim.GetFloat("moveY") == 0)
+                {
+                    hitBox.transform.GetChild(3).gameObject.SetActive(true);
+
+                }
+                break;
         }
 
-        else if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == -1)
-        {
-            hitBox.transform.localEulerAngles = new Vector3(0, 0, 180);
-        }
-
-        else if (myAnim.GetFloat("moveX") == 1 && myAnim.GetFloat("moveY") == 0)
-        {
-            hitBox.transform.localEulerAngles = new Vector3(0, 0, -90);
-        }
-
-        else if (myAnim.GetFloat("moveX") == -1 && myAnim.GetFloat("moveY") == 0)
-        {
-            hitBox.transform.localEulerAngles = new Vector3(0, 0, 90);
-        }
-        //set hitbox active
-        hitBox.SetActive(true);
+        
+        
     }
 
     public void TakeDamage(float damage) //called when enemy is hit by players attack
