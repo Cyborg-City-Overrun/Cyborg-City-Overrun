@@ -19,6 +19,7 @@ public class sword_class
     //other variables
     private float myDamageModifier;
     private float myAttackEnergyModifier;
+    private string[] swordSaveNames = { "StarterSword", "GreatSword", "Dagger" };
 
 
     public sword_class() //default constructor, only uesd at start.
@@ -86,7 +87,11 @@ public class sword_class
 
     public bool getUnlocked()
     {
-        return myUnlocked;
+        if (PlayerPrefs.GetInt(swordSaveNames[myID]) == 1)
+        {
+            return true;
+        }
+        else return false;
     }
 
     public int getPrice()
