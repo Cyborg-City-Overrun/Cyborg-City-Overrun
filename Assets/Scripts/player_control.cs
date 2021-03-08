@@ -369,5 +369,10 @@ public class player_control : MonoBehaviour
         this.myEnergy = newEnergy;
     }
 
+    public sword_list getSwordList()
+    {
+        return swordList;
+    }
+
 
 }

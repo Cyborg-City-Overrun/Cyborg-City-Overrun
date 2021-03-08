@@ -9,6 +9,7 @@ public class sword_list : MonoBehaviour
     private sword_class starterSword = new sword_class(0, "Starter Sword", 4f, 10f, 1, true, 0);
     private sword_class greatSword = new sword_class(1, "Great Sword", 12f, 20f, 2, false, 300);
     private sword_class dagger = new sword_class(2, "Dagger", 3f, 4f, 0, false, 200);
+    private string[] swordSaveNames = { "StarterSword", "GreatSword", "Dagger" };
 
     private sword_class[] swords = new sword_class[3]; //Change this to be equal to the number of swords
 
@@ -35,6 +36,7 @@ public class sword_list : MonoBehaviour
         if (swords[id].getUnlocked() == false)
         {
             swords[id].setUnlocked(true);
+            PlayerPrefs.SetInt(swordSaveNames[id], 1);
             print("Sword Unlocked");
         }
         else

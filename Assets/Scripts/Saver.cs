@@ -7,6 +7,7 @@ public class Saver : MonoBehaviour
     public player_control player;
     private string[] potionSaveNames = { "HealthPotionAmt", "EnergyPotionAmt", "AttackPotionAmt" };
     private string[] materialSaveNames = { "IronAmt" };
+    private string[] swordSaveNames = { "StarterSword", "GreatSword", "Dagger" };
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,18 @@ public class Saver : MonoBehaviour
         for (int i = 0; i < player.myMaterials.Length; i++)
         {
             PlayerPrefs.SetInt(materialSaveNames[i], player.myMaterials[i].GetComponent<number_in_inventory>().getNum());
-            print(materialSaveNames[i] + ": " + PlayerPrefs.GetInt(materialSaveNames[i]));
+   
+        }
+
+        for (int i = 0; i < swordSaveNames.Length; i++)
+        {
+            if (player.getSwordList().getSword(i).getUnlocked())
+            {
+                PlayerPrefs.SetInt(swordSaveNames[i], 1);
+            }
+            else PlayerPrefs.SetInt(swordSaveNames[i], 0);
+
+            print(swordSaveNames[i] + ": " + PlayerPrefs.GetInt(swordSaveNames[i]));
         }
 
         PlayerPrefs.SetFloat("Health", player.getMyHealth());
@@ -49,7 +61,7 @@ public class Saver : MonoBehaviour
     
     public void newGame()
     {
-        PlayerPrefs.SetInt("MoneyAmt", 100);
+        PlayerPrefs.SetInt("MoneyAmt", 400);
 
         for (int i = 0; i < materialSaveNames.Length; i++)
         {
@@ -59,6 +71,16 @@ public class Saver : MonoBehaviour
         for (int i = 0; i < potionSaveNames.Length; i++)
         {
             PlayerPrefs.SetInt(potionSaveNames[i], 2);
+        }
+
+        for (int i = 0; i < swordSaveNames.Length; i++)
+        {
+            if (i == 0)
+            {
+                PlayerPrefs.SetInt("StarterSword", 1);
+            }
+            else PlayerPrefs.SetInt(swordSaveNames[i], 0);
+
         }
 
         PlayerPrefs.SetFloat("Health", 100f);
