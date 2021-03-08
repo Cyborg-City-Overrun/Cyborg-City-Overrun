@@ -62,12 +62,12 @@ public class display_weapon_station : MonoBehaviour
 
     public void buttonCommand()
     {
-        if (myPlayer.GetComponent<player_control>().myMoney >= myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getPrice() && myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getUnlocked() == false)
+        if (myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getUnlocked() == false)
         {
-            myPlayer.GetComponent<player_control>().myMoney -= myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getPrice();
-
-            myPlayer.GetComponent<sword_list>().unlockWeapon(currentWeapon);
-
+            if (myPlayer.GetComponent<player_control>().Transaction(-myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getPrice()))
+            {
+                myPlayer.GetComponent<sword_list>().unlockWeapon(currentWeapon);
+            }
         }
     }
 
