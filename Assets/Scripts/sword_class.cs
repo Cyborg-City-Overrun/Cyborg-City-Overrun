@@ -17,12 +17,12 @@ public class sword_class
     private int myPrice;
 
     //other variables
-    private float myDamageModifier;
-    private float myAttackEnergyModifier;
     private string[] swordSaveNames = { "StarterSword", "GreatSword", "Dagger" };
 
+    private upgrade_class myUpgradeDamage;
 
-    public sword_class() //default constructor, only uesd at start.
+
+    public sword_class() //default constructor should not be used
     {
         myID = -1;
         myName = "Default";
@@ -32,12 +32,14 @@ public class sword_class
         myUnlocked = true;
         myPrice = 0;
 
-        myDamageModifier = 1;
-        myAttackEnergyModifier = 1;
+        myVariance = myDamage / 4;
+        myCritChance = 1;
         myCritDamage = 2;
+
+        myUpgradeDamage = null;
     }
 
-    public sword_class(int id, string name, float damage, float energy, int size, bool unlocked, int price)
+    public sword_class(int id, string name, float damage, float energy, int size, bool unlocked, int price, upgrade_class upgrades)
     {
         myID = id;
         myName = name;
@@ -48,44 +50,47 @@ public class sword_class
         myPrice = price;
 
         //always same at start
-        myDamageModifier = 1;
-        myAttackEnergyModifier = 1;
+
         myVariance = myDamage / 4;
         myCritChance = 1;
+        myCritDamage = 2;
+
+        myUpgradeDamage = upgrades;
+
     }
 
 
-    public int getID()
+    public int GetID()
     {
         return myID;
     }
 
-    public string getName()
+    public string GetName()
     {
         return myName;
     }
 
-    public float getDamage()
+    public float GetDamage()
     {
         return myDamage;
     }
 
-    public float getAttackEnergy()
+    public float GetAttackEnergy()
     {
         return myAttackEnergy;
     }
 
-    public int getSize()
+    public int GetSize()
     {
         return mySize;
     }
 
-    public void setUnlocked(bool isLocked)
+    public void GetUnlocked(bool isLocked)
     {
         myUnlocked = isLocked;
     }
 
-    public bool getUnlocked()
+    public bool GetUnlocked()
     {
         if (PlayerPrefs.GetInt(swordSaveNames[myID]) == 1)
         {
@@ -94,46 +99,23 @@ public class sword_class
         else return false;
     }
 
-    public int getPrice()
+    public int GetPrice()
     {
         return myPrice;
     }
 
-    public void setDamageModifier(float modifier)
+    public float GetDamageWithModifier()
     {
-        myDamageModifier = modifier;
+        return (GetDamage() + GetUpgradeModifierDamage() + GetVariance()) * GetCrit();
     }
 
-    public float getDamageModifier()
+    private float GetVariance()
     {
-        return myDamageModifier;
-    }
-
-    public void setAttackEnergyModifier(float modifier)
-    {
-        myAttackEnergyModifier = modifier;
-    }
-    public float getAttackEnergyModifier()
-    {
-        return myAttackEnergyModifier;
-    }
-
-    public float getDamageWithModifier()
-    {
-        return (getDamage() + getVariance()) * getDamageModifier() * getCrit();
-    }
-
-    public float getAttackEnergyWithModifier()
-    {
-        return myAttackEnergy * myAttackEnergyModifier;
-    }
-
-    private float getVariance()
-    {
+        myVariance = (GetDamage() + GetUpgradeModifierDamage()) / 4;
         return Random.Range(-myVariance, myVariance + 1);
     }
 
-    private float getCrit()
+    private float GetCrit()
     {
         if (Random.Range(0, 100) < myCritChance)
         {
@@ -145,5 +127,21 @@ public class sword_class
         }
     }
 
+   
+    //damage upgrades
+    public void UpgradeDamage()
+    {
+        myUpgradeDamage.Upgrade();
+    }
+
+    public float GetUpgradeModifierDamage()
+    {
+        return myUpgradeDamage.GetModifierTotal();
+    }
+
+    public int GetUpgradePriceDamage()
+    {
+        return myUpgradeDamage.GetPrice();
+    }
 }
 

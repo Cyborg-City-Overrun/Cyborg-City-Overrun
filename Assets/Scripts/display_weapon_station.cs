@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class display_weapon_station : MonoBehaviour
 {
 
-    public GameObject buildButton;
+    public GameObject purchaseButton;
+    public GameObject upgradeDamageButton;
 
     public Text weaponName;
 
@@ -15,9 +16,6 @@ public class display_weapon_station : MonoBehaviour
     private GameObject myPlayer;
 
     public GameObject[] weapons;
-
-    public GameObject[] slots;
-    public GameObject[] materials;
 
     private void Start()
     {
@@ -41,65 +39,54 @@ public class display_weapon_station : MonoBehaviour
 
     private void updateDisplay()
     {
-        weaponName.text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getName();
+        weaponName.text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetName();
         //display();
-        updateButton();
+        updatePurchaseButton();
+        updateUpgradeDamageButton();
     }
-    public void updateButton()
+    public void updatePurchaseButton()
     {
-        if (myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getUnlocked() == true)
+        if (myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetUnlocked() == true)
         {
-            buildButton.transform.GetChild(2).GetComponent<Text>().text = "Owned";
+            purchaseButton.transform.GetChild(2).GetComponent<Text>().text = "Owned";
         }
         else
         {
-            buildButton.transform.GetChild(2).GetComponent<Text>().text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getPrice().ToString();
+            purchaseButton.transform.GetChild(2).GetComponent<Text>().text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetPrice().ToString();
         }
 
-        buildButton.transform.GetComponent<Button>().onClick.RemoveAllListeners();
-        buildButton.transform.GetComponent<Button>().onClick.AddListener(buttonCommand);
+        purchaseButton.transform.GetComponent<Button>().onClick.RemoveAllListeners();
+        purchaseButton.transform.GetComponent<Button>().onClick.AddListener(purchaseButtonCommand);
     }
 
-    public void buttonCommand()
+    public void purchaseButtonCommand()
     {
-        if (myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getUnlocked() == false)
+        if (myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetUnlocked() == false)
         {
-            if (myPlayer.GetComponent<player_control>().Transaction(-myPlayer.GetComponent<sword_list>().getSword(currentWeapon).getPrice()))
+            if (myPlayer.GetComponent<player_control>().Transaction(-myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetPrice()))
             {
                 myPlayer.GetComponent<sword_list>().unlockWeapon(currentWeapon);
             }
         }
     }
 
-
-    
-    public void display()
+    public void updateUpgradeDamageButton()
     {
-        for (int i = 0; i < slots.Length; i++)
+        upgradeDamageButton.transform.GetChild(2).GetComponent<Text>().text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetUpgradePriceDamage().ToString();
+        
+
+        upgradeDamageButton.transform.GetComponent<Button>().onClick.RemoveAllListeners();
+        upgradeDamageButton.transform.GetComponent<Button>().onClick.AddListener(UpgradeDamageButtonCommand);
+    }
+
+    public void UpgradeDamageButtonCommand()
+    {
+        if (myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetUnlocked() == true)
         {
-            if (i < materials.Length)
+            if (myPlayer.GetComponent<player_control>().Transaction(-myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetUpgradePriceDamage()))
             {
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = materials[i].gameObject.GetComponent<inventory_item>().displayImage;
-                slots[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
-
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = materials[i].gameObject.GetComponent<inventory_item>().displayName;
-                slots[i].transform.GetChild(2).GetComponent<Text>().text = materials[i].gameObject.GetComponent<inventory_item>().displayNumber.ToString() + " / " + weapons[currentWeapon].GetComponent<weapon_build_requirements>().num[i].ToString();
-
-                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
-                slots[i].transform.GetComponent<Button>().onClick.AddListener(materials[i].gameObject.GetComponent<inventory_item>().buttonAction);
+                myPlayer.GetComponent<sword_list>().getSword(currentWeapon).UpgradeDamage();
             }
-            else
-            {
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-                slots[i].transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
-
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
-                slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
-
-                slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
-            }
-
-
         }
     }
 }

@@ -20,6 +20,6 @@ public class HUD_weapon_display : MonoBehaviour
     void Update()
     {
         //update image to be whatever image the equipped weapon is
-        image.transform.GetComponent<Image>().sprite = weapons.transform.GetChild(myPlayer.GetComponent<player_control>().GetSword().getID()).GetComponent<inventory_item>().displayImage;
+        image.transform.GetComponent<Image>().sprite = weapons.transform.GetChild(myPlayer.GetComponent<player_control>().GetSword().GetID()).GetComponent<inventory_item>().displayImage;
     }
 }
