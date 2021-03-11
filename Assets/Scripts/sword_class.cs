@@ -143,5 +143,10 @@ public class sword_class
     {
         return myUpgradeDamage.GetPrice();
     }
+
+    public bool CanUpgradeDamage()
+    {
+        return myUpgradeDamage.CanUpgrade();
+    }
 }
 

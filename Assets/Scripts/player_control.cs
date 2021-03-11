@@ -287,6 +287,7 @@ public class player_control : MonoBehaviour
         if (myMoney + amount >= 0)
         {
             myMoney += amount;
+            print("purchased " + amount);
             return true;
         }
         else

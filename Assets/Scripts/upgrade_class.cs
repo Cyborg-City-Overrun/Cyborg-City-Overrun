@@ -19,13 +19,16 @@ public class upgrade_class
 
 
 
-    public upgrade_class(float[] damage, int[] price)
+    public upgrade_class(float[] mod, int[] price)
     {
-        if (damage.Length == price.Length)
+        if (mod.Length == price.Length)
         {
-            for (int i = 0; i < damage.Length; i++)
+            myModifier = new float[mod.Length];
+            myPrice = new int[price.Length];
+
+            for (int i = 0; i < mod.Length; i++)
             {
-                myModifier[i] = damage[i];
+                myModifier[i] = mod[i];
                 myPrice[i] = price[i];
             }
             myModifierCount = 0;
@@ -37,7 +40,7 @@ public class upgrade_class
     public void Upgrade()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (myModifierCount < myModifier.Length && player.GetComponent<player_control>().Transaction(myPrice[myModifierCount]))
+        if (CanUpgrade() && player.GetComponent<player_control>().Transaction(-myPrice[myModifierCount]))
         {
             myModifierTotal += myModifier[myModifierCount];
             myModifierCount++;
@@ -58,5 +61,10 @@ public class upgrade_class
     public int GetPrice()
     {
         return myPrice[myModifierCount];
+    }
+
+    public bool CanUpgrade()
+    {
+        return (myModifierCount < myModifier.Length);
     }
 }

@@ -48,7 +48,6 @@ public class sword_list : MonoBehaviour
 
     public sword_class getSword(int id)
     {
-        print("DEBUG: " + starterSword.GetID());
         return swords[id];
     }
 
