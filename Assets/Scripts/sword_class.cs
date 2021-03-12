@@ -19,7 +19,9 @@ public class sword_class
     //other variables
     private string[] swordSaveNames = { "StarterSword", "GreatSword", "Dagger" };
 
+    //upgrades
     private upgrade_class myUpgradeDamage;
+    private upgrade_class myUpgradeEnergy;
 
 
     public sword_class() //default constructor should not be used
@@ -37,9 +39,10 @@ public class sword_class
         myCritDamage = 2;
 
         myUpgradeDamage = null;
+        myUpgradeEnergy = null;
     }
 
-    public sword_class(int id, string name, float damage, float energy, int size, bool unlocked, int price, upgrade_class upgrades)
+    public sword_class(int id, string name, float damage, float energy, int size, bool unlocked, int price, upgrade_class upgradeDamage, upgrade_class upgradeEnergy)
     {
         myID = id;
         myName = name;
@@ -55,7 +58,8 @@ public class sword_class
         myCritChance = 1;
         myCritDamage = 2;
 
-        myUpgradeDamage = upgrades;
+        myUpgradeDamage = upgradeDamage;
+        myUpgradeEnergy = upgradeEnergy;
 
     }
 
@@ -127,7 +131,12 @@ public class sword_class
         }
     }
 
-   
+    public float GetAttackEnergyWithModifier()
+    {
+        return myAttackEnergy + GetUpgradeModifierTotalEnergy(); //plus because the modifier is a negative value
+    }
+
+
     //damage upgrades
     public void UpgradeDamage()
     {
@@ -156,6 +165,37 @@ public class sword_class
     public bool CanUpgradeDamage()
     {
         return myUpgradeDamage.CanUpgrade();
+    }
+
+
+    //energy upgrades
+    public void UpgradeEnergy()
+    {
+        myUpgradeEnergy.Upgrade();
+    }
+    public float GetUpgradeModifierNextEnergy()
+    {
+        return myUpgradeEnergy.GetModifierNext();
+    }
+
+    public float GetUpgradeModifierTotalEnergy()
+    {
+        return myUpgradeEnergy.GetModifierTotal();
+    }
+
+    public int GetUpgradeCountEnergy()
+    {
+        return myUpgradeEnergy.GetCurrentUpgradeCount();
+    }
+
+    public int GetUpgradePriceEnergy()
+    {
+        return myUpgradeEnergy.GetPrice();
+    }
+
+    public bool CanUpgradeEnergy()
+    {
+        return myUpgradeEnergy.CanUpgrade();
     }
 }
 
