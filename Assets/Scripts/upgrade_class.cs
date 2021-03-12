@@ -48,9 +48,18 @@ public class upgrade_class
 
     }
 
+    public float GetModifierNext()
+    {
+        return myModifier[myModifierCount];
+    }
+
     public float GetModifierTotal()
     {
         return myModifierTotal;
+    }
+    public int GetCurrentUpgradeCount()
+    {
+        return myModifierCount;
     }
 
     public int GetNumUpgrades()
