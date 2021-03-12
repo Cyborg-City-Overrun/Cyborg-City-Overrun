@@ -106,12 +106,12 @@ public class sword_class
 
     public float GetDamageWithModifier()
     {
-        return (GetDamage() + GetUpgradeModifierDamage() + GetVariance()) * GetCrit();
+        return (GetDamage() + GetUpgradeModifierTotalDamage() + GetVariance()) * GetCrit();
     }
 
     private float GetVariance()
     {
-        myVariance = (GetDamage() + GetUpgradeModifierDamage()) / 4;
+        myVariance = (GetDamage() + GetUpgradeModifierTotalDamage()) / 4;
         return Random.Range(-myVariance, myVariance + 1);
     }
 
@@ -133,10 +133,19 @@ public class sword_class
     {
         myUpgradeDamage.Upgrade();
     }
+    public float GetUpgradeModifierNextDamage()
+    {
+        return myUpgradeDamage.GetModifierNext();
+    }
 
-    public float GetUpgradeModifierDamage()
+    public float GetUpgradeModifierTotalDamage()
     {
         return myUpgradeDamage.GetModifierTotal();
+    }
+
+    public int GetUpgradeCountDamage()
+    {
+        return myUpgradeDamage.GetCurrentUpgradeCount();
     }
 
     public int GetUpgradePriceDamage()

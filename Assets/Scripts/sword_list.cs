@@ -33,7 +33,7 @@ public class sword_list : MonoBehaviour
         greatSwordUpgradeDamage = new upgrade_class(new float[] { 3, 4, 5 }, new int[] { 30, 40, 50 });
         greatSword = new sword_class(1, "Great Sword", 12f, 20f, 2, false, 300, greatSwordUpgradeDamage);
 
-        daggerUpgradeDamage = new upgrade_class(new float[] { 2, 2, 2, 2, 2 }, new int[] { 20, 20, 20, 20, 20 });
+        daggerUpgradeDamage = new upgrade_class(new float[] { 2, 2, 2, 2, 2, 2 }, new int[] { 20, 20, 20, 20, 20, 20 });
         dagger = new sword_class(2, "Dagger", 3f, 4f, 0, false, 200, daggerUpgradeDamage);
 
 
