@@ -77,7 +77,7 @@ public class player_control : MonoBehaviour
     {
         if (mySword == null)
         {
-            mySword = swordList.getSword(0);//
+            mySword = swordList.getSword(0);
         }
 
         SwitchWeapon();
@@ -165,12 +165,12 @@ public class player_control : MonoBehaviour
         RestoreEnergy(myEnergyRegen * Time.fixedDeltaTime);
         EnergyBar.SetEnergy(myEnergy);
 
-        if (Input.GetKey(KeyCode.Space) && myEnergy >= mySword.getAttackEnergyWithModifier()
+        if (Input.GetKey(KeyCode.Space) && myEnergy >= mySword.GetAttackEnergy()
                 && !myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             myAnim.SetBool("isAttacking", true);
-            myAnim.SetInteger("swordID", mySword.getID());
-            DrainEnergy(mySword.getAttackEnergyWithModifier());
+            myAnim.SetInteger("swordID", mySword.GetID());
+            DrainEnergy(mySword.GetAttackEnergy());
             EnergyBar.SetEnergy(myEnergy);
 
             if (myAnim.GetFloat("moveX") == 0 && myAnim.GetFloat("moveY") == 1)
@@ -287,6 +287,7 @@ public class player_control : MonoBehaviour
         if (myMoney + amount >= 0)
         {
             myMoney += amount;
+            print("purchased " + amount);
             return true;
         }
         else
@@ -302,27 +303,27 @@ public class player_control : MonoBehaviour
         {
             do
             {
-                if (mySword.getID() < swordList.getNumSwords() - 1)
+                if (mySword.GetID() < swordList.getNumSwords() - 1)
                 {
-                    mySword = swordList.getSword(mySword.getID() + 1);
+                    mySword = swordList.getSword(mySword.GetID() + 1);
                 }
                 else
                 {
                     mySword = swordList.getSword(0);
                 }
-            } while (mySword.getUnlocked() == false);
+            } while (mySword.GetUnlocked() == false);
             
-            print("current sword: " + mySword.getName());
-            boxIndex = mySword.getSize();
+            print("current sword: " + mySword.GetName());
+            boxIndex = mySword.GetSize();
         }
     }
 
     public void SetWeapon(int id)
     {
-        if (swordList.getSword(id).getUnlocked() == true)
+        if (swordList.getSword(id).GetUnlocked() == true)
         {
             mySword = swordList.getSword(id);
-            print("current sword: " + mySword.getName());
+            print("current sword: " + mySword.GetName());
         }
         else
         {
@@ -347,7 +348,7 @@ public class player_control : MonoBehaviour
 
     public float getDamage()
     {
-        return mySword.getDamageWithModifier() * myAttackModifier * myAttackModifierPotion;
+        return mySword.GetDamageWithModifier() * myAttackModifier * myAttackModifierPotion;
     }
 
     public float getMyHealth()

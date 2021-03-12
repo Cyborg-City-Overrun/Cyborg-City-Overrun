@@ -37,7 +37,7 @@ public class Saver : MonoBehaviour
 
         for (int i = 0; i < swordSaveNames.Length; i++)
         {
-            if (player.getSwordList().getSword(i).getUnlocked())
+            if (player.getSwordList().getSword(i).GetUnlocked())
             {
                 PlayerPrefs.SetInt(swordSaveNames[i], 1);
             }
