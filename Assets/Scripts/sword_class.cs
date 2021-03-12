@@ -19,7 +19,10 @@ public class sword_class
     //other variables
     private string[] swordSaveNames = { "StarterSword", "GreatSword", "Dagger" };
 
+    //upgrades
     private upgrade_class myUpgradeDamage;
+    private upgrade_class myUpgradeEnergy;
+    private upgrade_class myUpgradeCrit;
 
 
     public sword_class() //default constructor should not be used
@@ -33,13 +36,15 @@ public class sword_class
         myPrice = 0;
 
         myVariance = myDamage / 4;
-        myCritChance = 1;
-        myCritDamage = 2;
+        myCritChance = 0f;
+        myCritDamage = 2.5f;
 
         myUpgradeDamage = null;
+        myUpgradeEnergy = null;
+        myUpgradeCrit = null;
     }
 
-    public sword_class(int id, string name, float damage, float energy, int size, bool unlocked, int price, upgrade_class upgrades)
+    public sword_class(int id, string name, float damage, float energy, int size, bool unlocked, int price, upgrade_class upgradeDamage, upgrade_class upgradeEnergy, upgrade_class upgradeCrit)
     {
         myID = id;
         myName = name;
@@ -52,10 +57,12 @@ public class sword_class
         //always same at start
 
         myVariance = myDamage / 4;
-        myCritChance = 1;
-        myCritDamage = 2;
+        myCritChance = 0f;
+        myCritDamage = 3f;
 
-        myUpgradeDamage = upgrades;
+        myUpgradeDamage = upgradeDamage;
+        myUpgradeEnergy = upgradeEnergy;
+        myUpgradeCrit = upgradeCrit;
 
     }
 
@@ -117,7 +124,7 @@ public class sword_class
 
     private float GetCrit()
     {
-        if (Random.Range(0, 100) < myCritChance)
+        if (Random.Range(0, 100) < myCritChance + GetUpgradeModifierTotalCrit())
         {
             return myCritDamage;
         }
@@ -127,7 +134,12 @@ public class sword_class
         }
     }
 
-   
+    public float GetAttackEnergyWithModifier()
+    {
+        return myAttackEnergy + GetUpgradeModifierTotalEnergy(); //plus because the modifier is a negative value
+    }
+
+
     //damage upgrades
     public void UpgradeDamage()
     {
@@ -156,6 +168,68 @@ public class sword_class
     public bool CanUpgradeDamage()
     {
         return myUpgradeDamage.CanUpgrade();
+    }
+
+
+    //energy upgrades
+    public void UpgradeEnergy()
+    {
+        myUpgradeEnergy.Upgrade();
+    }
+    public float GetUpgradeModifierNextEnergy()
+    {
+        return myUpgradeEnergy.GetModifierNext();
+    }
+
+    public float GetUpgradeModifierTotalEnergy()
+    {
+        return myUpgradeEnergy.GetModifierTotal();
+    }
+
+    public int GetUpgradeCountEnergy()
+    {
+        return myUpgradeEnergy.GetCurrentUpgradeCount();
+    }
+
+    public int GetUpgradePriceEnergy()
+    {
+        return myUpgradeEnergy.GetPrice();
+    }
+
+    public bool CanUpgradeEnergy()
+    {
+        return myUpgradeEnergy.CanUpgrade();
+    }
+
+
+    //Crit upgrades
+    public void UpgradeCrit()
+    {
+        myUpgradeCrit.Upgrade();
+    }
+    public float GetUpgradeModifierNextCrit()
+    {
+        return myUpgradeCrit.GetModifierNext();
+    }
+
+    public float GetUpgradeModifierTotalCrit()
+    {
+        return myUpgradeCrit.GetModifierTotal();
+    }
+
+    public int GetUpgradeCountCrit()
+    {
+        return myUpgradeCrit.GetCurrentUpgradeCount();
+    }
+
+    public int GetUpgradePriceCrit()
+    {
+        return myUpgradeCrit.GetPrice();
+    }
+
+    public bool CanUpgradeCrit()
+    {
+        return myUpgradeCrit.CanUpgrade();
     }
 }
 
