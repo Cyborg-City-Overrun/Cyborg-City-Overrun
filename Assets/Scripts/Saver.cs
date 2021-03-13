@@ -61,7 +61,7 @@ public class Saver : MonoBehaviour
     
     public void newGame()
     {
-        PlayerPrefs.SetInt("MoneyAmt", 400);
+        PlayerPrefs.SetInt("MoneyAmt", 100);
 
         for (int i = 0; i < materialSaveNames.Length; i++)
         {

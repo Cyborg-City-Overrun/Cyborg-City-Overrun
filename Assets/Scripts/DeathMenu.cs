@@ -19,6 +19,7 @@ public class DeathMenu : MonoBehaviour
     public void Restart()
     {
         myPlayer.GetComponent<player_control>().RestoreHealth(1000000);
+        PlayerPrefs.SetFloat("Health", 100);
         //saver.saveGame();
         this.gameObject.SetActive(false);
         SceneManager.LoadScene(1);
