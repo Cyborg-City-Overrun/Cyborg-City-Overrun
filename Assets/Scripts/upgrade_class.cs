@@ -76,4 +76,19 @@ public class upgrade_class
     {
         return (myModifierCount < myModifier.Length);
     }
+
+
+    public int Save() //returns the count to be passed into the load function
+    {
+        return myModifierCount;
+    }
+
+    public void Load(int count) //called when loading saved data, pass the old count in
+    {
+        for (int i = 0; i < count; i++)
+        {
+            myModifierTotal += myModifier[myModifierCount];
+            myModifierCount++;
+        }
+    }
 }
