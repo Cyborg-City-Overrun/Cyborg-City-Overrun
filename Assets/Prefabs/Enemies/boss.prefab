@@ -502,8 +502,8 @@ MonoBehaviour:
   - {fileID: -6813998838189736089, guid: 04c5f418a73fb4c46bd7b27f350f0b8e, type: 3}
   - {fileID: 148943302182416603, guid: 1bf83922028db0044a1605ae71c0d369, type: 3}
   - {fileID: 8856838488872990314, guid: 76bea0028627109498eea6a99fc23ae6, type: 3}
-  myFollowRange: 4
-  myAttackRange: 0.8
+  myFollowRange: 5
+  myAttackRange: 1
   myAttackCooldown: 1
   myMaxHealth: 50
   myHealthBar: {fileID: 7975248614384812787}
