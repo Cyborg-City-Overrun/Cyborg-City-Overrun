@@ -8,10 +8,21 @@ public class Saver : MonoBehaviour
     private string[] potionSaveNames = { "HealthPotionAmt", "EnergyPotionAmt", "AttackPotionAmt" };
     private string[] materialSaveNames = { "IronAmt" };
     private string[] swordSaveNames = { "StarterSword", "GreatSword", "Dagger" };
+    private string[] starterSwordUpgrades = { "SSDamage", "SSEnergy", "SSCrit" };
+    private string[] greatSwordUpgrades = { "GSDamage", "GSEnergy", "GSCrit" };
+    private string[] daggerUpgrades = { "DDamage", "DEnergy", "DCrit" };
+
+    private string[,] upgrades = new string[3, 3];
     // Start is called before the first frame update
     void Start()
     {
-      
+       for(int i = 0; i < 3; i++)
+        {
+            upgrades[0, i] = starterSwordUpgrades[i];
+            upgrades[1, i] = greatSwordUpgrades[i];
+            upgrades[2, i] = daggerUpgrades[i];
+        }
+
     }
 
     // Update is called once per frame
@@ -43,8 +54,18 @@ public class Saver : MonoBehaviour
             }
             else PlayerPrefs.SetInt(swordSaveNames[i], 0);
 
-            print(swordSaveNames[i] + ": " + PlayerPrefs.GetInt(swordSaveNames[i]));
         }
+
+        for (int i = 0; i < starterSwordUpgrades.Length; i++)
+        {
+            upgrade_class[] allUp = player.getSwordList().getSword(i).getAllUpgrades();
+            for (int j = 0; j < swordSaveNames.Length; j++)
+            {
+                PlayerPrefs.SetFloat(upgrades[i, j], allUp[j].Save());
+                print(PlayerPrefs.GetFloat(upgrades[i, j]));
+            }
+        }
+        
 
         PlayerPrefs.SetFloat("Health", player.getMyHealth());
         PlayerPrefs.SetFloat("Energy", player.getMyEnergy());
@@ -53,7 +74,7 @@ public class Saver : MonoBehaviour
         for (int i = 0; i < materialSaveNames.Length; i++)
         {
             PlayerPrefs.SetInt(materialSaveNames[i], player.myMaterials[i].GetComponent<number_in_inventory>().getNum());
-            print(materialSaveNames[i] + ": " + PlayerPrefs.GetInt(materialSaveNames[i]));
+            //print(materialSaveNames[i] + ": " + PlayerPrefs.GetInt(materialSaveNames[i]));
         }
     }
 
