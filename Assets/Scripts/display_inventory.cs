@@ -96,7 +96,7 @@ public class display_inventory : MonoBehaviour
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = list[i - startingIndex].gameObject.GetComponent<inventory_item>().displayNumber.ToString();
 
                 slots[i].transform.GetComponent<Button>().onClick.RemoveAllListeners();
-                slots[i].transform.GetComponent<Button>().onClick.AddListener(list[i - startingIndex].gameObject.GetComponent<inventory_item>().buttonAction);
+                slots[i].transform.GetComponent<Button>().onClick.AddListener(list[i - startingIndex].gameObject.GetComponent<inventory_item>().buttonActionInventory);
 
                 //if it is weapon
                 if (list[i - startingIndex].gameObject.tag == "Weapon")

@@ -164,7 +164,7 @@ public class display_weapon_station : MonoBehaviour
         if (myPlayer.GetComponent<sword_list>().getSword(currentWeapon).CanUpgradeCrit())
         {
             //display level
-            upgradeCritButton.transform.GetChild(2).GetComponent<Text>().text = "" + myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetUpgradeModifierNextCrit().ToString();
+            upgradeCritButton.transform.GetChild(2).GetComponent<Text>().text = "+" + myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetUpgradeModifierNextCrit().ToString();
 
             //display amount increase
             upgradeCritButton.transform.GetChild(3).GetComponent<Text>().text = "lvl " + (myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetUpgradeCountCrit() + 1).ToString();

@@ -112,6 +112,10 @@ public class player_control : MonoBehaviour
             RestoreHealth(10000);
             RestoreEnergy(10000);
         }
+        if (Input.GetKey(KeyCode.L)) //just for testing, restores all health and energy
+        {
+            Transaction(100);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D hit)
