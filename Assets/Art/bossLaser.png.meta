@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: 53014657e55a6f946b6e9293dd5f5b80
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 705256340924315385
+    second: bossLaser_0
+  - first:
+      213: 1898821368277514053
+    second: bossLaser_1
+  - first:
+      213: -3533023318403989889
+    second: bossLaser_2
+  - first:
+      213: -2836775970937820312
+    second: bossLaser_3
+  - first:
+      213: -7490817896773714312
+    second: bossLaser_4
+  - first:
+      213: 4530597408504652874
+    second: bossLaser_5
+  - first:
+      213: -2405243088111447262
+    second: bossLaser_6
+  - first:
+      213: -1448177783901203856
+    second: bossLaser_7
+  - first:
+      213: -1319247365871915749
+    second: bossLaser_8
+  - first:
+      213: -3807548526024622682
+    second: bossLaser_9
+  - first:
+      213: -3785338679854162278
+    second: bossLaser_10
+  - first:
+      213: 8068398962320478862
+    second: bossLaser_11
+  - first:
+      213: 4663091268338524093
+    second: bossLaser_12
+  - first:
+      213: 5126921921354901656
+    second: bossLaser_13
+  - first:
+      213: -6764113243399779547
+    second: bossLaser_14
+  - first:
+      213: 6499298834413769978
+    second: bossLaser_15
+  - first:
+      213: 7056404902366044717
+    second: bossLaser_16
+  - first:
+      213: -2669024473844259739
+    second: bossLaser_17
+  - first:
+      213: -1031446723171977501
+    second: bossLaser_18
+  - first:
+      213: 9006886658024647241
+    second: bossLaser_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bossLaser_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 377
+        width: 57
+        height: 108
+      alignment: 9
+      pivot: {x: 0.3126072, y: 0.5824184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6b26cc7e299c900800000000000000
+      internalID: 705256340924315385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 377
+        width: 60
+        height: 108
+      alignment: 9
+      pivot: {x: 0.2923064, y: 0.5906601}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5473a1c59f7f95a10800000000000000
+      internalID: 1898821368277514053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_2
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 377
+        width: 38
+        height: 108
+      alignment: 9
+      pivot: {x: 0.4531519, y: 0.5824184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ebb5bb20e28fec0800000000000000
+      internalID: -3533023318403989889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 377
+        width: 38
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5000004, y: 0.5906601}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b23e8c84fb1a8d0800000000000000
+      internalID: -2836775970937820312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 377
+        width: 56
+        height: 108
+      alignment: 9
+      pivot: {x: 0.6430544, y: 0.57417667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ef9a99fc44b0890800000000000000
+      internalID: -7490817896773714312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_5
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 377
+        width: 55
+        height: 108
+      alignment: 9
+      pivot: {x: 0.6132879, y: 0.57417667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44a932c65aefde30800000000000000
+      internalID: 4530597408504652874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_6
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 267
+        width: 51
+        height: 93
+      alignment: 9
+      pivot: {x: 0.3952805, y: 0.5095714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22357a6a72cde9ed0800000000000000
+      internalID: -2405243088111447262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_7
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 267
+        width: 51
+        height: 93
+      alignment: 9
+      pivot: {x: 0.37782738, y: 0.5095714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072d4f27af907ebe0800000000000000
+      internalID: -1448177783901203856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_8
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 267
+        width: 38
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5234246, y: 0.5095714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1da55aa28711bde0800000000000000
+      internalID: -1319247365871915749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_9
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 267
+        width: 38
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5000008, y: 0.5191424}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad7d31f9ced82bc0800000000000000
+      internalID: -3807548526024622682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_10
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 267
+        width: 50
+        height: 93
+      alignment: 9
+      pivot: {x: 0.58901244, y: 0.5191424}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e1fb8b686c77bc0800000000000000
+      internalID: -3785338679854162278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_11
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 267
+        width: 50
+        height: 93
+      alignment: 9
+      pivot: {x: 0.6246167, y: 0.5095714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e821e37ab16b8ff60800000000000000
+      internalID: 8068398962320478862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_12
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 158
+        width: 75
+        height: 93
+      alignment: 9
+      pivot: {x: 0.7492326, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf1b8c6dc0a6b040800000000000000
+      internalID: 4663091268338524093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_13
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 158
+        width: 78
+        height: 93
+      alignment: 9
+      pivot: {x: 0.7510585, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898a589e25c762740800000000000000
+      internalID: 5126921921354901656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_14
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 158
+        width: 56
+        height: 93
+      alignment: 9
+      pivot: {x: 0.65894943, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b04aac7da0122a0800000000000000
+      internalID: -6764113243399779547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_15
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 158
+        width: 42
+        height: 93
+      alignment: 9
+      pivot: {x: 0.52119374, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4d75aead5223a50800000000000000
+      internalID: 6499298834413769978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_16
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 39
+        width: 69
+        height: 93
+      alignment: 9
+      pivot: {x: 0.2677959, y: 0.50957125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d226adc4fd26de160800000000000000
+      internalID: 7056404902366044717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_17
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 39
+        width: 73
+        height: 93
+      alignment: 9
+      pivot: {x: 0.25613278, y: 0.5191424}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56460b3d168b5fad0800000000000000
+      internalID: -2669024473844259739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_18
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 39
+        width: 59
+        height: 93
+      alignment: 9
+      pivot: {x: 0.31895965, y: 0.50957125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6f79c8ba09fa1f0800000000000000
+      internalID: -1031446723171977501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLaser_19
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 39
+        width: 52
+        height: 93
+      alignment: 9
+      pivot: {x: 0.38017684, y: 0.5000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94aa3c7e1b3eefc70800000000000000
+      internalID: 9006886658024647241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
