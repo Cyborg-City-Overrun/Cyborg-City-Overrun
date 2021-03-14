@@ -23,7 +23,7 @@ public class sword_class
     private upgrade_class myUpgradeDamage;
     private upgrade_class myUpgradeEnergy;
     private upgrade_class myUpgradeCrit;
-
+    private upgrade_class[] upgrades;
 
     public sword_class() //default constructor should not be used
     {
@@ -230,6 +230,30 @@ public class sword_class
     public bool CanUpgradeCrit()
     {
         return myUpgradeCrit.CanUpgrade();
+    }
+
+    public upgrade_class GetDamageUpgrade()
+    {
+        return myUpgradeDamage;
+    }
+
+    public upgrade_class getEnergyUpgrade()
+    {
+        return myUpgradeEnergy;
+    }
+
+    public upgrade_class getCritUpgrade()
+    {
+        return myUpgradeCrit;
+    }
+
+    public upgrade_class[] getAllUpgrades()
+    {
+        upgrades = new upgrade_class[3];
+        upgrades[0] = myUpgradeDamage;
+        upgrades[1] = myUpgradeEnergy;
+        upgrades[2] = myUpgradeCrit;
+        return upgrades;
     }
 }
 
