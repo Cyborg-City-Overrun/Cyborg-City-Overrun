@@ -63,9 +63,7 @@ public class potions : MonoBehaviour
                 myTimer = modifierDurration;
                 myActive = true;
                 break;
-        }
-
-        
+        }        
     }
 
     public void addPotion(int num)
