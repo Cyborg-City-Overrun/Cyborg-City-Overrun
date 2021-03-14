@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class OptionsMenu : MonoBehaviour
 {
-    private Saver saver = new Saver();
     public Canvas PauseMenu;
     public Canvas ControlsMenu;
     //Function to load the game

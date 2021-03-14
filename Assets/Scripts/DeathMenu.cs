@@ -5,10 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenu : MonoBehaviour
 {
+    private Saver saver = new Saver();
 
-    //Function to bring to main menu after death
-    public void Menu()
+    private GameObject myPlayer;
+
+    private void Start()
     {
-        SceneManager.LoadScene(0);
+        myPlayer = GameObject.FindGameObjectWithTag("Player");
+
+    }
+
+    //Function to restart when player dies
+    public void Restart()
+    {
+        myPlayer.GetComponent<player_control>().RestoreHealth(1000000);
+        PlayerPrefs.SetFloat("Health", 100);
+        //saver.saveGame();
+        this.gameObject.SetActive(false);
+        SceneManager.LoadScene(1);
     }
 }
