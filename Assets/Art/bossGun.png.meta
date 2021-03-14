@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: b0f6084f02a4ce2458ecf34fc8692ab5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8765281719923348695
+    second: bossGun_0
+  - first:
+      213: -4337659769568316661
+    second: bossGun_1
+  - first:
+      213: -8539456527663882645
+    second: bossGun_2
+  - first:
+      213: 3818750835446919437
+    second: bossGun_3
+  - first:
+      213: 6212123805273906851
+    second: bossGun_4
+  - first:
+      213: 6096563956856196370
+    second: bossGun_5
+  - first:
+      213: 9098847882004587773
+    second: bossGun_6
+  - first:
+      213: 164072921288537737
+    second: bossGun_7
+  - first:
+      213: -7415531390376963430
+    second: bossGun_8
+  - first:
+      213: -2072993989736624948
+    second: bossGun_9
+  - first:
+      213: -1632160544963856910
+    second: bossGun_10
+  - first:
+      213: -7739632745570672582
+    second: bossGun_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bossGun_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 395
+        width: 32
+        height: 93
+      alignment: 9
+      pivot: {x: 0.49999994, y: 0.51756173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b6eb757b67b5680800000000000000
+      internalID: -8765281719923348695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 395
+        width: 32
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03b066eb698dc3c0800000000000000
+      internalID: -4337659769568316661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 395
+        width: 32
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51756173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e14b53881cd7980800000000000000
+      internalID: -8539456527663882645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 395
+        width: 32
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51756173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d013a88f6adeef430800000000000000
+      internalID: 3818750835446919437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 395
+        width: 32
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51756173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae591a00b5e53650800000000000000
+      internalID: 6212123805273906851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_5
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 395
+        width: 32
+        height: 93
+      alignment: 9
+      pivot: {x: 0.47448063, y: 0.50878084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d0dd62e985b9450800000000000000
+      internalID: 6096563956856196370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 268
+        width: 61
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5535489, y: 0.51756203}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4e230e0f9954e70800000000000000
+      internalID: 9098847882004587773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_7
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 267
+        width: 63
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5648111, y: 0.5087812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986f9aed377e64200800000000000000
+      internalID: 164072921288537737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_8
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 266
+        width: 59
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5553641, y: 0.5263426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9292d75d7db61990800000000000000
+      internalID: -7415531390376963430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_9
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 142
+        width: 61
+        height: 93
+      alignment: 9
+      pivot: {x: 0.4598383, y: 0.5263426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc8a3413fe3b33e0800000000000000
+      internalID: -2072993989736624948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_10
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 141
+        width: 63
+        height: 93
+      alignment: 9
+      pivot: {x: 0.4481511, y: 0.5351236}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f57505c1a66959e0800000000000000
+      internalID: -1632160544963856910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossGun_11
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 140
+        width: 59
+        height: 93
+      alignment: 9
+      pivot: {x: 0.44463593, y: 0.5351236}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a306744360d479490800000000000000
+      internalID: -7739632745570672582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
