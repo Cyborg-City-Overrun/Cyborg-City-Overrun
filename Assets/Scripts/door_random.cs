@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class door_random : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public GameObject roomSet;
     public Saver save;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
