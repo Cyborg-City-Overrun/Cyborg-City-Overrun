@@ -12,16 +12,13 @@ public class Saver : MonoBehaviour
     private string[] greatSwordUpgrades = { "GSDamage", "GSEnergy", "GSCrit" };
     private string[] daggerUpgrades = { "DDamage", "DEnergy", "DCrit" };
 
-    private string[,] upgrades = new string[3, 3];
+    public string[,] upgrades = new string[3, 3];
     // Start is called before the first frame update
     void Start()
     {
-       for(int i = 0; i < 3; i++)
-        {
-            upgrades[0, i] = starterSwordUpgrades[i];
-            upgrades[1, i] = greatSwordUpgrades[i];
-            upgrades[2, i] = daggerUpgrades[i];
-        }
+        setUpgradeMatrix();
+
+        loadUpgrades();
 
     }
 
@@ -33,6 +30,7 @@ public class Saver : MonoBehaviour
 
     public void saveGame()
     {
+
         PlayerPrefs.SetInt("MoneyAmt", player.myMoney);
 
         for (int i = 0; i < player.myPotions.Length; i++)
@@ -61,8 +59,8 @@ public class Saver : MonoBehaviour
             upgrade_class[] allUp = player.getSwordList().getSword(i).getAllUpgrades();
             for (int j = 0; j < swordSaveNames.Length; j++)
             {
-                PlayerPrefs.SetFloat(upgrades[i, j], allUp[j].Save());
-                print(PlayerPrefs.GetFloat(upgrades[i, j]));
+                PlayerPrefs.SetInt(upgrades[i, j], allUp[j].Save());
+                print(PlayerPrefs.GetInt(upgrades[i, j]));
             }
         }
         
@@ -82,6 +80,17 @@ public class Saver : MonoBehaviour
     
     public void newGame()
     {
+
+        setUpgradeMatrix();
+
+        for(int x = 0; x < 3; x++)
+        {
+            for(int y = 0; y < 3; y++)
+            {
+                PlayerPrefs.SetInt(upgrades[x, y], 0);
+            }
+        }
+
         PlayerPrefs.SetInt("MoneyAmt", 100);
 
         for (int i = 0; i < materialSaveNames.Length; i++)
@@ -94,6 +103,8 @@ public class Saver : MonoBehaviour
             PlayerPrefs.SetInt(potionSaveNames[i], 2);
         }
 
+     
+
         for (int i = 0; i < swordSaveNames.Length; i++)
         {
             if (i == 0)
@@ -104,7 +115,31 @@ public class Saver : MonoBehaviour
 
         }
 
+
         PlayerPrefs.SetFloat("Health", 100f);
         PlayerPrefs.SetFloat("Energy", 100f);
+    }
+
+    public void loadUpgrades()
+    {
+
+        for (int i = 0; i < starterSwordUpgrades.Length; i++)
+        {
+            upgrade_class[] allUp = player.getSwordList().getSword(i).getAllUpgrades();
+            for (int j = 0; j < swordSaveNames.Length; j++)
+            {
+                allUp[j].Load(PlayerPrefs.GetInt(upgrades[i, j]));
+            }
+        }
+    }
+
+    void setUpgradeMatrix()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            upgrades[0, i] = starterSwordUpgrades[i];
+            upgrades[1, i] = greatSwordUpgrades[i];
+            upgrades[2, i] = daggerUpgrades[i];
+        }
     }
 }
