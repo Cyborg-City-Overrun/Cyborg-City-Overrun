@@ -36,7 +36,7 @@ public class inventory_item : MonoBehaviour
         }
     }
 
-    public void buttonAction()
+    public void buttonActionInventory()
     {
         switch (this.gameObject.tag)
         {
@@ -48,6 +48,16 @@ public class inventory_item : MonoBehaviour
                 break;
             case "Material":
                 //no button action
+                break;
+        }
+    }
+
+    public void buttonActionShop()
+    {
+        switch (this.gameObject.tag)
+        {
+            case "Potion":
+                this.gameObject.GetComponent<potions>().BuyPotion(displayNumber);
                 break;
         }
     }

@@ -98,4 +98,12 @@ public class potions : MonoBehaviour
     {
         return (int)(myTimer+1);
     }
+
+    public void BuyPotion(int id)
+    {
+        if (player.GetComponent<player_control>().Transaction(-price))
+        {
+            addPotion(1);
+        }
+    }
 }
