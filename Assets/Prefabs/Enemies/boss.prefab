@@ -503,9 +503,9 @@ MonoBehaviour:
   - {fileID: 148943302182416603, guid: 1bf83922028db0044a1605ae71c0d369, type: 3}
   - {fileID: 8856838488872990314, guid: 76bea0028627109498eea6a99fc23ae6, type: 3}
   myFollowRange: 5
-  myAttackRange: 1
+  myAttackRange: 1.6
   myAttackCooldown: 1
-  myMaxHealth: 50
+  myMaxHealth: 100
   myHealthBar: {fileID: 7975248614384812787}
   deathRewardMin: 70
   deathRewardMax: 100
@@ -789,8 +789,8 @@ PolygonCollider2D:
       - {x: -0.68936634, y: 0.3906536}
       - {x: -0.6480408, y: 0.44795227}
       - {x: -0.5130339, y: 0.82721686}
-      - {x: 0.032904208, y: 2.3136368}
-      - {x: 0.66291535, y: 2.3261282}
+      - {x: 0.1265474, y: 2.5243301}
+      - {x: 0.6941196, y: 2.5212119}
       - {x: 1.3309755, y: 0.6340561}
       - {x: 1.4470348, y: 0.3305549}
 --- !u!1 &9039765837605123412
