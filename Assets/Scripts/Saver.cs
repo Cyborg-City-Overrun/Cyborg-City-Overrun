@@ -100,7 +100,7 @@ public class Saver : MonoBehaviour
 
         for (int i = 0; i < potionSaveNames.Length; i++)
         {
-            PlayerPrefs.SetInt(potionSaveNames[i], 2);
+            PlayerPrefs.SetInt(potionSaveNames[i], 0);
         }
 
      
