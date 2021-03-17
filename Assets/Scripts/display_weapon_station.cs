@@ -19,6 +19,11 @@ public class display_weapon_station : MonoBehaviour
 
     public GameObject[] weapons;
 
+
+    public GameObject statDamage;
+    public GameObject statEnergy;
+    public GameObject statCrit;
+
     private void Start()
     {
         myPlayer = GameObject.FindGameObjectWithTag("Player");
@@ -52,11 +57,14 @@ public class display_weapon_station : MonoBehaviour
                 weapons[i].transform.GetChild(2).GetComponent<Text>().text = "";
             }
         }
+
         //display();
         UpdatePurchaseButton();
         UpdateUpgradeDamageButton();
         UpdateUpgradeEnergyButton();
         UpdateUpgradeCritButton();
+
+        UpdateStats();
     }
 
     //purchase
@@ -191,5 +199,13 @@ public class display_weapon_station : MonoBehaviour
         {
             myPlayer.GetComponent<sword_list>().getSword(currentWeapon).UpgradeCrit();
         }
+    }
+
+    //Stats display
+    public void UpdateStats()
+    {
+        statDamage.transform.GetChild(0).GetComponent<Text>().text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetBaseDamageWithModifier().ToString();
+        statEnergy.transform.GetChild(0).GetComponent<Text>().text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetAttackEnergyWithModifier().ToString();
+        statCrit.transform.GetChild(0).GetComponent<Text>().text = myPlayer.GetComponent<sword_list>().getSword(currentWeapon).GetUpgradeModifierTotalCrit() .ToString();
     }
 }
