@@ -110,6 +110,10 @@ public class sword_class
     {
         return myPrice;
     }
+    public float GetBaseDamageWithModifier()
+    {
+        return (GetDamage() + GetUpgradeModifierTotalDamage());
+    }
 
     public float GetDamageWithModifier()
     {
