@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1068414449646829533}
   - component: {fileID: 4005777536296521329}
   - component: {fileID: 889726158672633467}
+  - component: {fileID: -5404659437809399713}
   m_Layer: 0
   m_Name: potion_energy
-  m_TagString: Untagged
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,14 +102,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.5}
+  m_Size: {x: 0.6, y: 0.75}
   m_EdgeRadius: 0
 --- !u!114 &889726158672633467
 MonoBehaviour:
@@ -124,3 +125,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restoreAmount: 0
   vendPotion: {fileID: 0}
+--- !u!114 &-5404659437809399713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7301975485415096766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de35adeb13f5e0d43b02b22e7b7503d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myID: 1
+  saveName: EnergyPotionAmt
+  effectAmount: 50
+  price: 20
+  modifierDurration: 0
+  player: {fileID: 0}
