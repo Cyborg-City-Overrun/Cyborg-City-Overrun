@@ -6,10 +6,11 @@ public class door_random : MonoBehaviour
 {
     private GameObject player;
     public GameObject roomSet;
-    public Saver save;
+    private Saver save;
 
     private void Start()
     {
+        save = FindObjectOfType<Saver>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
