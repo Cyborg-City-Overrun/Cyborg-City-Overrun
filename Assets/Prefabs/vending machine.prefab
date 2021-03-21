@@ -149,6 +149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7639419814794565763}
+  - component: {fileID: 6113884958034236604}
   m_Layer: 0
   m_Name: vending machine
   m_TagString: Untagged
@@ -173,6 +174,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6113884958034236604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7311042243106452082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec820f96023af1b4ebdcd12ac0180ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  garunteedLoot:
+  - {fileID: 148943302182416603, guid: 1bf83922028db0044a1605ae71c0d369, type: 3}
+  randomLoot:
+  - {fileID: 148943302182416603, guid: 1bf83922028db0044a1605ae71c0d369, type: 3}
+  randomMin: 0
 --- !u!1 &8797119024888323035
 GameObject:
   m_ObjectHideFlags: 0
