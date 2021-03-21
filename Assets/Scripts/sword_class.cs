@@ -117,7 +117,7 @@ public class sword_class
 
     public float GetDamageWithModifier()
     {
-        return (GetDamage() + GetUpgradeModifierTotalDamage() + GetVariance()) * GetCrit();
+        return (GetDamage() + GetUpgradeModifierTotalDamage() + GetVariance()) * GetCrit() /* * damage from tree*/;
     }
 
     private float GetVariance()

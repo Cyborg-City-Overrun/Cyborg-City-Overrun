@@ -4,31 +4,33 @@ using UnityEngine;
 
 public class SkillTreeNode
 {
-    private string name;
+    private int id;
     private float[] skillIncrease;
     private float totalSkill;
     private int curTier;
 
     public SkillTreeNode()
     {
-        new SkillTreeNode("Null", null);
+        new SkillTreeNode(-1, null);
     }
 
-    public SkillTreeNode(string name, float[] increase)
+    public SkillTreeNode(int id, float[] increase)
     {
-        this.name = name;
+        this.id = id;
         this.skillIncrease = increase;
         curTier = 0;
         totalSkill = 0;
     }
     
-    public void incraseTier()
+    public bool incraseTier()
     {
         if(!isMaxTier())
         {
             totalSkill += skillIncrease[curTier];
             curTier++;
+            return true;
         }
+        return false;
     }
 
     public float getTotalSkill()
