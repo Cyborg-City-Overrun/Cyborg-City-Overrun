@@ -331,7 +331,7 @@ MonoBehaviour:
   - {fileID: 889726158672633467, guid: d3c89b2c6a51c7e48b2458cfe7e44960, type: 3}
   - {fileID: 8727547603987182073, guid: f5cdc66c48dd5cb408b5b6c9e8882bc1, type: 3}
   randomAmt: 0
-  price: 0
+  price: 60
   player: {fileID: 4975546431517850009, guid: 2ba1d07a83259164fbc233e586af3dc6, type: 3}
   vendHealth: {fileID: 0}
   vendEnergy: {fileID: 0}

@@ -9,7 +9,7 @@ public class VendingMachine : MonoBehaviour
     // Start is called before the first frame update
     public item[] Loot;
     public int randomAmt;
-    public int price;
+    public int price = 60;
 
     public GameObject player;
     public potions vendHealth = new potions();
@@ -41,17 +41,14 @@ public class VendingMachine : MonoBehaviour
                 switch (lootIndex)
                 {
                     case 0:
-                        price = vendHealth.getPrice();
                         player.GetComponent<player_control>().Transaction(-price);
                         Instantiate(Loot[lootIndex].gameObject, new Vector3(this.transform.position.x + Random.Range(-1.0f, 1.0f), this.transform.position.y - Random.Range(.5f, 1.0f), -1), Quaternion.identity);
                         break;
                     case 1:
-                        price = vendEnergy.getPrice();
                         player.GetComponent<player_control>().Transaction(-price);
                         Instantiate(Loot[lootIndex].gameObject, new Vector3(this.transform.position.x + Random.Range(-1.0f, 1.0f), this.transform.position.y - Random.Range(.5f, 1.0f), -1), Quaternion.identity);
                         break;
                     case 2:
-                        price = vendAttack.getPrice();
                         player.GetComponent<player_control>().Transaction(-price);
                         Instantiate(Loot[lootIndex].gameObject, new Vector3(this.transform.position.x + Random.Range(-1.0f, 1.0f), this.transform.position.y - Random.Range(.5f, 1.0f), -1), Quaternion.identity);
                         break;
