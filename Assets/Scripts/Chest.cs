@@ -28,7 +28,7 @@ public class Chest : MonoBehaviour
             Anim.SetBool("isOpened", true);
             for (int i= 0; i < garunteedLoot.Length; i++)
             {
-                Instantiate(garunteedLoot[i].gameObject, new Vector3(this.transform.position.x + Random.Range(-1.0f,1.0f), this.transform.position.y - Random.Range(-.5f, -1.0f), -1), Quaternion.identity);
+                Instantiate(garunteedLoot[i].gameObject, new Vector3(this.transform.position.x + Random.Range(-1.0f,1.0f), this.transform.position.y - Random.Range(.5f, .75f), -1), Quaternion.identity);
             }
 
             //random drops
