@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class display_trees : MonoBehaviour
 {
     public GameObject[] DamageBuffButtons;
+    public GameObject[] DamageCritBuffButtons;
+    public GameObject[] DamageCritChanceButtons;
+    public GameObject[] DamageCritStunButtons;
 
     private GameObject player;
 
@@ -21,23 +24,53 @@ public class display_trees : MonoBehaviour
         UpdateDisplay();
     }
 
-    private void UpdateDisplay()
+    public void UpdateDisplay()
     {
-        for (int i = 0; i < DamageBuffButtons.Length; i++)
+        UpdateDamage();
+    }
+
+    private void UpdateButtons(GameObject[] list, string tree_tag, string branch_tag)
+    {
+        for (int i = 0; i < list.Length; i++)
         {
-            Color color = DamageBuffButtons[i].transform.GetComponent<Image>().color;
-            if (i < player.GetComponent<tree_list>().GetTreeWithTag("Damage").GetActiveBranchWithTag("DamageBuff").GetLevel())
+            Color color = list[i].transform.GetComponent<Image>().color;
+            if (i < player.GetComponent<tree_list>().GetTreeWithTag(tree_tag).GetActiveBranchWithTag(branch_tag).GetLevel())
             {
-                DamageBuffButtons[i].transform.GetComponent<Image>().color = new Color(color.r, color.g, color.b, 1);
+                list[i].transform.GetComponent<Image>().color = new Color(color.r, color.g, color.b, 1);
             }
-            else if (i == player.GetComponent<tree_list>().GetTreeWithTag("Damage").GetActiveBranchWithTag("DamageBuff").GetLevel())
+            else if (i == player.GetComponent<tree_list>().GetTreeWithTag(tree_tag).GetActiveBranchWithTag(branch_tag).GetLevel())
             {
-                DamageBuffButtons[i].transform.GetComponent<Image>().color = new Color(color.r, color.g, color.b, .5f);
+                list[i].transform.GetComponent<Image>().color = new Color(color.r, color.g, color.b, .4f);
             }
             else 
             {
-                DamageBuffButtons[i].transform.GetComponent<Image>().color = new Color(color.r, color.g, color.b, .2f);
+                list[i].transform.GetComponent<Image>().color = new Color(color.r, color.g, color.b, .15f);
             }
         }
+    }
+
+    public void UpdateDamage()
+    {
+        UpdateDamageBuff();
+        UpdateDamageCritBuff();
+        UpdateDamageCritChance();
+        UpdateDamageCritStun();
+    }
+
+    public void UpdateDamageBuff()
+    {
+        UpdateButtons(DamageBuffButtons, "Damage", "DamageBuff");
+    }
+    public void UpdateDamageCritBuff()
+    {
+        UpdateButtons(DamageCritBuffButtons, "Damage", "DamageCritBuff");
+    }
+    public void UpdateDamageCritChance()
+    {
+        UpdateButtons(DamageCritChanceButtons, "Damage", "DamageCritChance");
+    }
+    public void UpdateDamageCritStun()
+    {
+        UpdateButtons(DamageCritStunButtons, "Damage", "DamageCritStun");
     }
 }

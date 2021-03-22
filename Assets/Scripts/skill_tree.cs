@@ -42,6 +42,6 @@ public class skill_tree
             }
         }
 
-        return null; //this should not be reached. if it is, that means there was no branch with the ggiven tag
+        return null; //this should not be reached. if it is, that means there was no branch with the given tag or level
     }
 }
