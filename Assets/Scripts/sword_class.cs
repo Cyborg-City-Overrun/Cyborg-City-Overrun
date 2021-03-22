@@ -37,7 +37,7 @@ public class sword_class
 
         myVariance = myDamage / 4;
         myCritChance = 0f;
-        myCritDamage = 2.5f;
+        myCritDamage = 1f;
 
         myUpgradeDamage = null;
         myUpgradeEnergy = null;
@@ -58,7 +58,7 @@ public class sword_class
 
         myVariance = myDamage / 4;
         myCritChance = 0f;
-        myCritDamage = 3f;
+        myCritDamage = 2f;
 
         myUpgradeDamage = upgradeDamage;
         myUpgradeEnergy = upgradeEnergy;
@@ -117,7 +117,7 @@ public class sword_class
 
     public float GetDamageWithModifier()
     {
-        return (GetDamage() + GetUpgradeModifierTotalDamage() + GetVariance()) * GetCrit();
+        return (GetDamage() + GetUpgradeModifierTotalDamage() + GetVariance()) * GetCrit() /* * damage from tree*/;
     }
 
     private float GetVariance()
@@ -128,9 +128,9 @@ public class sword_class
 
     private float GetCrit()
     {
-        if (Random.Range(0, 100) < myCritChance + GetUpgradeModifierTotalCrit())
+        if (Random.Range(0, 100) < myCritChance + GetUpgradeModifierTotalCrit() /* + skill tree crit chance*/)
         {
-            return myCritDamage;
+            return GetCritDamage();
         }
         else
         {
@@ -141,6 +141,16 @@ public class sword_class
     public float GetAttackEnergyWithModifier()
     {
         return myAttackEnergy + GetUpgradeModifierTotalEnergy(); //plus because the modifier is a negative value
+    }
+
+    public void setCritDamage(float dmg)
+    {
+        myCritDamage = dmg;
+    }
+
+    public float GetCritDamage()
+    {
+        return myCritDamage;
     }
 
 

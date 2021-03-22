@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class SkillTree
 {
-    private string treeName;
+    private int id;
     private SkillTreeNode[] nodes;
 
     public SkillTree()
     {
-        new SkillTree("Null",null);
+        new SkillTree(-1, null);
     }
 
-    public SkillTree(string treeName, SkillTreeNode[] nodes)
+    public SkillTree(int id, SkillTreeNode[] nodes)
     {
-        this.treeName = treeName;
+        this.id = id;
         this.nodes = new SkillTreeNode[nodes.Length];
         this.nodes = nodes;
     }
 
-    public void increaseNode(int newPos)
+    public void increaseNode(int node)
     {
-        nodes[newPos].incraseTier();
+        nodes[node].incraseTier();
+    }
+
+    public SkillTreeNode getNode(int id)
+    {
+        return nodes[id];
     }
 
     

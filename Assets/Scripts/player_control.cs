@@ -36,6 +36,8 @@ public class player_control : MonoBehaviour
 
     public Canvas InventoryMenu;
 
+    public Canvas TreeMenu;
+
     public BoxCollider2D InteractHitbox;
 
     public GameObject[] hitBoxes;
@@ -53,6 +55,8 @@ public class player_control : MonoBehaviour
 
     private float myAttackModifier = 1;
     private float myAttackModifierPotion = 1;
+
+    private tree_list treeList;
 
 
     // Start is called before the first frame update
@@ -72,6 +76,7 @@ public class player_control : MonoBehaviour
         myEnergy = myMaxEnergy;
         swordList = GetComponent<sword_list>();
         myMoney = PlayerPrefs.GetInt("MoneyAmt");
+        treeList = GetComponent<tree_list>();
     }
 
     private void Update()
@@ -84,6 +89,12 @@ public class player_control : MonoBehaviour
         SwitchWeapon();
         ConsumePotions();
         Interact();
+
+        //move this later
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            TreeMenu.gameObject.SetActive(true);
+        }
     }
 
     void FixedUpdate()
@@ -341,9 +352,9 @@ public class player_control : MonoBehaviour
         return mySword;
     }
 
-    public void setAttackModifier(float modifier)
+    public void setAttackModifier() //not in use. can probably delete
     {
-        myAttackModifier = modifier;
+        myAttackModifier = treeList.GetTreeWithTag("Damage").GetActiveBranchWithTag("DamageBuff").GetModifier();
     }
 
     public void setAttackModifierPotion(float modifier)
@@ -353,7 +364,7 @@ public class player_control : MonoBehaviour
 
     public float getDamage()
     {
-        return mySword.GetDamageWithModifier() * myAttackModifier * myAttackModifierPotion;
+        return mySword.GetDamageWithModifier() * treeList.GetTreeWithTag("Damage").GetActiveBranchWithTag("DamageBuff").GetModifier() * myAttackModifierPotion;
     }
 
     public float getMyHealth()
