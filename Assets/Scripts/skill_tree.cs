@@ -32,6 +32,19 @@ public class skill_tree
 
         return null; //this should not be reached. if it is, that means there was no branch with the ggiven tag
     }
+
+    public skill_tree_branch GetNextBranchWithTag(string tag)
+    {
+        
+        skill_tree_branch active = GetActiveBranchWithTag(tag);
+        if (active != null)
+        {
+            return GetBranchWithTagAndLevel(tag, active.GetLevel() + 1);
+        }
+
+        return null; //shouldnt happen, if so there is no next level
+    }
+
     public skill_tree_branch GetBranchWithTagAndLevel(string tag, int level)
     {
         for (int i = 0; i < branches.Length; i++)

@@ -38,7 +38,7 @@ public class display_trees : MonoBehaviour
             {
                 list[i].transform.GetComponent<Image>().color = new Color(color.r, color.g, color.b, 1);
             }
-            else if (i == player.GetComponent<tree_list>().GetTreeWithTag(tree_tag).GetActiveBranchWithTag(branch_tag).GetLevel())
+            else if (i == player.GetComponent<tree_list>().GetTreeWithTag(tree_tag).GetActiveBranchWithTag(branch_tag).GetLevel() && player.GetComponent<tree_list>().GetTreeWithTag(tree_tag).GetNextBranchWithTag(branch_tag).IsUnlockable())
             {
                 list[i].transform.GetComponent<Image>().color = new Color(color.r, color.g, color.b, .4f);
             }
