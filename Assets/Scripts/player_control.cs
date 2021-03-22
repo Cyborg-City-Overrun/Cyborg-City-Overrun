@@ -240,7 +240,7 @@ public class player_control : MonoBehaviour
         {
             InteractHitbox.gameObject.SetActive(true);
         }
-        else if (!Input.GetKey(KeyCode.E))
+        else
         {
             InteractHitbox.gameObject.SetActive(false);
         }

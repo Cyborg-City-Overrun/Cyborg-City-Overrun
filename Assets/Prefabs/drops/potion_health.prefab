@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1708523531383863810}
   - component: {fileID: 7120280226418412519}
-  - component: {fileID: 2652048769904234815}
   - component: {fileID: 8727547603987182073}
+  - component: {fileID: 2062144440663061654}
+  - component: {fileID: 1168509794361514155}
   m_Layer: 0
   m_Name: potion_health
-  m_TagString: Untagged
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,32 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2652048769904234815
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7120293243417528409}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.5}
-  m_EdgeRadius: 0
 --- !u!114 &8727547603987182073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,5 +97,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99da8a49f9f34d418c7ee0e825353f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restoreAmount: 0
-  vendPotion: {fileID: 0}
+  restoreAmount: 1
+  myPotions: {fileID: 588093453713736211, guid: ca8024c274863064a8fa605da47cec81,
+    type: 3}
+--- !u!114 &2062144440663061654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7120293243417528409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de35adeb13f5e0d43b02b22e7b7503d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myID: 0
+  saveName: HealthPotionAmt
+  effectAmount: 20
+  price: 50
+  vendPrice: 60
+  modifierDurration: 0
+  player: {fileID: 4975546431517850009, guid: 2ba1d07a83259164fbc233e586af3dc6, type: 3}
+--- !u!60 &1168509794361514155
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7120293243417528409}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.125, y: 0.375}
+      - {x: -0.25, y: 0.3125}
+      - {x: -0.28125, y: 0.03125}
+      - {x: -0.28125, y: -0.21875}
+      - {x: -0.21875, y: -0.34375}
+      - {x: 0.15625, y: -0.34375}
+      - {x: 0.28125, y: -0.3125}
+      - {x: 0.28125, y: 0.15625}
+      - {x: 0.1875, y: 0.375}
+    - - {x: -0.09375, y: -0.125}
+      - {x: -0.0625, y: -0.03125}
+      - {x: 0.03125, y: 0.09375}
+      - {x: 0, y: 0.21875}
+      - {x: -0.03125, y: 0.09375}
+      - {x: 0.0625, y: 0}
+      - {x: 0.09375, y: -0.125}
+      - {x: 0.0625, y: -0.15625}
+      - {x: -0.0625, y: -0.15625}
