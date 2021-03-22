@@ -54,7 +54,7 @@ public class player_control : MonoBehaviour
     private float myAttackModifier = 1;
     private float myAttackModifierPotion = 1;
 
-    private SkillTreeManager skillTreeManager;
+    private tree_list treeList;
 
 
     // Start is called before the first frame update
@@ -74,7 +74,7 @@ public class player_control : MonoBehaviour
         myEnergy = myMaxEnergy;
         swordList = GetComponent<sword_list>();
         myMoney = PlayerPrefs.GetInt("MoneyAmt");
-        skillTreeManager = GetComponent<SkillTreeManager>();
+        treeList = GetComponent<tree_list>();
     }
 
     private void Update()
@@ -346,8 +346,7 @@ public class player_control : MonoBehaviour
 
     public void setAttackModifier()
     {
-        
-        myAttackModifier = skillTreeManager.GetTree(0).getNode(0).getTotalSkill();
+        myAttackModifier = treeList.GetTreeWithTag("Damage").GetBranchWithTag("DamageBuff").GetModifier();
     }
 
     public void setAttackModifierPotion(float modifier)
