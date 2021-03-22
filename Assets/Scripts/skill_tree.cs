@@ -20,7 +20,7 @@ public class skill_tree
         return tag;
     }
 
-    public skill_tree_branch GetBranchWithTag(string tag)
+    public skill_tree_branch GetActiveBranchWithTag(string tag)
     {
         for (int i = 0; i < branches.Length; i++)
         {
@@ -32,5 +32,16 @@ public class skill_tree
 
         return null; //this should not be reached. if it is, that means there was no branch with the ggiven tag
     }
+    public skill_tree_branch GetBranchWithTagAndLevel(string tag, int level)
+    {
+        for (int i = 0; i < branches.Length; i++)
+        {
+            if (branches[i].GetTag() == tag && branches[i].GetLevel() == level)
+            {
+                return branches[i];
+            }
+        }
 
+        return null; //this should not be reached. if it is, that means there was no branch with the ggiven tag
+    }
 }

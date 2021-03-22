@@ -8,6 +8,8 @@ public class skill_tree_branch
                         //there will only be one "active" branch for each tag
                         //ie damage I and damage II both have "Damage" tag and unlocking II will deactivate I
 
+    private int level; //what level upgrade is this, used for aquiring upgrades
+
     private skill_tree_branch[] requirements;
     
     private float modifier;
@@ -18,7 +20,9 @@ public class skill_tree_branch
     public skill_tree_branch() //root constructor
     {
         tag = "Root";
-        
+
+        level = -1;
+
         requirements = null;
         
         modifier = 0;
@@ -31,6 +35,8 @@ public class skill_tree_branch
     {
         tag = t;
 
+        level = 0;
+
         requirements = null;
         
         modifier = mod;
@@ -39,9 +45,11 @@ public class skill_tree_branch
         isActive = true;
     }
 
-    public skill_tree_branch(string t, skill_tree_branch[] req, float mod) //regular branch constructor
+    public skill_tree_branch(string t, int l, skill_tree_branch[] req, float mod) //regular branch constructor
     {
         tag = t;
+
+        level = l;
 
         requirements = new skill_tree_branch[req.Length];
         requirements = req;
@@ -57,6 +65,10 @@ public class skill_tree_branch
         return tag;
     }
 
+    public int GetLevel()
+    {
+        return level;
+    }
     public float GetModifier()
     {
         return modifier;

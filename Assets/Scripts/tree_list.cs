@@ -29,6 +29,8 @@ public class tree_list : MonoBehaviour
     skill_tree_branch damageBuffBase;
     skill_tree_branch damageBuffI;
     skill_tree_branch damageBuffII;
+    skill_tree_branch damageBuffIII;
+    skill_tree_branch damageBuffIV;
 
     skill_tree_branch damageCritBuffBase; 
     skill_tree_branch damageCritBuffI;
@@ -48,17 +50,20 @@ public class tree_list : MonoBehaviour
         //damage tree
         damageRoot = new skill_tree_branch();
 
+        //constructor is ("tag", level, requirements[], modifier)
         damageBuffBase = new skill_tree_branch("DamageBuff", 1f); //this tag is a multiplier to players damage
-        damageBuffI = new skill_tree_branch("DamageBuff", new skill_tree_branch[1] { damageRoot }, 2f);
-        damageBuffII = new skill_tree_branch("DamageBuff", new skill_tree_branch[1] { damageBuffI }, 3f);
+        damageBuffI = new skill_tree_branch("DamageBuff", 1, new skill_tree_branch[2] { damageRoot, damageBuffBase }, 1.5f);
+        damageBuffII = new skill_tree_branch("DamageBuff", 2, new skill_tree_branch[1] { damageBuffI }, 2f);
+        damageBuffIII = new skill_tree_branch("DamageBuff", 3, new skill_tree_branch[1] { damageBuffII }, 2.5f);
+        damageBuffIV = new skill_tree_branch("DamageBuff", 4, new skill_tree_branch[1] { damageBuffIII }, 3f);
 
         damageCritBuffBase = new skill_tree_branch("DamageCritBuff", 2f); //this tag is a multiplier to damage dealt on critical hit
-        damageCritBuffI = new skill_tree_branch("DamageCritBuff", new skill_tree_branch[1] { damageRoot }, 2f);
+        damageCritBuffI = new skill_tree_branch("DamageCritBuff", 1, new skill_tree_branch[1] { damageRoot }, 2f);
 
-        skill_tree_branch[] damageBranches = new skill_tree_branch[6]
+        skill_tree_branch[] damageBranches = new skill_tree_branch[8]
             { 
             damageRoot, 
-            damageBuffBase, damageBuffI, damageBuffII, 
+            damageBuffBase, damageBuffI, damageBuffII, damageBuffIII, damageBuffIV, 
             damageCritBuffBase, damageCritBuffI
             };
 

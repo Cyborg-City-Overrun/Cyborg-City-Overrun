@@ -36,6 +36,8 @@ public class player_control : MonoBehaviour
 
     public Canvas InventoryMenu;
 
+    public Canvas TreeMenu;
+
     public BoxCollider2D InteractHitbox;
 
     public GameObject[] hitBoxes;
@@ -87,6 +89,12 @@ public class player_control : MonoBehaviour
         SwitchWeapon();
         ConsumePotions();
         Interact();
+
+        //move this later
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            TreeMenu.gameObject.SetActive(true);
+        }
     }
 
     void FixedUpdate()
@@ -344,9 +352,9 @@ public class player_control : MonoBehaviour
         return mySword;
     }
 
-    public void setAttackModifier()
+    public void setAttackModifier() //not in use. can probably delete
     {
-        myAttackModifier = treeList.GetTreeWithTag("Damage").GetBranchWithTag("DamageBuff").GetModifier();
+        myAttackModifier = treeList.GetTreeWithTag("Damage").GetActiveBranchWithTag("DamageBuff").GetModifier();
     }
 
     public void setAttackModifierPotion(float modifier)
@@ -356,7 +364,7 @@ public class player_control : MonoBehaviour
 
     public float getDamage()
     {
-        return mySword.GetDamageWithModifier() * myAttackModifier * myAttackModifierPotion;
+        return mySword.GetDamageWithModifier() * treeList.GetTreeWithTag("Damage").GetActiveBranchWithTag("DamageBuff").GetModifier() * myAttackModifierPotion;
     }
 
     public float getMyHealth()
