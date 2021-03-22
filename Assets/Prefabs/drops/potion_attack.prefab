@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4858469937900751955}
   - component: {fileID: 5034834550421684077}
-  - component: {fileID: 3887596313995643193}
   - component: {fileID: 3652091926146024302}
   - component: {fileID: 8311393527553974244}
+  - component: {fileID: 4622099078156428708}
   m_Layer: 0
   m_Name: potion_attack
   m_TagString: Potion
@@ -85,32 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3887596313995643193
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720457483350044942}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.75}
-  m_EdgeRadius: 0
 --- !u!114 &3652091926146024302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,8 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540b62955d692ff48991c8b5c1895b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restoreAmount: 0
-  vendPotion: {fileID: 0}
+  restoreAmount: 1
+  myPotions: {fileID: 2493796512373700893, guid: 360e499d40c735e499b07a92dc753663,
+    type: 3}
 --- !u!114 &8311393527553974244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,5 +116,49 @@ MonoBehaviour:
   saveName: AttackPotionAmt
   effectAmount: 1.5
   price: 80
+  vendPrice: 60
   modifierDurration: 8
-  player: {fileID: 0}
+  player: {fileID: 4975546431517850009, guid: 2ba1d07a83259164fbc233e586af3dc6, type: 3}
+--- !u!60 &4622099078156428708
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720457483350044942}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.125, y: 0.375}
+      - {x: -0.25, y: 0.3125}
+      - {x: -0.28125, y: 0.03125}
+      - {x: -0.28125, y: -0.21875}
+      - {x: -0.21875, y: -0.34375}
+      - {x: 0.15625, y: -0.34375}
+      - {x: 0.28125, y: -0.3125}
+      - {x: 0.28125, y: 0.15625}
+      - {x: 0.1875, y: 0.375}
+    - - {x: -0.09375, y: -0.125}
+      - {x: -0.0625, y: -0.03125}
+      - {x: 0.03125, y: 0.09375}
+      - {x: 0, y: 0.21875}
+      - {x: -0.03125, y: 0.09375}
+      - {x: 0.0625, y: 0}
+      - {x: 0.09375, y: -0.125}
+      - {x: 0.0625, y: -0.15625}
+      - {x: -0.0625, y: -0.15625}

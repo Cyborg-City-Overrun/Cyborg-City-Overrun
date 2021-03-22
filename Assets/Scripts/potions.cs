@@ -11,6 +11,7 @@ public class potions : MonoBehaviour
     
     public float effectAmount;
     public int price;
+    public int vendPrice = 60;
 
     private float myTimer = 0;
     public float modifierDurration;
@@ -84,6 +85,16 @@ public class potions : MonoBehaviour
         return price;
     }
 
+    public int getVendPrice()
+    {
+        return vendPrice;
+    }
+
+    public void setID(int id)
+    {
+        myID = id;
+    }
+
     public int getMyNumberInInventory()
     {
         return myNumberInInventory;
@@ -105,5 +116,10 @@ public class potions : MonoBehaviour
         {
             addPotion(1);
         }
+    }
+
+    public void VendPotion(int id)
+    {
+        addPotion(1);
     }
 }
