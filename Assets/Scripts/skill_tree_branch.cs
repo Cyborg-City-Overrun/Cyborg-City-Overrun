@@ -98,7 +98,7 @@ public class skill_tree_branch
 
     public void Unlock()
     { 
-        if (this.IsUnlockable())
+        if (IsUnlockable())
         {
             isUnlocked = true;
             isActive = true;

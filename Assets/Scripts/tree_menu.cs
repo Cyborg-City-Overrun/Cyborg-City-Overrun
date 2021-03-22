@@ -19,6 +19,17 @@ public class tree_menu : MonoBehaviour
     public void UnlockDamageBuff(int level)
     {
         player.GetComponent<tree_list>().GetTreeWithTag("Damage").GetBranchWithTagAndLevel("DamageBuff", level).Unlock();
-        print(player.GetComponent<tree_list>().GetTreeWithTag("Damage").GetActiveBranchWithTag("DamageBuff").GetModifier().ToString());
+    }
+    public void UnlockDamageCritBuff(int level)
+    {
+        player.GetComponent<tree_list>().GetTreeWithTag("Damage").GetBranchWithTagAndLevel("DamageCritBuff", level).Unlock();
+    }
+    public void UnlockDamageCritChance(int level)
+    {
+        player.GetComponent<tree_list>().GetTreeWithTag("Damage").GetBranchWithTagAndLevel("DamageCritChance", level).Unlock();
+    }
+    public void UnlockDamageCritStun(int level)
+    {
+        player.GetComponent<tree_list>().GetTreeWithTag("Damage").GetBranchWithTagAndLevel("DamageCritStun", level).Unlock();
     }
 }

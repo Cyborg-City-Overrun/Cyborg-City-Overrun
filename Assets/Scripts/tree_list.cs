@@ -29,11 +29,17 @@ public class tree_list : MonoBehaviour
     skill_tree_branch damageBuffBase;
     skill_tree_branch damageBuffI;
     skill_tree_branch damageBuffII;
-    skill_tree_branch damageBuffIII;
-    skill_tree_branch damageBuffIV;
 
     skill_tree_branch damageCritBuffBase; 
     skill_tree_branch damageCritBuffI;
+    skill_tree_branch damageCritBuffII;
+
+    skill_tree_branch damageCritChanceBase;
+    skill_tree_branch damageCritChanceI;
+    skill_tree_branch damageCritChanceII;
+    
+    skill_tree_branch damageCritStunBase;
+    skill_tree_branch damageCritStunI;
 
     skill_tree damageTree;
 
@@ -54,17 +60,25 @@ public class tree_list : MonoBehaviour
         damageBuffBase = new skill_tree_branch("DamageBuff", 1f); //this tag is a multiplier to players damage
         damageBuffI = new skill_tree_branch("DamageBuff", 1, new skill_tree_branch[2] { damageRoot, damageBuffBase }, 1.5f);
         damageBuffII = new skill_tree_branch("DamageBuff", 2, new skill_tree_branch[1] { damageBuffI }, 2f);
-        damageBuffIII = new skill_tree_branch("DamageBuff", 3, new skill_tree_branch[1] { damageBuffII }, 2.5f);
-        damageBuffIV = new skill_tree_branch("DamageBuff", 4, new skill_tree_branch[1] { damageBuffIII }, 3f);
 
         damageCritBuffBase = new skill_tree_branch("DamageCritBuff", 2f); //this tag is a multiplier to damage dealt on critical hit
-        damageCritBuffI = new skill_tree_branch("DamageCritBuff", 1, new skill_tree_branch[1] { damageRoot }, 2f);
+        damageCritBuffI = new skill_tree_branch("DamageCritBuff", 1, new skill_tree_branch[2] { damageCritBuffBase, damageBuffII }, 3f);
+        damageCritBuffII = new skill_tree_branch("DamageCritBuff", 2, new skill_tree_branch[1] { damageCritBuffI }, 4f);
 
-        skill_tree_branch[] damageBranches = new skill_tree_branch[8]
+        damageCritChanceBase = new skill_tree_branch("DamageCritChance", 0f); //this tag is an additive percentage to crit chance
+        damageCritChanceI = new skill_tree_branch("DamageCritChance", 1, new skill_tree_branch[2] { damageCritChanceBase, damageBuffII }, 10f);
+        damageCritChanceII = new skill_tree_branch("DamageCritChance", 2, new skill_tree_branch[1] { damageCritChanceI }, 20f);
+
+        damageCritStunBase = new skill_tree_branch("DamageCritStun", 0f); //when unlocked, stuns enemy temporarily on critial hit
+        damageCritStunI = new skill_tree_branch("DamageCritStun", 1, new skill_tree_branch[3] { damageCritStunBase, damageCritBuffII, damageCritChanceII }, 1f);
+
+        skill_tree_branch[] damageBranches = new skill_tree_branch[12]
             { 
             damageRoot, 
-            damageBuffBase, damageBuffI, damageBuffII, damageBuffIII, damageBuffIV, 
-            damageCritBuffBase, damageCritBuffI
+            damageBuffBase, damageBuffI, damageBuffII,
+            damageCritBuffBase, damageCritBuffI, damageCritBuffII,
+            damageCritChanceBase, damageCritChanceI, damageCritChanceII,
+            damageCritStunBase, damageCritStunI
             };
 
         damageTree = new skill_tree("Damage", damageBranches);
