@@ -14,6 +14,42 @@ TextureImporter:
   - first:
       213: -2987163020676625895
     second: building1_3
+  - first:
+      213: 8165177452502791258
+    second: building1_4
+  - first:
+      213: 9108604927624082656
+    second: building1_5
+  - first:
+      213: -2340867966695813161
+    second: building1_6
+  - first:
+      213: 2877807896401205971
+    second: building1_7
+  - first:
+      213: -4323816622102759433
+    second: building1_8
+  - first:
+      213: 4359004977083148988
+    second: building1_9
+  - first:
+      213: -1576734431218340962
+    second: building1_10
+  - first:
+      213: 4799880075982283882
+    second: building1_11
+  - first:
+      213: -1457127411745370776
+    second: building1_12
+  - first:
+      213: -6115384084810704138
+    second: building1_13
+  - first:
+      213: 1157807120327411842
+    second: building1_14
+  - first:
+      213: -5940685881875300797
+    second: building1_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +94,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,11 +155,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 64
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,12 +175,12 @@ TextureImporter:
       name: building1_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0.333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,10 +198,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0.333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +217,12 @@ TextureImporter:
       name: building1_3
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0.333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

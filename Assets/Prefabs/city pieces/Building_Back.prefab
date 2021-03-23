@@ -13,10 +13,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7778499055428314127, guid: e42bedb86523e8d45ba50845c26f003f,
         type: 3}
+    - target: {fileID: 1022192316458964066, guid: ec1e9a369f11cc44b92d25ebf0434181,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5866555715336399650, guid: ec1e9a369f11cc44b92d25ebf0434181,
         type: 3}
       propertyPath: m_Name
-      value: building1_0
+      value: Building_Back
       objectReference: {fileID: 0}
     - target: {fileID: 6498545218580637289, guid: ec1e9a369f11cc44b92d25ebf0434181,
         type: 3}
@@ -72,6 +77,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622138276007073302, guid: ec1e9a369f11cc44b92d25ebf0434181,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.333
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec1e9a369f11cc44b92d25ebf0434181, type: 3}
