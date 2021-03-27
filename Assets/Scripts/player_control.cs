@@ -247,11 +247,11 @@ public class player_control : MonoBehaviour
     private void Interact()
     {
         //make a hitbox to interact with things in the world
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             InteractHitbox.gameObject.SetActive(true);
         }
-        else if (!Input.GetKeyDown(KeyCode.E))
+        else if (!Input.GetKey(KeyCode.E))
         {
             InteractHitbox.gameObject.SetActive(false);
         }
