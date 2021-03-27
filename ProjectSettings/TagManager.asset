@@ -12,6 +12,7 @@ TagManager:
   - Weapon
   - EnemyAttack
   - Material
+  - DBox
   layers:
   - Default
   - TransparentFX

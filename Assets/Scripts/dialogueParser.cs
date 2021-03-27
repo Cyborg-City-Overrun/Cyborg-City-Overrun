@@ -12,6 +12,11 @@ public class dialogueParser : MonoBehaviour
     private bool isFinished = false;
     private string charName = "";
     private string dialogue = "";
+    private GameObject dialogueBox;
+    private bool isInteracted = false;
+    private string[] emoticons = { ":|", ":)", ">:(" };
+    public Image emote;
+    public Sprite[] emoteSprites;
 
     public Text name;
     public Text dialogueTxt;
@@ -20,13 +25,19 @@ public class dialogueParser : MonoBehaviour
     {
         string text = txtFile.text;
         lines = text.Split('\n');
+        dialogueBox = GameObject.FindGameObjectWithTag("DBox");
+        dialogueBox.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        parse();
+        if(isInteracted)
+        {
+            dialogueBox.SetActive(true);
+            parse();
+        }
     }
 
     public void parse()
@@ -35,17 +46,25 @@ public class dialogueParser : MonoBehaviour
         {
             string lineStr = lines[currentLine];
             string[] tokens = lineStr.Split(' ');
-            charName = getCharacterName(tokens);
+
+            if(tokens[0]=="END")
+            {
+                isInteracted = false;
+                dialogueBox.SetActive(false);
+            }
             
 
-            print(charName);
-            print(dialogue);
-            name.text = charName;
-            dialogueTxt.text = dialogue;
-            isFinished = !isFinished;
+            if(!isFinished)
+            {
+                charName = getCharacterName(tokens);
+                name.text = charName;
+                dialogueTxt.text = dialogue;
+                isFinished = !isFinished;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+
+        if (Input.GetMouseButtonDown(0))
         {
             currentLine++;
             isFinished = !isFinished;
@@ -56,7 +75,8 @@ public class dialogueParser : MonoBehaviour
     {
         bool isNameFound = false;
         string charName = "";
-        int dialogueStart = 0;
+        int emoticonStart = 0;
+
         for (int i = 0; i < tokens.Length; i++)
         {
             string curToken = tokens[i];
@@ -76,17 +96,42 @@ public class dialogueParser : MonoBehaviour
                     }
                 }
             }
-            dialogueStart++;
+            emoticonStart++;
             if(isNameFound)
             {
                 break;
             }
             charName += ' ';
         }
+        int dialogueStart = getEmotion(tokens, emoticonStart);
         getDialogue(tokens, dialogueStart);
         return charName;
     }
 
+    int getEmotion(string[] tokens, int emoticonStart)
+    {
+        int dialogueStart = emoticonStart;
+        bool isEmoteFound = false;
+        for(int i  = emoticonStart; i < tokens.Length; i++)
+        {
+            if(isEmoteFound)
+            {
+                break;
+            }
+
+            for(int j = 0; j < emoticons.Length; j++)
+            {
+                if(tokens[i]==emoticons[j])
+                {
+                    emote.sprite = emoteSprites[j];
+                    dialogueStart++;
+                    isEmoteFound = true;
+                    
+                }
+            }
+        }
+        return dialogueStart;
+    }
     string getDialogue(string[] tokens, int startPos)
     {
         string curDialogue = "";
@@ -120,5 +165,18 @@ public class dialogueParser : MonoBehaviour
 
          dialogue = curDialogue;
         return dialogue;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    { 
+        if(collision.tag=="Interact")
+        {
+            isInteracted = true;
+        }
+    }
+
+    public void setIsInteracted(bool newState)
+    {
+        this.isInteracted = newState;
     }
 }
