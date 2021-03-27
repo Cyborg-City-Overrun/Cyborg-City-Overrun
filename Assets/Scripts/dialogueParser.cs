@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class dialogueParser : MonoBehaviour
 {
     public TextAsset txtFile;
+    public player_control player;
     private string[] lines;
     private int currentLine  = 0;
     private bool isFinished = false;
@@ -35,7 +36,7 @@ public class dialogueParser : MonoBehaviour
     {
         if(isInteracted)
         {
-            dialogueBox.SetActive(true);
+
             parse();
         }
     }
@@ -47,11 +48,16 @@ public class dialogueParser : MonoBehaviour
             string lineStr = lines[currentLine];
             string[] tokens = lineStr.Split(' ');
 
-            if(tokens[0]=="END")
+    
+
+            if (tokens[0] == "END")
             {
-                isInteracted = false;
+                isFinished = true;
                 dialogueBox.SetActive(false);
+                player.setCanMove(true);
+                isInteracted = false;
             }
+           
             
 
             if(!isFinished)
@@ -172,11 +178,15 @@ public class dialogueParser : MonoBehaviour
         if(collision.tag=="Interact")
         {
             isInteracted = true;
+            player.setCanMove(false);
+            dialogueBox.SetActive(true);
         }
     }
 
     public void setIsInteracted(bool newState)
     {
         this.isInteracted = newState;
+        player.setCanMove(!newState);
+        dialogueBox.SetActive(newState);
     }
 }

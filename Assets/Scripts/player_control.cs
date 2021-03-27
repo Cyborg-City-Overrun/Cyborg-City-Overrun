@@ -58,6 +58,8 @@ public class player_control : MonoBehaviour
 
     private tree_list treeList;
 
+    private bool canMove = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -86,9 +88,12 @@ public class player_control : MonoBehaviour
             mySword = swordList.getSword(0);
         }
 
-        SwitchWeapon();
-        ConsumePotions();
-        Interact();
+        if(canMove)
+        {
+            SwitchWeapon();
+            ConsumePotions();
+            Interact();
+        }
 
         //move this later
         if (Input.GetKeyDown(KeyCode.U))
@@ -103,8 +108,11 @@ public class player_control : MonoBehaviour
 
         myMovement.x = Input.GetAxisRaw("Horizontal");
         myMovement.y = Input.GetAxisRaw("Vertical");
-        Move();
-        CheckAttack();
+        if (canMove)
+        {
+            Move();
+            CheckAttack();
+        }
 
         camTF.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
 
@@ -391,5 +399,9 @@ public class player_control : MonoBehaviour
         return swordList;
     }
 
+    public void setCanMove(bool newState)
+    {
+        this.canMove = newState;
+    }
 
 }
