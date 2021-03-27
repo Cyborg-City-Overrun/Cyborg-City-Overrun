@@ -854,6 +854,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 0}
   DeathMenu: {fileID: 0}
   InventoryMenu: {fileID: 0}
+  TreeMenu: {fileID: 0}
   InteractHitbox: {fileID: 4975546431080644966}
   hitBoxes:
   - {fileID: 4975546432177934915}
