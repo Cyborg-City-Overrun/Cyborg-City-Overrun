@@ -46,6 +46,8 @@ public class player_control : MonoBehaviour
 
     public int myMoney;
 
+    public int mySkillPoints;
+
     private sword_list swordList;
     private sword_class mySword;
 
@@ -57,6 +59,8 @@ public class player_control : MonoBehaviour
     private float myAttackModifierPotion = 1;
 
     private tree_list treeList;
+
+    private bool canMove = true;
 
 
     // Start is called before the first frame update
@@ -77,6 +81,7 @@ public class player_control : MonoBehaviour
         swordList = GetComponent<sword_list>();
         myMoney = PlayerPrefs.GetInt("MoneyAmt");
         treeList = GetComponent<tree_list>();
+        mySkillPoints = 30;
     }
 
     private void Update()
@@ -86,9 +91,12 @@ public class player_control : MonoBehaviour
             mySword = swordList.getSword(0);
         }
 
-        SwitchWeapon();
-        ConsumePotions();
-        Interact();
+        if(canMove)
+        {
+            SwitchWeapon();
+            ConsumePotions();
+            Interact();
+        }
 
         //move this later
         if (Input.GetKeyDown(KeyCode.U))
@@ -103,8 +111,11 @@ public class player_control : MonoBehaviour
 
         myMovement.x = Input.GetAxisRaw("Horizontal");
         myMovement.y = Input.GetAxisRaw("Vertical");
-        Move();
-        CheckAttack();
+        if (canMove)
+        {
+            Move();
+            CheckAttack();
+        }
 
         camTF.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
 
@@ -391,5 +402,23 @@ public class player_control : MonoBehaviour
         return swordList;
     }
 
+    public void setCanMove(bool newState)
+    {
+        this.canMove = newState;
+    }
+    public bool UseSkillPoint()
+    {
+        if (mySkillPoints > 0)
+        {
+            mySkillPoints--;
+            return true;
+        }
+        return false;
+    }
+
+    public int GetSkillPoints()
+    {
+        return mySkillPoints;
+    }
 
 }

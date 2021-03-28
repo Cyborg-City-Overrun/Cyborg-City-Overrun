@@ -178,7 +178,7 @@ public class dialogueParser : MonoBehaviour
         if(collision.tag=="Interact")
         {
             isInteracted = true;
-            player.setCanMove(false);
+            //player.setCanMove(false);
             dialogueBox.SetActive(true);
         }
     }
