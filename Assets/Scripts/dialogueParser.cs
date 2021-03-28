@@ -9,15 +9,17 @@ public class dialogueParser : MonoBehaviour
     public TextAsset txtFile;
     public player_control player;
     private string[] lines;
-    private int currentLine  = 0;
+    private int currentLine = 0;
     private bool isFinished = false;
     private string charName = "";
     private string dialogue = "";
     private GameObject dialogueBox;
     private bool isInteracted = false;
-    private string[] emoticons = { ":|", ":)", ">:(" };
+    private string[] emoticons = { ":|", ":)", ">:(", ":O" };
+    private int[] who = {1, 2};
     public Image emote;
-    public Sprite[] emoteSprites;
+    public Sprite[] emoteSprites1;
+    public Sprite[] emoteSprites2;
 
     public Text name;
     public Text dialogueTxt;
@@ -47,8 +49,6 @@ public class dialogueParser : MonoBehaviour
         {
             string lineStr = lines[currentLine];
             string[] tokens = lineStr.Split(' ');
-
-    
 
             if (tokens[0] == "END")
             {
@@ -109,33 +109,64 @@ public class dialogueParser : MonoBehaviour
             }
             charName += ' ';
         }
-        int dialogueStart = getEmotion(tokens, emoticonStart);
+
+        int dialogueStart = getCharEmotion(tokens, emoticonStart);
         getDialogue(tokens, dialogueStart);
         return charName;
     }
 
-    int getEmotion(string[] tokens, int emoticonStart)
+    int getCharEmotion(string[] tokens, int emoticonStart)
     {
-        int dialogueStart = emoticonStart;
+        int dialogueStart = emoticonStart + 1;
         bool isEmoteFound = false;
-        for(int i  = emoticonStart; i < tokens.Length; i++)
-        {
-            if(isEmoteFound)
-            {
-                break;
-            }
+        int currChar = 0;
 
-            for(int j = 0; j < emoticons.Length; j++)
+        if((tokens[emoticonStart]) == "1")
+        {
+            currChar = 0;
+            for (int i = emoticonStart; i < tokens.Length; i++)
             {
-                if(tokens[i]==emoticons[j])
+                if (isEmoteFound)
                 {
-                    emote.sprite = emoteSprites[j];
-                    dialogueStart++;
-                    isEmoteFound = true;
-                    
+                    break;
+                }
+
+                for (int j = 0; j < emoticons.Length; j++)
+                {
+                    if (tokens[i] == emoticons[j])
+                    {
+                        emote.sprite = emoteSprites1[j];
+                        dialogueStart++;
+                        isEmoteFound = true;
+
+                    }
                 }
             }
         }
+        else
+        {
+            currChar = 1;
+            for (int i = emoticonStart; i < tokens.Length; i++)
+            {
+                if (isEmoteFound)
+                {
+                    break;
+                }
+
+                for (int j = 0; j < emoticons.Length; j++)
+                {
+                    if (tokens[i] == emoticons[j])
+                    {
+                        emote.sprite = emoteSprites2[j];
+                        dialogueStart++;
+                        isEmoteFound = true;
+
+                    }
+                }
+            }
+        }
+
+        
         return dialogueStart;
     }
     string getDialogue(string[] tokens, int startPos)
