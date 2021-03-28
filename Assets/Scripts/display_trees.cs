@@ -10,6 +10,18 @@ public class display_trees : MonoBehaviour
     public GameObject[] DamageCritChanceButtons;
     public GameObject[] DamageCritStunButtons;
 
+    public GameObject[] HealthIncreaseButtons;
+    public GameObject[] HealthRecoveryButtons;
+    public GameObject[] HealthRegenButtons;
+
+    public GameObject[] EnergyAttackButtons;
+    public GameObject[] EnergyRunButtons;
+    public GameObject[] EnergyWalkSpeedButtons;
+    public GameObject[] EnergyRunSpeedButtons;
+    public GameObject[] EnergyRegenButtons;
+
+    public Text SkillPointsText;
+
     private GameObject player;
 
     // Start is called before the first frame update
@@ -27,6 +39,14 @@ public class display_trees : MonoBehaviour
     public void UpdateDisplay()
     {
         UpdateDamage();
+        UpdateHealth();
+        UpdateEnergy();
+        UpdateSkillPointText();
+    }
+
+    private void UpdateSkillPointText()
+    {
+        SkillPointsText.text = ("Upgrade Points: " + player.GetComponent<player_control>().GetSkillPoints().ToString());
     }
 
     private void UpdateButtons(GameObject[] list, string tree_tag, string branch_tag)
@@ -49,6 +69,7 @@ public class display_trees : MonoBehaviour
         }
     }
 
+    //damage
     public void UpdateDamage()
     {
         UpdateDamageBuff();
@@ -72,5 +93,57 @@ public class display_trees : MonoBehaviour
     public void UpdateDamageCritStun()
     {
         UpdateButtons(DamageCritStunButtons, "Damage", "DamageCritStun");
+    }
+
+    //health
+    public void UpdateHealth()
+    {
+        UpdateHealthIncrease();
+        UpdateHealthRecovery();
+        UpdateHealthRegen();
+    }
+
+    public void UpdateHealthIncrease()
+    {
+        UpdateButtons(HealthIncreaseButtons, "Health", "HealthIncrease");
+    }
+    public void UpdateHealthRecovery()
+    {
+        UpdateButtons(HealthRecoveryButtons, "Health", "HealthRecovery");
+    }
+    public void UpdateHealthRegen()
+    {
+        UpdateButtons(HealthRegenButtons, "Health", "HealthRegen");
+    }
+
+    //energy
+    public void UpdateEnergy()
+    {
+        UpdateEnergyAttack();
+        UpdateEnergyRun();
+        UpdateWalkSpeed();
+        UpdateRunSpeed();
+        UpdateEnergyRegen();
+    }
+
+    public void UpdateEnergyAttack()
+    {
+        UpdateButtons(EnergyAttackButtons, "Energy", "AttackEnergy");
+    }
+    public void UpdateEnergyRun()
+    {
+        UpdateButtons(EnergyRunButtons, "Energy", "RunEnergy");
+    }
+    public void UpdateWalkSpeed()
+    {
+        UpdateButtons(EnergyWalkSpeedButtons, "Energy", "WalkSpeed");
+    }
+    public void UpdateRunSpeed()
+    {
+        UpdateButtons(EnergyRunSpeedButtons, "Energy", "RunSpeed");
+    }
+    public void UpdateEnergyRegen()
+    {
+        UpdateButtons(EnergyRegenButtons, "Energy", "EnergyRegen");
     }
 }

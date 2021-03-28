@@ -1,0 +1,12 @@
+Player: :| "Ugh-"
+Player: :| "Where am I?"
+Shop Keeper: >:( "Oi!"
+Shop Keeper: >:( "Dumbass!"
+Shop Keeper: :) "You're finally awake, I thought you were going into rigor-mortis over there!"
+Player: :| "Who the hell are you?"
+Shop Keeper: >:( "You don't remeber me? I should really just stop introducing myself at this point."
+Shop Keeper: :| "I'm the reason you have that sword."
+Shop Keeper: :| "And to answer your question, you're in random dungeon number..."
+Shop Keeper: :| "..."
+Shop Keeper: >:( "Whatever- doesn't matter, they're all the same."
+END
