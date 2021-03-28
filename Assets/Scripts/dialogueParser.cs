@@ -15,7 +15,7 @@ public class dialogueParser : MonoBehaviour
     private string dialogue = "";
     private GameObject dialogueBox;
     private bool isInteracted = false;
-    private string[] emoticons = { ":|", ":)", ">:(" };
+    private string[] emoticons = { ":|", ":)", ">:(", ":o" };
     public Image emote;
     public Sprite[] emoteSprites;
 
@@ -109,12 +109,12 @@ public class dialogueParser : MonoBehaviour
             }
             charName += ' ';
         }
-        int dialogueStart = getEmotion(tokens, emoticonStart);
+        int dialogueStart = getEmotion(tokens, emoticonStart,charName);
         getDialogue(tokens, dialogueStart);
         return charName;
     }
 
-    int getEmotion(string[] tokens, int emoticonStart)
+    int getEmotion(string[] tokens, int emoticonStart, string charName)
     {
         int dialogueStart = emoticonStart;
         bool isEmoteFound = false;
@@ -129,7 +129,16 @@ public class dialogueParser : MonoBehaviour
             {
                 if(tokens[i]==emoticons[j])
                 {
-                    emote.sprite = emoteSprites[j];
+                  
+                    if(charName== "Player")
+                    {
+                        print("ach");
+                        emote.sprite = emoteSprites[j+4];
+                    }
+                    else
+                    {
+                        emote.sprite = emoteSprites[j];
+                    }
                     dialogueStart++;
                     isEmoteFound = true;
                     
