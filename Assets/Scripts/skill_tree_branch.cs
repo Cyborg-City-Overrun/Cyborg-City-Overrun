@@ -97,8 +97,9 @@ public class skill_tree_branch
     }
 
     public void Unlock()
-    { 
-        if (IsUnlockable())
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (IsUnlockable() && player.GetComponent<player_control>().UseSkillPoint())
         {
             isUnlocked = true;
             isActive = true;

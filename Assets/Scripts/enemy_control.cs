@@ -37,6 +37,8 @@ public class enemy_control : MonoBehaviour
     public enum Attacks { directional, area, variable};
     public Attacks attackPattern;
 
+    private float stunTime;
+
 
     private void Start()
     {
@@ -56,6 +58,10 @@ public class enemy_control : MonoBehaviour
 
     private void CheckAttackAndMove()
     {
+        if (isStunned())
+        {
+            return;
+        }
         if (!myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && !myAnim.GetCurrentAnimatorStateInfo(0).IsTag("PreAttack")) //if not currently attacking
         {
             //remove hitbox from last attack
@@ -244,6 +250,24 @@ public class enemy_control : MonoBehaviour
                 drop = Instantiate(drops[randomItemIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y - 1, -1), Quaternion.identity);
             }
         }
+    }
+
+    public void Stun(float time)
+    {
+        stunTime = time;
+        isStunned();
+    }
+
+    public bool isStunned()
+    {
+        if (stunTime > 0)
+        {
+            myAnim.SetBool("isMoving", false);
+            myAnim.SetBool("isAttacking", false);
+            stunTime -= Time.fixedDeltaTime;
+            return true;
+        }
+        return false;
     }
 
     public float getDamage()

@@ -126,7 +126,7 @@ public class sword_class
         return Random.Range(-myVariance, myVariance + 1);
     }
 
-    private float GetCrit()
+    public float GetCrit()
     {
         if (Random.Range(0, 100) < myCritChance + GetUpgradeModifierTotalCrit() /* + skill tree crit chance*/)
         {
@@ -151,6 +151,10 @@ public class sword_class
     public float GetCritDamage()
     {
         return myCritDamage;
+    }
+    public float GetCritChance()
+    {
+        return myCritChance;
     }
 
 
