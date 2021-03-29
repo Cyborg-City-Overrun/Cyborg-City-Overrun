@@ -1,0 +1,6 @@
+Shop Keeper: :| "Believe it or not, selling potions is actually a lucrative business."
+Shop Keeper: :| "There are so many scam artists out there though-"
+Shop Keeper: :) "But that only makes my stuff, the legit stuff, more valuable on the market"
+Player: :| "That's cool, but I don't care about being some sleazeball salesman"
+Shop Keeper: :) "Well, that's your loss-"
+END
