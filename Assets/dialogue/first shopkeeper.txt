@@ -1,0 +1,5 @@
+Shop Keeper: :) "Welcome to the potion shop!"
+Shop Keeper: :| "A one stop shop for all of your potion needs"
+Shop Keeper: :) "(I know you'll need it lol)"
+Player: :| "Thank you... I think?"
+END

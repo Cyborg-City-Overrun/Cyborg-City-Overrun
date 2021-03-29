@@ -9,13 +9,16 @@ public class display_shop : MonoBehaviour
     public GameObject[] potions;
     public Sprite locked;
     public GameObject myPlayer;
+    public GameObject shopkeeper;
     public enum Displays { potions };
     public Displays currentDisplay;
+    public bool firstInteract;
 
     // Start is called before the first frame update
     void Start()
     {
         myPlayer = GameObject.FindGameObjectWithTag("Player");
+        firstInteract = false;
     }
 
     private void OnEnable()
@@ -36,6 +39,11 @@ public class display_shop : MonoBehaviour
     public void close()
     {
         gameObject.SetActive(false);
+    }
+
+    public void talk()
+    {
+        firstInteract = shopkeeper.GetComponent<shopKeeper>().doInteract(firstInteract);
     }
 
     public void DisplayAll()

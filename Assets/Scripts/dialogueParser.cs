@@ -36,7 +36,6 @@ public class dialogueParser : MonoBehaviour
     {
         if(isInteracted)
         {
-
             parse();
         }
     }
@@ -56,6 +55,8 @@ public class dialogueParser : MonoBehaviour
                 dialogueBox.SetActive(false);
                 player.setCanMove(true);
                 isInteracted = false;
+                currentLine = 0;
+                lineStr = lines[0];
             }
            
             
@@ -75,6 +76,8 @@ public class dialogueParser : MonoBehaviour
             currentLine++;
             isFinished = !isFinished;
         }
+
+
     }
 
     string getCharacterName(string[] tokens)
@@ -188,7 +191,7 @@ public class dialogueParser : MonoBehaviour
         {
             isInteracted = true;
             player.setCanMove(false);
-            dialogueBox.SetActive(true);
+            //dialogueBox.SetActive(true);
         }
     }
 
