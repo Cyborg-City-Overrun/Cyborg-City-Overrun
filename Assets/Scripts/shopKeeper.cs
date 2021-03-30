@@ -5,13 +5,14 @@ using UnityEngine;
 public class shopKeeper : MonoBehaviour
 {
 
-    public dialogueParser dialogue;
-    public dialogueParser firstInteraction;
+    public dialogueParser dialogue, firstInteraction, bossMono, bossDead;
     public dialogueParser[] randTalk;
+    private GameObject player;
     private bool firstInteracted = false;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         dialogue.setIsInteracted(true);
     }
 
@@ -34,6 +35,18 @@ public class shopKeeper : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void bossInteract(bool alive)
+    {
+        if (alive == true)
+        {
+            bossMono.setIsInteracted(true);
+        }
+        else
+        {
+            bossDead.setIsInteracted(true);
+        }
     }
 
 }

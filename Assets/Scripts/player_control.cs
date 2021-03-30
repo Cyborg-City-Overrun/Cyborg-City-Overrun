@@ -98,6 +98,11 @@ public class player_control : MonoBehaviour
             Interact();
         }
 
+        if (!canMove)
+        {
+            myAnim.GetComponent<Animator>().Play("Idle",0);
+        }
+
         //move this later
         if (Input.GetKeyDown(KeyCode.U))
         {

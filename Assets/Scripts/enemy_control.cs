@@ -31,6 +31,8 @@ public class enemy_control : MonoBehaviour
 
     public GameObject floatingDamage;
 
+    public GameObject boss;
+
     public GameObject hitBox; //set to parent that holds hitboxes
     private bool attacked; //used to trigger Attack() call once
 
@@ -241,7 +243,17 @@ public class enemy_control : MonoBehaviour
         if (myHealth <= 0)
         {
             myTarget.GetComponent<player_control>().Transaction(Random.Range(deathRewardMin, deathRewardMax + 1));
-            Destroy(gameObject);
+
+            string bossName = "boss";
+            if (GameObject.Find(bossName).GetComponent<enemy_control>().myHealth <= 0)
+            {
+                Destroy(gameObject);
+                boss.GetComponent<shopKeeper>().bossInteract(false);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
             GameObject drop;
             int randomItemIndex = Random.Range(-3, drops.Length);
 
