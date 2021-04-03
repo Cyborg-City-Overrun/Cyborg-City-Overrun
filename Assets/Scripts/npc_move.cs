@@ -14,10 +14,17 @@ public class npc_move : MonoBehaviour
 
     public float mySpeed = 1f;
 
+
+    private Animator myAnim;
+
+
     // Start is called before the first frame update
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
+
+        myAnim = GetComponent<Animator>();
+        myAnim.SetBool("isMoving", false);
     }
 
     // Update is called once per frame
@@ -37,6 +44,9 @@ public class npc_move : MonoBehaviour
             ChangeDirection();
         }
 
+        myAnim.SetFloat("moveX", myMovement.x);
+        myAnim.SetFloat("moveY", myMovement.y);
+
         myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
     }
 
@@ -44,6 +54,8 @@ public class npc_move : MonoBehaviour
     {
 
         int move = Random.Range(-1, 2); //-1, 0, or 1
+
+
         int plane = Random.Range(0, 2); //0 or 1 (horizontal or vertical)
 
         if (plane == 0)
@@ -57,7 +69,15 @@ public class npc_move : MonoBehaviour
             myMovement.x = 0;
         }
 
-        
+        if (move == 0)
+        {
+            myAnim.SetBool("isMoving", false);
+        }
+        else
+        {
+            myAnim.SetBool("isMoving", true);
+        }
+
         myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
 
     }
