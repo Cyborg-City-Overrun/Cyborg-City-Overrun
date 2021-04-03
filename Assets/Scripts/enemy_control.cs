@@ -286,4 +286,9 @@ public class enemy_control : MonoBehaviour
     {
         return myPower;
     }
+
+    public float getMyHealth()
+    {
+        return myHealth;
+    }
 }
