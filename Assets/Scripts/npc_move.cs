@@ -7,6 +7,8 @@ public class npc_move : MonoBehaviour
     private Rigidbody2D myRigidBody;
     private Vector2 myMovement = Vector2.zero;
 
+    public BoxCollider2D collider;
+
     private float myTimer = 0;
     private float myChangeTime = 0;
 
@@ -21,6 +23,7 @@ public class npc_move : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        myRigidBody.velocity = Vector2.zero;
         Move();
     }
 
@@ -29,39 +32,39 @@ public class npc_move : MonoBehaviour
         myTimer += Time.deltaTime;
         if (myTimer >= myChangeTime)
         {
-            print("changing direction");
             myTimer = 0;
             myChangeTime = Random.Range(1f, 3f);
             ChangeDirection();
-            print("New direction: (" + myMovement.x + ", " + myMovement.y + ")");
         }
 
         myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
-
     }
 
     private void ChangeDirection()
     {
-        float moveX;
-        float moveY;
-        float rand = Random.Range(0f, 1f);
-        float randX = 1 - rand;
-        float randY = 0 + rand;
 
-        int xSign = Random.Range(0, 2); //returns 0 or 1
-        if (xSign == 0)
+        int move = Random.Range(-1, 2); //-1, 0, or 1
+        int plane = Random.Range(0, 2); //0 or 1 (horizontal or vertical)
+
+        if (plane == 0)
         {
-            randX *= -1;
+            myMovement.x = move;
+            myMovement.y = 0;
         }
-        int ySign = Random.Range(0, 2); //returns 0 or 1
-        if (ySign == 0)
+        else
         {
-            randY *= -1;
+            myMovement.y = move;
+            myMovement.x = 0;
         }
 
-        moveX = 0 - randX;
-        moveY = 0 + randY;
-        myMovement.x = moveX;
-        myMovement.y = moveY;
+        
+        myRigidBody.MovePosition(myRigidBody.position + myMovement * mySpeed * Time.fixedDeltaTime);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        myMovement.x *= -1;
+        myMovement.y *= -1;
     }
 }
