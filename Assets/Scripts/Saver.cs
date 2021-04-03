@@ -60,7 +60,6 @@ public class Saver : MonoBehaviour
             for (int j = 0; j < swordSaveNames.Length; j++)
             {
                 PlayerPrefs.SetInt(upgrades[i, j], allUp[j].Save());
-                print(PlayerPrefs.GetInt(upgrades[i, j]));
             }
         }
         

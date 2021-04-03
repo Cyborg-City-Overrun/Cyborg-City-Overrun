@@ -18,9 +18,10 @@ public class dialogueParser : MonoBehaviour
     private string[] emoticons = { ":|", ":)", ">:(", ":o" };
     public Image emote;
     public Sprite[] emoteSprites;
-
     public Text name;
     public Text dialogueTxt;
+
+    private bool isEnd = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +55,7 @@ public class dialogueParser : MonoBehaviour
                 isFinished = true;
                 dialogueBox.SetActive(false);
                 player.setCanMove(true);
+                isEnd = true;
                 isInteracted = false;
                 currentLine = 0;
                 lineStr = lines[0];
@@ -135,7 +137,6 @@ public class dialogueParser : MonoBehaviour
                   
                     if(charName== "Player")
                     {
-                        print("ach");
                         emote.sprite = emoteSprites[j+4];
                     }
                     else
@@ -200,5 +201,10 @@ public class dialogueParser : MonoBehaviour
         this.isInteracted = newState;
         player.setCanMove(!newState);
         dialogueBox.SetActive(newState);
+    }
+
+    public bool getIsEnd()
+    {
+        return isEnd;
     }
 }
