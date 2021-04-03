@@ -62,6 +62,8 @@ public class player_control : MonoBehaviour
 
     private bool canMove = true;
 
+    KeyCode interactKey = KeyCode.E;
+
 
     // Start is called before the first frame update
     void Start()
@@ -263,14 +265,23 @@ public class player_control : MonoBehaviour
     private void Interact()
     {
         //make a hitbox to interact with things in the world
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(interactKey))
         {
             InteractHitbox.gameObject.SetActive(true);
         }
-        else if (!Input.GetKey(KeyCode.E))
+        else if (!Input.GetKey(interactKey))
         {
             InteractHitbox.gameObject.SetActive(false);
         }
+    }
+
+    public void SetInteractKey(KeyCode key)
+    {
+        interactKey = key;
+    }
+    public string GetInteractKey()
+    {
+        return interactKey.ToString();
     }
 
     public void TakeDamage(float damage)
