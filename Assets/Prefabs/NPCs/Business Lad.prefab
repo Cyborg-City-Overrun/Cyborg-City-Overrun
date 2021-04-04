@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1358934167509391733}
   - component: {fileID: 2703090016572271101}
   - component: {fileID: 2602098860557317287}
+  - component: {fileID: 3578395658679438740}
   m_Layer: 0
   m_Name: Business Lad
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758977243882173334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 235.21112, y: -413.34116, z: 0}
+  m_LocalPosition: {x: 13.123602, y: -17.465425, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1469894932084080896}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3638878185727999710, guid: 6707b00ad7f4d674fbce525307d7a87b,
+  m_Sprite: {fileID: -121427704643487620, guid: 1ea1613727755434b8332c82d03d4938,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,7 +145,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5625, y: 1.28125}
+    oldSize: {x: 0.625, y: 1.34375}
     newSize: {x: 0.5625, y: 1.28125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -170,6 +171,20 @@ PolygonCollider2D:
       - {x: 0.31231403, y: 0.00018882751}
       - {x: 0.29796028, y: 0.40065384}
       - {x: 0.21875, y: 0.5066109}
+--- !u!114 &3578395658679438740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758977243882173334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edf8fb041076bd47b3d337fb90a5dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 5590971663327995960}
+  mySpeed: 0.75
 --- !u!1 &3655647720907178384
 GameObject:
   m_ObjectHideFlags: 0

@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 6233886782623356156}
   - component: {fileID: 4503931142065305848}
   - component: {fileID: 642656011198180009}
+  - component: {fileID: 5113277857082862691}
   m_Layer: 0
   m_Name: The Throne
   m_TagString: Untagged
@@ -220,3 +221,17 @@ PolygonCollider2D:
     - - {x: -0.0625, y: 0.046875}
       - {x: -0.0625, y: -0.078125}
       - {x: -0.09375, y: -0.078125}
+--- !u!114 &5113277857082862691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158658223578972461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edf8fb041076bd47b3d337fb90a5dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 0}
+  mySpeed: 0.75
