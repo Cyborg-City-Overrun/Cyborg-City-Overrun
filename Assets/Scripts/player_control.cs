@@ -62,6 +62,8 @@ public class player_control : MonoBehaviour
 
     private bool canMove = true;
 
+    KeyCode interactKey = KeyCode.E;
+
 
     // Start is called before the first frame update
     void Start()
@@ -91,7 +93,7 @@ public class player_control : MonoBehaviour
             mySword = swordList.getSword(0);
         }
 
-        if(canMove)
+        if (canMove)
         {
             SwitchWeapon();
             ConsumePotions();
@@ -100,7 +102,7 @@ public class player_control : MonoBehaviour
 
         if (!canMove)
         {
-            myAnim.GetComponent<Animator>().Play("Idle",0);
+            myAnim.GetComponent<Animator>().Play("Idle", 0);
         }
 
         //move this later
@@ -263,14 +265,24 @@ public class player_control : MonoBehaviour
     private void Interact()
     {
         //make a hitbox to interact with things in the world
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(interactKey))
         {
             InteractHitbox.gameObject.SetActive(true);
         }
-        else if (!Input.GetKey(KeyCode.E))
+        else if (!Input.GetKey(interactKey))
         {
             InteractHitbox.gameObject.SetActive(false);
         }
+    }
+
+    public void SetInteractKey(KeyCode key)
+    {
+        interactKey = key;
+    }
+
+    public string GetInteractKey()
+    {
+        return interactKey.ToString();
     }
 
     public void TakeDamage(float damage)
@@ -344,7 +356,7 @@ public class player_control : MonoBehaviour
                     mySword = swordList.getSword(0);
                 }
             } while (mySword.GetUnlocked() == false);
-            
+
             print("current sword: " + mySword.GetName());
             boxIndex = mySword.GetSize();
         }
@@ -389,7 +401,7 @@ public class player_control : MonoBehaviour
     }
     public void setMyHealth(float newHealth)
     {
-         this.myHealth = newHealth;
+        this.myHealth = newHealth;
     }
 
     public float getMyEnergy()
