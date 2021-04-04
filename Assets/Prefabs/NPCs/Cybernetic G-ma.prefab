@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4292192240769238041}
   - component: {fileID: 7677932361520832550}
   - component: {fileID: 1562796624170678364}
+  - component: {fileID: 208793307213633688}
   m_Layer: 0
   m_Name: Cybernetic G-ma
   m_TagString: Untagged
@@ -170,6 +171,20 @@ PolygonCollider2D:
       - {x: 0.25480366, y: 0.00018882751}
       - {x: 0.28656197, y: 0.3030281}
       - {x: 0.27742004, y: 0.5066414}
+--- !u!114 &208793307213633688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960969684003600159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edf8fb041076bd47b3d337fb90a5dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 0}
+  mySpeed: 0.75
 --- !u!1 &7396328391886383198
 GameObject:
   m_ObjectHideFlags: 0

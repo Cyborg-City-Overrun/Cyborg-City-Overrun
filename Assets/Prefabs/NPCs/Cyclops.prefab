@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 560279545927962545}
   - component: {fileID: 4321195086251963317}
   - component: {fileID: 8852209276441943042}
+  - component: {fileID: 3859184213760673174}
   m_Layer: 0
   m_Name: Cyclops
   m_TagString: Untagged
@@ -230,3 +231,17 @@ PolygonCollider2D:
       - {x: 0.1918335, y: 0.12387085}
       - {x: 0.2404499, y: 0.307209}
       - {x: 0.21875, y: 0.5066109}
+--- !u!114 &3859184213760673174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861807479851686710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edf8fb041076bd47b3d337fb90a5dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 0}
+  mySpeed: 0.75
