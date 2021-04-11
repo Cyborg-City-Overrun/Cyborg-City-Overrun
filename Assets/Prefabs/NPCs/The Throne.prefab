@@ -233,5 +233,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edf8fb041076bd47b3d337fb90a5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 0}
+  collider: {fileID: 421477665787977814}
   mySpeed: 0.75

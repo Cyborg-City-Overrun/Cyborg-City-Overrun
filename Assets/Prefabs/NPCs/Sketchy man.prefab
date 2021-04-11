@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2713551333041790094}
   - component: {fileID: 3770059665411572806}
   - component: {fileID: -6645930106792441393}
-  - component: {fileID: 6866700638207326507}
   m_Layer: 0
   m_Name: Sketchy man
   m_TagString: Untagged
@@ -185,22 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edf8fb041076bd47b3d337fb90a5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 0}
+  collider: {fileID: 7893823722218553731}
   mySpeed: 1
---- !u!114 &6866700638207326507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2346173529005723619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7edf8fb041076bd47b3d337fb90a5dc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider: {fileID: 0}
-  mySpeed: 0.75
 --- !u!1 &7235306124024840890
 GameObject:
   m_ObjectHideFlags: 0
