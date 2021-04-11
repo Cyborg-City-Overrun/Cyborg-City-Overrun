@@ -6,52 +6,55 @@ using UnityEngine.UI;
 public class KeyBindScript : MonoBehaviour
 {
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
+    
 
     public Text interact, pauseMenu, inventory, swordSwitch, healthPotion, energyPotion, attackBuffPotion;
 
     private GameObject currentKey;
+
+
     void Start()
     {
-        keys.Add("Interact", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Interact", "D")));
-        keys.Add("Pause Menu", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Pause Menu", "M")));
-        keys.Add("Inventory", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Inventory", "T")));
-        keys.Add("Sword Switch", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Sword Switch", "Z")));
-        keys.Add("Health Potion", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Health Potion", "F")));
-        keys.Add("Energy Potion", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Energy Potion", "G")));
-        keys.Add("Attack Buff Potion", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Attack Buff Potion", "H")));
+        keys.Add("InteractControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InteractControl", "E")));
+        keys.Add("PauseMenuControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseMenuControl", "M")));
+        keys.Add("InventoryControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InventoryControl", "T")));
+        keys.Add("SwordSwitchControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("SwordSwitchControl", "Z")));
+        keys.Add("HealthPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("HealthPotionControl", "F")));
+        keys.Add("EnergyPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("EnergyPotionControl", "G")));
+        keys.Add("AttackBuffPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackBuffPotionControl", "H")));
 
-        interact.text = keys["Interact"].ToString();
-        pauseMenu.text = keys["Pause Menu"].ToString();
-        inventory.text = keys["Inventory"].ToString();
-        swordSwitch.text = keys["Sword Switch"].ToString();
-        healthPotion.text = keys["Health Potion"].ToString();
-        energyPotion.text = keys["Energy Potion"].ToString();
-        attackBuffPotion.text = keys["Attack Buff Potion"].ToString();
+        interact.text = keys["InteractControl"].ToString();
+        pauseMenu.text = keys["PauseMenuControl"].ToString();
+        inventory.text = keys["InventoryControl"].ToString();
+        swordSwitch.text = keys["SwordSwitchControl"].ToString();
+        healthPotion.text = keys["HealthPotionControl"].ToString();
+        energyPotion.text = keys["EnergyPotionControl"].ToString();
+        attackBuffPotion.text = keys["AttackBuffPotionControl"].ToString();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keys["Interact"])){
+        if (Input.GetKeyDown(keys["InteractControl"])){
             Debug.Log("Interact");
         }
-        if (Input.GetKeyDown(keys["Pause Menu"])){
+        if (Input.GetKeyDown(keys["PauseMenuControl"])){
             Debug.Log("Pause Menu");
         }
-        if (Input.GetKeyDown(keys["Inventory"])){
+        if (Input.GetKeyDown(keys["InventoryControl"])){
             Debug.Log("Inventory");
         }
-        if (Input.GetKeyDown(keys["Sword Switch"])){
+        if (Input.GetKeyDown(keys["SwordSwitchControl"])){
             Debug.Log("Sword Switch");
         }
-        if (Input.GetKeyDown(keys["Health Potion"])){
+        if (Input.GetKeyDown(keys["HealthPotionControl"])){
             Debug.Log("Health Potion");
         }
-        if (Input.GetKeyDown(keys["Energy Potion"])){
+        if (Input.GetKeyDown(keys["EnergyPotionControl"])){
             Debug.Log("Energy Potion");
         }
-        if (Input.GetKeyDown(keys["Attack Buff Potion"])){
+        if (Input.GetKeyDown(keys["AttackBuffPotionControl"])){
             Debug.Log("Attack Buff Potion");
         }
     }
@@ -76,6 +79,17 @@ public class KeyBindScript : MonoBehaviour
         foreach(var key in keys){
             PlayerPrefs.SetString(key.Key, key.Value.ToString());
         }
+        PlayerPrefs.Save();
+    }
+    public void ResetKeys()
+    {
+        PlayerPrefs.SetString("InteractControl", "E");
+        PlayerPrefs.SetString("PauseMenuControl", "M");
+        PlayerPrefs.SetString("InventoryControl", "T");
+        PlayerPrefs.SetString("SwordSwitchControl", "Z");
+        PlayerPrefs.SetString("HealthPotionControl", "F");
+        PlayerPrefs.SetString("EnergyPotionControl", "G");
+        PlayerPrefs.SetString("AttackBuffPotionControl", "H");
         PlayerPrefs.Save();
     }
 }
