@@ -13,6 +13,11 @@ public class Saver : MonoBehaviour
     private string[] daggerUpgrades = { "DDamage", "DEnergy", "DCrit" };
 
     public string[,] upgrades = new string[3, 3];
+
+
+    private KeyBindScript keyScript = new KeyBindScript();
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,6 +122,9 @@ public class Saver : MonoBehaviour
 
         PlayerPrefs.SetFloat("Health", 100f);
         PlayerPrefs.SetFloat("Energy", 100f);
+
+        keyScript.ResetKeys();
+        
     }
 
     public void loadUpgrades()

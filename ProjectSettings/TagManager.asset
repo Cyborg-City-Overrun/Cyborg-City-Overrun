@@ -15,6 +15,7 @@ TagManager:
   - DBox
   - Image
   - starterDoor
+  - KeyManager
   layers:
   - Default
   - TransparentFX
