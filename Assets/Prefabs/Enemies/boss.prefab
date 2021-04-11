@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 5795297901571502704}
   - component: {fileID: 4929440162084024382}
   - component: {fileID: 8259365577278483178}
+  - component: {fileID: 4204390669362562357}
   m_Layer: 0
   m_Name: boss
   m_TagString: Enemy
@@ -568,6 +569,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4204390669362562357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559560461978980265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79a94b32b833764eb249fa38441f7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 0}
+  bossDying: {fileID: 0}
 --- !u!1 &7442535490614997845
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +782,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8711736328715151512}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
