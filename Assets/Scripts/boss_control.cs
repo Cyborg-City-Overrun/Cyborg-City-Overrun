@@ -8,6 +8,7 @@ public class boss_control : MonoBehaviour
     public GameObject boss;
 
     // Update is called once per frame
+
     void Update()
     {
 
