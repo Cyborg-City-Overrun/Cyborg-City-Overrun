@@ -6,6 +6,7 @@ public class boss_control : MonoBehaviour
 {
 
     public GameObject boss;
+    public GameObject bossDying;
 
     // Update is called once per frame
 
@@ -17,5 +18,6 @@ public class boss_control : MonoBehaviour
     private void OnDisable()
     {
         boss.GetComponent<shopKeeper>().bossInteract(false);
+        Instantiate(bossDying.gameObject, new Vector3(this.transform.position.x, this.transform.position.y, -1), Quaternion.identity);
     }
 }
