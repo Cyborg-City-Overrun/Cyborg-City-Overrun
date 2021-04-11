@@ -7,6 +7,8 @@ public class door_random : MonoBehaviour
     private GameObject player;
     public GameObject roomSet;
     private Saver save;
+    public AudioSource audio;
+    public AudioClip dungeonMusic;
 
     private void Start()
     {
@@ -18,7 +20,12 @@ public class door_random : MonoBehaviour
     {
         if (collision.tag == "Interact")
         {
-            
+            if(this.tag=="starterDoor")
+            {
+                audio.clip = dungeonMusic;
+                audio.Play();
+
+            }
             save.saveGame();
             int roomNum = Random.Range(0, roomSet.transform.childCount);
             player.transform.position = roomSet.transform.GetChild(roomNum).GetChild(0).transform.position; //teleport the player to the spawnpoint of the random

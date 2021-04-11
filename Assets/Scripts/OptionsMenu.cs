@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class OptionsMenu : MonoBehaviour
 {
     public Canvas PauseMenu;
+    public Canvas optionsMenu;
     public Canvas ControlsMenu;
     //Function to load the game
     //Function to bring to Main menu
@@ -35,7 +36,7 @@ public class OptionsMenu : MonoBehaviour
     public void Options()
     {
         //open the options menu
-        print("This tab isnt set up yet");
+        optionsMenu.gameObject.SetActive(true);
     }
 
 }
