@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\inventory_item.cs" />
-    <Compile Include="Assets\Scripts\Skill Tree Scripts\SkillTreeManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\KeyBindScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -102,7 +101,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\Scripts\Skill Tree Scripts\SkillTree.cs" />
     <Compile Include="Assets\Scripts\Saver.cs" />
     <Compile Include="Assets\Scripts\potion_timer.cs" />
     <Compile Include="Assets\Scripts\Shop Scripts\shop.cs" />
@@ -138,7 +136,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\pause_game.cs" />
-    <Compile Include="Assets\Scripts\Skill Tree Scripts\SkillTreeNode.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Skill Tree Scripts\tree_menu.cs" />
