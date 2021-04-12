@@ -12,6 +12,7 @@ public class KeyBindScript : MonoBehaviour
 
     private GameObject currentKey;
 
+    private KeyCode[] invalidKeys;
 
     void Start()
     {
@@ -31,31 +32,32 @@ public class KeyBindScript : MonoBehaviour
         energyPotion.text = keys["EnergyPotionControl"].ToString();
         attackBuffPotion.text = keys["AttackBuffPotionControl"].ToString();
 
+        invalidKeys = new KeyCode[] { KeyCode.Space, KeyCode.Escape, KeyCode.Return, KeyCode.Backspace,
+            KeyCode.F1, KeyCode.F2, KeyCode.F3, KeyCode.F4, KeyCode.F5, KeyCode.F6, KeyCode.F7, KeyCode.F8, 
+            KeyCode.F9, KeyCode.F10, KeyCode.F11, KeyCode.F12, KeyCode.F13, KeyCode.F14, KeyCode.F15,
+            KeyCode.CapsLock, KeyCode.Mouse0, KeyCode.Mouse1, KeyCode.Mouse2, KeyCode.Mouse3, 
+            KeyCode.Mouse4, KeyCode.Mouse5, KeyCode.Mouse6, KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D,
+            KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow };
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keys["InteractControl"])){
-            Debug.Log("Interact");
+        UpdateDisplay();
+    }
+
+    private void UpdateDisplay()
+    {
+        GameObject cl = GameObject.FindGameObjectWithTag("ControlList");
+        if (cl == null)
+        {
+            return;
         }
-        if (Input.GetKeyDown(keys["PauseMenuControl"])){
-            Debug.Log("Pause Menu");
-        }
-        if (Input.GetKeyDown(keys["InventoryControl"])){
-            Debug.Log("Inventory");
-        }
-        if (Input.GetKeyDown(keys["SwordSwitchControl"])){
-            Debug.Log("Sword Switch");
-        }
-        if (Input.GetKeyDown(keys["HealthPotionControl"])){
-            Debug.Log("Health Potion");
-        }
-        if (Input.GetKeyDown(keys["EnergyPotionControl"])){
-            Debug.Log("Energy Potion");
-        }
-        if (Input.GetKeyDown(keys["AttackBuffPotionControl"])){
-            Debug.Log("Attack Buff Potion");
+        for (int i = 0; i < cl.transform.childCount; i++)
+        {
+            Transform child = cl.transform.GetChild(i);
+            child.GetChild(0).GetComponent<Text>().text = keys[child.name].ToString();
+
         }
     }
 
@@ -63,12 +65,41 @@ public class KeyBindScript : MonoBehaviour
     {
         if (currentKey != null){
             Event e = Event.current;
-            if (e.isKey){
+            keys[currentKey.name] = KeyCode.None;
+            if (e.isKey && CheckKeyAvailable(e)){
                 keys[currentKey.name] = e.keyCode;
-                currentKey.transform.GetChild(0).GetComponent<Text>().text = e.keyCode.ToString();
+                //currentKey.transform.GetChild(0).GetComponent<Text>().text = e.keyCode.ToString();
                 currentKey = null;
             }
         }
+    }
+
+    private bool CheckKeyAvailable(Event e)
+    {
+        GameObject cl = GameObject.FindGameObjectWithTag("ControlList");
+        if (cl == null)
+        {
+            return false;
+        }
+        for (int i = 0; i < cl.transform.childCount; i++)
+        {
+            Transform child = cl.transform.GetChild(i);
+
+            if (keys[child.name] == e.keyCode)
+            {
+                print("INVALID");
+                return false;
+            }
+        }
+        for (int i = 0; i < invalidKeys.Length; i++)
+        {
+            if (invalidKeys[i] == e.keyCode)
+            {
+                print("INVALID");
+                return false;
+            }
+        }
+        return true;
     }
 
     public void ChangeKey(GameObject clicked){
@@ -91,5 +122,20 @@ public class KeyBindScript : MonoBehaviour
         PlayerPrefs.SetString("EnergyPotionControl", "G");
         PlayerPrefs.SetString("AttackBuffPotionControl", "H");
         PlayerPrefs.Save();
+
+        keys.Clear();
+
+        keys.Add("InteractControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InteractControl", "E")));
+        keys.Add("PauseMenuControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseMenuControl", "M")));
+        keys.Add("InventoryControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InventoryControl", "T")));
+        keys.Add("SwordSwitchControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("SwordSwitchControl", "Z")));
+        keys.Add("HealthPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("HealthPotionControl", "F")));
+        keys.Add("EnergyPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("EnergyPotionControl", "G")));
+        keys.Add("AttackBuffPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackBuffPotionControl", "H")));
+    }
+
+    public KeyCode GetKey(string key)
+    {
+        return keys[key];
     }
 }
