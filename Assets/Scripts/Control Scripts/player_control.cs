@@ -286,7 +286,6 @@ public class player_control : MonoBehaviour
         myHealth -= damage;
         if (myHealth <= 0)
         {
-            //Time.timeScale = 0;
             DeathMenu.gameObject.SetActive(true);
         }
         HealthBar.SetHealth(myHealth);
