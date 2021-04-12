@@ -62,8 +62,8 @@ public class player_control : MonoBehaviour
 
     private bool canMove = true;
 
-    KeyCode interactKey = KeyCode.E;
-
+    private GameObject keyManager;
+    private KeyBindScript keyScript;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +84,9 @@ public class player_control : MonoBehaviour
         myMoney = PlayerPrefs.GetInt("MoneyAmt");
         treeList = GetComponent<tree_list>();
         mySkillPoints = 30;
+
+        keyManager = GameObject.FindGameObjectWithTag("KeyManager");
+        keyScript = keyManager.GetComponent<KeyBindScript>();
     }
 
     private void Update()
@@ -96,9 +99,11 @@ public class player_control : MonoBehaviour
         if (canMove)
         {
             SwitchWeapon();
-            ConsumePotions();
             Interact();
+
+            ConsumePotions();
         }
+
 
         if (!canMove)
         {
@@ -114,6 +119,7 @@ public class player_control : MonoBehaviour
 
     void FixedUpdate()
     {
+
         transform.position = new Vector3(transform.position.x, transform.position.y, -4);
 
         myMovement.x = Input.GetAxisRaw("Horizontal");
@@ -127,12 +133,12 @@ public class player_control : MonoBehaviour
         camTF.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
 
         //Code added by Tim to go back to Main menu if button M is pressed
-        if (Input.GetKey(KeyCode.M))
+        if (Input.GetKey(keyScript.GetKey("PauseMenuControl")))
         {
             PauseMenu.gameObject.SetActive(true);
         }
 
-        if (Input.GetKey(KeyCode.T))
+        if (Input.GetKey(keyScript.GetKey("InventoryControl")))
         {
             InventoryMenu.gameObject.SetActive(true);
         }
@@ -245,17 +251,17 @@ public class player_control : MonoBehaviour
 
     private void ConsumePotions()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(keyScript.GetKey("HealthPotionControl")))
         {
             myPotions[0].GetComponent<potions>().ConsumePotion();
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(keyScript.GetKey("EnergyPotionControl")))
         {
             myPotions[1].GetComponent<potions>().ConsumePotion();
         }
 
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(keyScript.GetKey("AttackBuffPotionControl")))
         {
             myPotions[2].GetComponent<potions>().ConsumePotion();
         }
@@ -265,24 +271,14 @@ public class player_control : MonoBehaviour
     private void Interact()
     {
         //make a hitbox to interact with things in the world
-        if (Input.GetKey(interactKey))
+        if (Input.GetKey(keyScript.GetKey("InteractControl")))
         {
             InteractHitbox.gameObject.SetActive(true);
         }
-        else if (!Input.GetKey(interactKey))
+        else
         {
             InteractHitbox.gameObject.SetActive(false);
         }
-    }
-
-    public void SetInteractKey(KeyCode key)
-    {
-        interactKey = key;
-    }
-
-    public string GetInteractKey()
-    {
-        return interactKey.ToString();
     }
 
     public void TakeDamage(float damage)
@@ -343,7 +339,7 @@ public class player_control : MonoBehaviour
 
     public void SwitchWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(keyScript.GetKey("SwordSwitchControl")))
         {
             do
             {

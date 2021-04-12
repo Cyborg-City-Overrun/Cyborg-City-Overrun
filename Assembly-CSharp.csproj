@@ -94,7 +94,6 @@
     <Compile Include="Assets\Scripts\Potion Scripts\potion_display.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\HUD Scripts\EnergyBar.cs" />
-    <Compile Include="Assets\Scripts\Menu Scripts\display_controls.cs" />
     <Compile Include="Assets\Scripts\Control Scripts\npc_move.cs" />
     <Compile Include="Assets\Scripts\Potion Scripts\AttackPotionItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
