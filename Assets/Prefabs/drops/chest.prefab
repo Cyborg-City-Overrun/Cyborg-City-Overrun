@@ -184,8 +184,10 @@ MonoBehaviour:
   garunteedLoot:
   - {fileID: -6813998838189736089, guid: 04c5f418a73fb4c46bd7b27f350f0b8e, type: 3}
   randomLoot:
-  - {fileID: -6813998838189736089, guid: 04c5f418a73fb4c46bd7b27f350f0b8e, type: 3}
-  randomMin: -10
+  - {fileID: 5185507506871908531, guid: 76ecfc3c77bb58c41b8c5d72b81b33ba, type: 3}
+  - {fileID: 7798443084728561194, guid: 0f7c79e3b82888d4ca0bcd4ab953c1bc, type: 3}
+  - {fileID: 1866497972227626229, guid: 3d4c9035a28726d45b1dfd89cd67cbf0, type: 3}
+  randomMin: 0
 --- !u!95 &6699185572526978315
 Animator:
   serializedVersion: 3
