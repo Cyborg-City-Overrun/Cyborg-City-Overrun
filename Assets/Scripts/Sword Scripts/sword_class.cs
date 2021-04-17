@@ -140,7 +140,7 @@ public class sword_class
 
     public float GetAttackEnergyWithModifier()
     {
-        return myAttackEnergy + GetUpgradeModifierTotalEnergy(); //plus because the modifier is a negative value
+        return (myAttackEnergy + GetUpgradeModifierTotalEnergy()) * GameObject.FindGameObjectWithTag("Player").GetComponent<tree_list>().GetTreeWithTag("Energy").GetActiveBranchWithTag("AttackEnergy").GetModifier(); //plus because the modifier is a negative value
     }
 
     public void setCritDamage(float dmg)

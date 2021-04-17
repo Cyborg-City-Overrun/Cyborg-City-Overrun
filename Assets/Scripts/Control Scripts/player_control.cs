@@ -20,7 +20,7 @@ public class player_control : MonoBehaviour
     private float myMaxEnergy = 50f;
     private float myEnergy;
     private float myRunEnergy = 50f;
-    private float myEnergyRegen = 25f;
+    private float myEnergyRegen = 20f;
 
     private float myMaxHealth = 100f;
     private float myHealth;
@@ -85,9 +85,9 @@ public class player_control : MonoBehaviour
         swordList = GetComponent<sword_list>();
         myMoney = PlayerPrefs.GetInt("MoneyAmt");
         treeList = GetComponent<tree_list>();
-        mySkillPointsRed = 0;
-        mySkillPointsGreen = 0;
-        mySkillPointsYellow = 0;
+        mySkillPointsRed = 10;
+        mySkillPointsGreen = 10;
+        mySkillPointsYellow = 10;
 
         keyManager = GameObject.FindGameObjectWithTag("KeyManager");
         keyScript = keyManager.GetComponent<KeyBindScript>();
@@ -95,6 +95,8 @@ public class player_control : MonoBehaviour
 
     private void Update()
     {
+        UpdateHealth();
+
         if (mySword == null)
         {
             mySword = swordList.getSword(0);
@@ -107,7 +109,6 @@ public class player_control : MonoBehaviour
 
             ConsumePotions();
         }
-
 
         if (!canMove)
         {
@@ -189,19 +190,19 @@ public class player_control : MonoBehaviour
     {
         if (myEnergy > 0 && Input.GetKey(keyScript.GetKey("RunControl")))
         {
-            myEnergy -= myRunEnergy * Time.fixedDeltaTime;
-            mySpeed = myRunningSpeed;
+            myEnergy -= myRunEnergy * treeList.GetTreeWithTag("Energy").GetActiveBranchWithTag("RunEnergy").GetModifier() * Time.fixedDeltaTime;
+            mySpeed = myRunningSpeed * treeList.GetTreeWithTag("Energy").GetActiveBranchWithTag("RunSpeed").GetModifier();
         }
         else
         {
-            mySpeed = myBaseSpeed;
+            mySpeed = myBaseSpeed * treeList.GetTreeWithTag("Energy").GetActiveBranchWithTag("WalkSpeed").GetModifier();
         }
     }
 
 
     private void CheckAttack()
     {
-        RestoreEnergy(myEnergyRegen * Time.fixedDeltaTime);
+        RestoreEnergy(myEnergyRegen * treeList.GetTreeWithTag("Energy").GetActiveBranchWithTag("EnergyRegen").GetModifier() * Time.fixedDeltaTime);
         EnergyBar.SetEnergy(myEnergy);
 
         if (Input.GetKey(keyScript.GetKey("AttackControl")) && myEnergy >= mySword.GetAttackEnergyWithModifier()
@@ -267,6 +268,16 @@ public class player_control : MonoBehaviour
 
     }
 
+    private void UpdateHealth()
+    {
+        myMaxHealth = treeList.GetTreeWithTag("Health").GetActiveBranchWithTag("HealthIncrease").GetModifier();
+
+        HealthBar.SetMaxHealth(myMaxHealth);
+        HealthBar.SetHealth(myHealth);
+
+        RestoreHealth(treeList.GetTreeWithTag("Health").GetActiveBranchWithTag("HealthRegen").GetModifier() * Time.fixedDeltaTime);
+    }
+
     private void Interact()
     {
         //make a hitbox to interact with things in the world
@@ -292,12 +303,20 @@ public class player_control : MonoBehaviour
 
     public void RestoreHealth(float health)
     {
-        myHealth += health;
+        if (health >= 0)
+        {
+            myHealth += health * treeList.GetTreeWithTag("Health").GetActiveBranchWithTag("HealthRecovery").GetModifier();
+        }
+        else
+        {
+            myHealth += health;
+        }
+
         if (myHealth > myMaxHealth)
         {
             myHealth = myMaxHealth;
         }
-        HealthBar.SetHealth(myHealth);
+
     }
 
     public void DrainEnergy(float energy)
