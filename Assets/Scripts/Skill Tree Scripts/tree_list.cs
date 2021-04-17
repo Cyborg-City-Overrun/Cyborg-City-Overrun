@@ -101,10 +101,10 @@ public class tree_list : MonoBehaviour
         healthIncreaseV = new skill_tree_branch("HealthIncrease", 5, new skill_tree_branch[1] { healthIncreaseIV }, 200f);
 
         healthRecoveryBase = new skill_tree_branch("HealthRecovery", 1f); //this tag is a multiplier to the effects of health potions
-        healthRecoveryI = new skill_tree_branch("HealthRecovery", 1, new skill_tree_branch[2] { healthRecoveryBase, healthIncreaseI }, 1.25f);
-        healthRecoveryII = new skill_tree_branch("HealthRecovery", 2, new skill_tree_branch[1] { healthRecoveryI }, 1.5f);
-        healthRecoveryIII = new skill_tree_branch("HealthRecovery", 3, new skill_tree_branch[1] { healthRecoveryII }, 1.75f);
-        healthRecoveryIV = new skill_tree_branch("HealthRecovery", 4, new skill_tree_branch[1] { healthRecoveryIII }, 2f);
+        healthRecoveryI = new skill_tree_branch("HealthRecovery", 1, new skill_tree_branch[2] { healthRecoveryBase, healthIncreaseI }, 1.4f);
+        healthRecoveryII = new skill_tree_branch("HealthRecovery", 2, new skill_tree_branch[1] { healthRecoveryI }, 1.8f);
+        healthRecoveryIII = new skill_tree_branch("HealthRecovery", 3, new skill_tree_branch[1] { healthRecoveryII }, 2.2f);
+        healthRecoveryIV = new skill_tree_branch("HealthRecovery", 4, new skill_tree_branch[1] { healthRecoveryIII }, 2.6f);
 
         healthRegenBase = new skill_tree_branch("HealthRegen", 0f); //this tag is the amount of health regen
         healthRegenI = new skill_tree_branch("HealthRegen", 1, new skill_tree_branch[3] { healthRegenBase, healthIncreaseV, healthRecoveryIV }, 1f);
@@ -126,12 +126,12 @@ public class tree_list : MonoBehaviour
 
         //constructor is ("tag", level, requirements[], modifier)
         energyAttackBase = new skill_tree_branch("AttackEnergy", 1f); //this tag is a multiplier to energy consumption of attacking
-        energyAttackI = new skill_tree_branch("AttackEnergy", 1, new skill_tree_branch[2] { energyRoot, energyAttackBase }, .9f);
-        energyAttackII = new skill_tree_branch("AttackEnergy", 2, new skill_tree_branch[1] { energyAttackI }, .8f);
+        energyAttackI = new skill_tree_branch("AttackEnergy", 1, new skill_tree_branch[2] { energyRoot, energyAttackBase }, .93f);
+        energyAttackII = new skill_tree_branch("AttackEnergy", 2, new skill_tree_branch[1] { energyAttackI }, .86f);
 
         energyRunBase = new skill_tree_branch("RunEnergy", 1f); //this tag is a multiplier to energy consumption of running
-        energyRunI = new skill_tree_branch("RunEnergy", 1, new skill_tree_branch[2] { energyRoot, energyRunBase }, .9f);
-        energyRunII = new skill_tree_branch("RunEnergy", 2, new skill_tree_branch[1] { energyRunI }, .8f);
+        energyRunI = new skill_tree_branch("RunEnergy", 1, new skill_tree_branch[2] { energyRoot, energyRunBase }, .91f);
+        energyRunII = new skill_tree_branch("RunEnergy", 2, new skill_tree_branch[1] { energyRunI }, .82f);
 
         energyWalkSpeedBase = new skill_tree_branch("WalkSpeed", 1f); //this tag is a multiplier to walk speed
         energyWalkSpeedI = new skill_tree_branch("WalkSpeed", 1, new skill_tree_branch[3] { energyRoot, energyWalkSpeedBase, energyRunI }, 1.25f);
@@ -142,8 +142,8 @@ public class tree_list : MonoBehaviour
         energyRunSpeedII = new skill_tree_branch("RunSpeed", 2, new skill_tree_branch[1] { energyRunSpeedI }, 1.5f);
 
         energyRegenBase = new skill_tree_branch("EnergyRegen", 1f); //this tag is a multiplier to energy regen rate
-        energyRegenI = new skill_tree_branch("EnergyRegen", 1, new skill_tree_branch[4] { energyRoot, energyRegenBase, energyRunII, energyAttackII }, 1.25f);
-        energyRegenII = new skill_tree_branch("EnergyRegen", 2, new skill_tree_branch[1] { energyRegenI }, 1.5f);
+        energyRegenI = new skill_tree_branch("EnergyRegen", 1, new skill_tree_branch[4] { energyRoot, energyRegenBase, energyRunII, energyAttackII }, 1.15f);
+        energyRegenII = new skill_tree_branch("EnergyRegen", 2, new skill_tree_branch[1] { energyRegenI }, 1.3f);
 
 
         skill_tree_branch[] energyBranches = new skill_tree_branch[16]
