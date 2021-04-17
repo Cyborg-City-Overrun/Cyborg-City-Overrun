@@ -96,10 +96,42 @@ public class skill_tree_branch
         return true;
     }
 
-    public void Unlock()
+    public void UnlockRed()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (IsUnlockable() && player.GetComponent<player_control>().UseSkillPoint())
+        if (IsUnlockable() && player.GetComponent<player_control>().UseSkillPoint("Red"))
+        {
+            isUnlocked = true;
+            isActive = true;
+            for (int i = 0; i < requirements.Length; i++)
+            {
+                if (requirements[i].GetTag() == GetTag())
+                {
+                    requirements[i].Deactivate();
+                }
+            }
+        }
+    }
+    public void UnlockGreen()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (IsUnlockable() && player.GetComponent<player_control>().UseSkillPoint("Green"))
+        {
+            isUnlocked = true;
+            isActive = true;
+            for (int i = 0; i < requirements.Length; i++)
+            {
+                if (requirements[i].GetTag() == GetTag())
+                {
+                    requirements[i].Deactivate();
+                }
+            }
+        }
+    }
+    public void UnlockYellow()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (IsUnlockable() && player.GetComponent<player_control>().UseSkillPoint("Yellow"))
         {
             isUnlocked = true;
             isActive = true;

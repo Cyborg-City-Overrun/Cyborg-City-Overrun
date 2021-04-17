@@ -8,7 +8,7 @@ public class KeyBindScript : MonoBehaviour
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
     
 
-    public Text interact, pauseMenu, inventory, swordSwitch, healthPotion, energyPotion, attackBuffPotion;
+    public Text attack, interact, pauseMenu, inventory, swordSwitch, run, healthPotion, energyPotion, attackBuffPotion;
 
     private GameObject currentKey;
 
@@ -16,23 +16,27 @@ public class KeyBindScript : MonoBehaviour
 
     void Start()
     {
+        keys.Add("AttackControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackControl", "Space")));
         keys.Add("InteractControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InteractControl", "E")));
         keys.Add("PauseMenuControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseMenuControl", "M")));
         keys.Add("InventoryControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InventoryControl", "T")));
         keys.Add("SwordSwitchControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("SwordSwitchControl", "Z")));
+        keys.Add("RunControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunControl", "LeftShift")));
         keys.Add("HealthPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("HealthPotionControl", "F")));
         keys.Add("EnergyPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("EnergyPotionControl", "G")));
         keys.Add("AttackBuffPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackBuffPotionControl", "H")));
-
+        
+        attack.text = keys["AttackControl"].ToString();
         interact.text = keys["InteractControl"].ToString();
         pauseMenu.text = keys["PauseMenuControl"].ToString();
         inventory.text = keys["InventoryControl"].ToString();
         swordSwitch.text = keys["SwordSwitchControl"].ToString();
+        run.text = keys["RunControl"].ToString();
         healthPotion.text = keys["HealthPotionControl"].ToString();
         energyPotion.text = keys["EnergyPotionControl"].ToString();
         attackBuffPotion.text = keys["AttackBuffPotionControl"].ToString();
 
-        invalidKeys = new KeyCode[] { KeyCode.Space, KeyCode.Escape, KeyCode.Return, KeyCode.Backspace,
+        invalidKeys = new KeyCode[] { KeyCode.Escape, KeyCode.Return, KeyCode.Backspace,
             KeyCode.F1, KeyCode.F2, KeyCode.F3, KeyCode.F4, KeyCode.F5, KeyCode.F6, KeyCode.F7, KeyCode.F8, 
             KeyCode.F9, KeyCode.F10, KeyCode.F11, KeyCode.F12, KeyCode.F13, KeyCode.F14, KeyCode.F15,
             KeyCode.CapsLock, KeyCode.Mouse0, KeyCode.Mouse1, KeyCode.Mouse2, KeyCode.Mouse3, 
@@ -114,10 +118,12 @@ public class KeyBindScript : MonoBehaviour
     }
     public void ResetKeys()
     {
+        PlayerPrefs.SetString("AttackControl", "Space");
         PlayerPrefs.SetString("InteractControl", "E");
         PlayerPrefs.SetString("PauseMenuControl", "M");
         PlayerPrefs.SetString("InventoryControl", "T");
         PlayerPrefs.SetString("SwordSwitchControl", "Z");
+        PlayerPrefs.SetString("RunControl", "LeftShift");
         PlayerPrefs.SetString("HealthPotionControl", "F");
         PlayerPrefs.SetString("EnergyPotionControl", "G");
         PlayerPrefs.SetString("AttackBuffPotionControl", "H");
@@ -125,10 +131,12 @@ public class KeyBindScript : MonoBehaviour
 
         keys.Clear();
 
+        keys.Add("AttackControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackControl", "Space")));
         keys.Add("InteractControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InteractControl", "E")));
         keys.Add("PauseMenuControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseMenuControl", "M")));
         keys.Add("InventoryControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("InventoryControl", "T")));
         keys.Add("SwordSwitchControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("SwordSwitchControl", "Z")));
+        keys.Add("RunControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunControl", "LeftShift")));
         keys.Add("HealthPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("HealthPotionControl", "F")));
         keys.Add("EnergyPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("EnergyPotionControl", "G")));
         keys.Add("AttackBuffPotionControl", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AttackBuffPotionControl", "H")));
