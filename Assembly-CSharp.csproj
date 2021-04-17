@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Item Scripts\inventory_item.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Utility Scripts\KeyBindScript.cs" />
+    <Compile Include="Assets\Scripts\Menu Scripts\HideOnStart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Assets\Scripts\Item Scripts\Chest.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Scripts\Menu Scripts\ShowChildOnStart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Item Scripts\number_in_inventory.cs" />
     <Compile Include="Assets\Scripts\Item Scripts\energy_bar_item.cs" />
@@ -140,8 +142,7 @@
     <Compile Include="Assets\Scripts\Skill Tree Scripts\tree_menu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\Menu Scripts\ShowChildOnStart.cs" />
-    <Compile Include="Assets\Scripts\Menu Scripts\HideOnStart.cs" />
+    <Compile Include="Assets\Scripts\Item Scripts\upgradeDrop.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

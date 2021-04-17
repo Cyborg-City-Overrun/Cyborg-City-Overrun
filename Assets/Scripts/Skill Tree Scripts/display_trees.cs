@@ -20,7 +20,9 @@ public class display_trees : MonoBehaviour
     public GameObject[] EnergyRunSpeedButtons;
     public GameObject[] EnergyRegenButtons;
 
-    public Text SkillPointsText;
+    public Text SkillPointsRedText;
+    public Text SkillPointsGreenText;
+    public Text SkillPointsYellowText;
 
     private GameObject player;
 
@@ -46,7 +48,9 @@ public class display_trees : MonoBehaviour
 
     private void UpdateSkillPointText()
     {
-        SkillPointsText.text = ("Upgrade Points: " + player.GetComponent<player_control>().GetSkillPoints().ToString());
+        SkillPointsRedText.text = "Red Points: " + player.GetComponent<player_control>().GetSkillPoints("Red").ToString();
+        SkillPointsGreenText.text = "Green Points: " + player.GetComponent<player_control>().GetSkillPoints("Green").ToString();
+        SkillPointsYellowText.text = "Yellow Points: " + player.GetComponent<player_control>().GetSkillPoints("Yellow").ToString();
     }
 
     private void UpdateButtons(GameObject[] list, string tree_tag, string branch_tag)

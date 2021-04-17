@@ -46,7 +46,9 @@ public class player_control : MonoBehaviour
 
     public int myMoney;
 
-    public int mySkillPoints;
+    public int mySkillPointsRed;
+    public int mySkillPointsGreen;
+    public int mySkillPointsYellow;
 
     private sword_list swordList;
     private sword_class mySword;
@@ -83,7 +85,9 @@ public class player_control : MonoBehaviour
         swordList = GetComponent<sword_list>();
         myMoney = PlayerPrefs.GetInt("MoneyAmt");
         treeList = GetComponent<tree_list>();
-        mySkillPoints = 30;
+        mySkillPointsRed = 0;
+        mySkillPointsGreen = 0;
+        mySkillPointsYellow = 0;
 
         keyManager = GameObject.FindGameObjectWithTag("KeyManager");
         keyScript = keyManager.GetComponent<KeyBindScript>();
@@ -110,11 +114,6 @@ public class player_control : MonoBehaviour
             myAnim.GetComponent<Animator>().Play("Idle", 0);
         }
 
-        //move this later
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            TreeMenu.gameObject.SetActive(true);
-        }
     }
 
     void FixedUpdate()
@@ -148,7 +147,7 @@ public class player_control : MonoBehaviour
             RestoreHealth(10000);
             RestoreEnergy(10000);
         }
-        if (Input.GetKey(KeyCode.L)) //just for testing, restores all health and energy
+        if (Input.GetKey(KeyCode.L)) //just for testing, gives money
         {
             Transaction(100);
         }
@@ -188,7 +187,7 @@ public class player_control : MonoBehaviour
 
     private void CheckRunning()
     {
-        if (myEnergy > 0 && Input.GetKey(KeyCode.LeftShift))
+        if (myEnergy > 0 && Input.GetKey(keyScript.GetKey("RunControl")))
         {
             myEnergy -= myRunEnergy * Time.fixedDeltaTime;
             mySpeed = myRunningSpeed;
@@ -205,7 +204,7 @@ public class player_control : MonoBehaviour
         RestoreEnergy(myEnergyRegen * Time.fixedDeltaTime);
         EnergyBar.SetEnergy(myEnergy);
 
-        if (Input.GetKey(KeyCode.Space) && myEnergy >= mySword.GetAttackEnergyWithModifier()
+        if (Input.GetKey(keyScript.GetKey("AttackControl")) && myEnergy >= mySword.GetAttackEnergyWithModifier()
                 && !myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             myAnim.SetBool("isAttacking", true);
@@ -418,19 +417,72 @@ public class player_control : MonoBehaviour
     {
         this.canMove = newState;
     }
-    public bool UseSkillPoint()
+    public bool UseSkillPoint(string type)
     {
-        if (mySkillPoints > 0)
+        switch(type)
         {
-            mySkillPoints--;
-            return true;
+            case "Red":
+                if (mySkillPointsRed > 0)
+                {
+                    mySkillPointsRed--;
+                    return true;
+                }
+                break;
+            case "Green":
+                if (mySkillPointsGreen > 0)
+                {
+                    mySkillPointsGreen--;
+                    return true;
+                }
+                break;
+            case "Yellow":
+                if (mySkillPointsYellow > 0)
+                {
+                    mySkillPointsYellow--;
+                    return true;
+                }
+                break;
         }
+        
         return false;
     }
 
-    public int GetSkillPoints()
+    public int GetSkillPoints(string type)
     {
-        return mySkillPoints;
+        switch (type)
+        {
+            case "Red":
+                return mySkillPointsRed;
+            case "Green":
+                return mySkillPointsGreen;
+            case "Yellow":
+                return mySkillPointsYellow;
+        }
+        return 0;
     }
 
+    public void AddSkillPoints(string type)
+    {
+        switch (type)
+        {
+            case "Red":
+                mySkillPointsRed++;
+                break;
+            case "Green":
+                mySkillPointsGreen++;
+                break;
+            case "Yellow":
+                mySkillPointsYellow++;
+                break;
+        }
+    }
+
+    public void OpenUpgradeMenu()
+    {
+        TreeMenu.gameObject.SetActive(true);
+    }
+    public void CloseUpgradeMenu()
+    {
+        TreeMenu.gameObject.SetActive(false);
+    }
 }
