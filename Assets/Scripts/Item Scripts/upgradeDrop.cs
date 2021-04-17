@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class upgradeDrop : MonoBehaviour
+public class upgradeDrop : item
 {
     public enum types { red, green, yellow };
     public types type;
