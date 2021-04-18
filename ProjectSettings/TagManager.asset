@@ -17,6 +17,7 @@ TagManager:
   - starterDoor
   - KeyManager
   - ControlList
+  - KeyChest
   layers:
   - Default
   - TransparentFX
