@@ -122,6 +122,7 @@ public class Saver : MonoBehaviour
 
         PlayerPrefs.SetFloat("Health", 100f);
         PlayerPrefs.SetFloat("Energy", 100f);
+        PlayerPrefs.SetInt("keyAmt", 0);
 
         keyScript.ResetKeys();
         
