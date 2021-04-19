@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: c9af421e15a646143a8f04b5f4490a44
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 336536752318468255
+    second: EnemyBa Attack_0
+  - first:
+      213: -7858940646816027940
+    second: EnemyBa Attack_1
+  - first:
+      213: -634263143448980507
+    second: EnemyBa Attack_2
+  - first:
+      213: 583972849671596084
+    second: EnemyBa Attack_3
+  - first:
+      213: -5512605387061146009
+    second: EnemyBa Attack_4
+  - first:
+      213: 6672078876628945400
+    second: EnemyBa Attack_5
+  - first:
+      213: 1143389878827871462
+    second: EnemyBa Attack_6
+  - first:
+      213: 7532626823975603546
+    second: EnemyBa Attack_7
+  - first:
+      213: -3905257900256901915
+    second: EnemyBa Attack_8
+  - first:
+      213: 7798754992358053553
+    second: EnemyBa Attack_9
+  - first:
+      213: 8501376416559883603
+    second: EnemyBa Attack_10
+  - first:
+      213: -955934380535682839
+    second: EnemyBa Attack_11
+  - first:
+      213: -8357162929359127215
+    second: EnemyBa Attack_12
+  - first:
+      213: -1870892558228814347
+    second: EnemyBa Attack_13
+  - first:
+      213: -6121659027886745338
+    second: EnemyBa Attack_14
+  - first:
+      213: 4454370873050626125
+    second: EnemyBa Attack_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +80,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +89,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +123,369 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: EnemyBa Attack_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 115
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f905ec7a46e9ba400800000000000000
+      internalID: 336536752318468255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 115
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdae6a3ce1f6fe290800000000000000
+      internalID: -7858940646816027940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 115
+        width: 11
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3d9901805a237f0800000000000000
+      internalID: -634263143448980507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 115
+        width: 11
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438e5277630ba1800800000000000000
+      internalID: 583972849671596084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 78
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ec0558b9a4f73b0800000000000000
+      internalID: -5512605387061146009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 78
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f90bda536cf79c50800000000000000
+      internalID: 6672078876628945400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 78
+        width: 18
+        height: 33
+      alignment: 9
+      pivot: {x: 0.6949317, y: 0.49999976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ecef4f69032edf00800000000000000
+      internalID: 1143389878827871462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_7
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 78
+        width: 18
+        height: 33
+      alignment: 9
+      pivot: {x: 0.34161758, y: 0.49335432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d05a4df24498860800000000000000
+      internalID: 7532626823975603546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 41
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e446e271acbdc9c0800000000000000
+      internalID: -3905257900256901915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_9
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 41
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b65ec1985eba3c60800000000000000
+      internalID: 7798754992358053553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_10
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 41
+        width: 19
+        height: 33
+      alignment: 9
+      pivot: {x: 0.70775646, y: 0.51993597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3556fe20fc4faf570800000000000000
+      internalID: 8501376416559883603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 41
+        width: 19
+        height: 33
+      alignment: 9
+      pivot: {x: 0.3153277, y: 0.4800636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e86693eeb6dbb2f0800000000000000
+      internalID: -955934380535682839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 3
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d7c790894650c80800000000000000
+      internalID: -8357162929359127215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_13
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 3
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f589d571214906e0800000000000000
+      internalID: -1870892558228814347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_14
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 3
+        width: 17
+        height: 33
+      alignment: 9
+      pivot: {x: 0.69349873, y: 0.49999976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6095fbe4c8f7b0ba0800000000000000
+      internalID: -6121659027886745338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBa Attack_15
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 3
+        width: 17
+        height: 33
+      alignment: 9
+      pivot: {x: 0.35810134, y: 0.48670897}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48770275ba11dd30800000000000000
+      internalID: 4454370873050626125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
