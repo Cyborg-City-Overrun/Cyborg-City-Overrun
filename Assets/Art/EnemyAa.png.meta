@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 1eb0537a48a9fa849984ecbb70e8d520
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1531369739392481845
+    second: EnemyAa_0
+  - first:
+      213: 6212438919872749674
+    second: EnemyAa_1
+  - first:
+      213: -8002907130339468299
+    second: EnemyAa_2
+  - first:
+      213: 4158183229565011046
+    second: EnemyAa_3
+  - first:
+      213: -4470835464218498517
+    second: EnemyAa_4
+  - first:
+      213: -6517639359412750514
+    second: EnemyAa_5
+  - first:
+      213: -5092745317981609130
+    second: EnemyAa_6
+  - first:
+      213: 8766225129454549379
+    second: EnemyAa_7
+  - first:
+      213: 1013972905013528221
+    second: EnemyAa_8
+  - first:
+      213: -7024227509469173835
+    second: EnemyAa_9
+  - first:
+      213: -981157243922856245
+    second: EnemyAa_10
+  - first:
+      213: 3077835938825385671
+    second: EnemyAa_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +68,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +77,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +111,285 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: EnemyAa_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 89
+        width: 14
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5000004, y: 0.52215135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a75481aa4804510800000000000000
+      internalID: 1531369739392481845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 89
+        width: 14
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5130536, y: 0.5387647}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60a3df5844073650800000000000000
+      internalID: 6212438919872749674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 89
+        width: 13
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53322697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbdcadbd56ffe090800000000000000
+      internalID: -8002907130339468299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 89
+        width: 13
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5843459, y: 0.54430276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6648535cd95d4b930800000000000000
+      internalID: 4158183229565011046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 49
+        width: 13
+        height: 34
+      alignment: 9
+      pivot: {x: 0.54217285, y: 0.54299974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2aa90235d664f1c0800000000000000
+      internalID: -4470835464218498517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_5
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 49
+        width: 13
+        height: 34
+      alignment: 9
+      pivot: {x: 0.54217327, y: 0.54299974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e473918d881bc85a0800000000000000
+      internalID: -6517639359412750514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_6
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 49
+        width: 13
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54299974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6532c26ad1fe259b0800000000000000
+      internalID: -5092745317981609130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_7
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 49
+        width: 13
+        height: 34
+      alignment: 9
+      pivot: {x: 0.45782763, y: 0.5644994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389bd3e4f43e7a970800000000000000
+      internalID: 8766225129454549379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 11
+        width: 13
+        height: 33
+      alignment: 9
+      pivot: {x: 0.48594233, y: 0.52768904}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96c33f1cfa521e00800000000000000
+      internalID: 1013972905013528221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 11
+        width: 13
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5000003, y: 0.5221512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7209ccb4ee48e90800000000000000
+      internalID: -7024227509469173835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_10
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 11
+        width: 13
+        height: 33
+      alignment: 9
+      pivot: {x: 0.55623066, y: 0.5332269}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc64d2f5faa3262f0800000000000000
+      internalID: -981157243922856245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAa_11
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 11
+        width: 13
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5562304, y: 0.5443026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c63e92ba7ba6ba20800000000000000
+      internalID: 3077835938825385671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
