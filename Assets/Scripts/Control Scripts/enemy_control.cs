@@ -45,6 +45,7 @@ public class enemy_control : MonoBehaviour
     {
         myHealthBar.SetMaxHealth(myMaxHealth);
         myHealth = myMaxHealth;
+        myHealthBar.SetHealth(myHealth);
         myRigidBody = gameObject.GetComponent<Rigidbody2D>();
         myTarget = GameObject.FindGameObjectWithTag("Player");
         myTargetPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
