@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: ea01e0c7b7257ee49abb985ed2f7fb9d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6719728104526663746
+    second: EnemyCa Pre_0
+  - first:
+      213: 3991435808933586893
+    second: EnemyCa Pre_1
+  - first:
+      213: -4386223916252240394
+    second: EnemyCa Pre_2
+  - first:
+      213: 5150135662019761251
+    second: EnemyCa Pre_3
+  - first:
+      213: -174816675366660295
+    second: EnemyCa Pre_4
+  - first:
+      213: 5517055792422164938
+    second: EnemyCa Pre_5
+  - first:
+      213: -8229246181684393221
+    second: EnemyCa Pre_6
+  - first:
+      213: -3228665899322683307
+    second: EnemyCa Pre_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +56,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +65,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +99,201 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: EnemyCa Pre_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 75
+        width: 13
+        height: 40
+      alignment: 9
+      pivot: {x: 0.4999997, y: 0.44974422}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebfaa7e34eabeb2a0800000000000000
+      internalID: -6719728104526663746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyCa Pre_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 75
+        width: 13
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4223318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7a24f78bd646730800000000000000
+      internalID: 3991435808933586893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyCa Pre_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 75
+        width: 13
+        height: 40
+      alignment: 9
+      pivot: {x: 0.48594314, y: 0.42690048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5667e56900123c0800000000000000
+      internalID: -4386223916252240394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyCa Pre_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 75
+        width: 13
+        height: 40
+      alignment: 9
+      pivot: {x: 0.51405805, y: 0.43146935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36452c71915f87740800000000000000
+      internalID: 5150135662019761251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyCa Pre_4
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 24
+        width: 13
+        height: 41
+      alignment: 9
+      pivot: {x: 0.4859421, y: 0.42422625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93794f3f82de29df0800000000000000
+      internalID: -174816675366660295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyCa Pre_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 24
+        width: 13
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4331408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac995593305809c40800000000000000
+      internalID: 5517055792422164938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyCa Pre_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 24
+        width: 13
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5000006, y: 0.41976893}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa467bb238dbcd80800000000000000
+      internalID: -8229246181684393221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyCa Pre_7
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 24
+        width: 13
+        height: 41
+      alignment: 9
+      pivot: {x: 0.51405805, y: 0.43314064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550547488797133d0800000000000000
+      internalID: -3228665899322683307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
