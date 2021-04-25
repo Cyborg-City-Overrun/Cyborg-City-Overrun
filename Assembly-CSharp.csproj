@@ -126,6 +126,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Scripts\Shop Scripts\shop_items.cs" />
     <Compile Include="Assets\Scripts\Shop Scripts\shopKeeper.cs" />
+    <Compile Include="Assets\Scripts\Control Scripts\boss_shootFire.cs" />
     <Compile Include="Assets\Scripts\Item Scripts\key.cs" />
     <Compile Include="Assets\Scripts\Item Scripts\VendingMachine.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
@@ -141,7 +142,7 @@
     <Compile Include="Assets\Scripts\Skill Tree Scripts\tree_menu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\Control Scripts\boss_shootFire.cs" />
+    <Compile Include="Assets\Scripts\Utility Scripts\locked_door.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

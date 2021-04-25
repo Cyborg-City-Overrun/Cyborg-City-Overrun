@@ -5,8 +5,6 @@ using UnityEngine;
 public class boss_shootFire : MonoBehaviour
 {
 
-    private Animator myAnim;
-    private Rigidbody2D myBody;
     public GameObject boss;
     public GameObject funnyFire;
     private bool flaming = false;
@@ -14,8 +12,6 @@ public class boss_shootFire : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myBody = gameObject.GetComponent<Rigidbody2D>();
-        myAnim = GetComponent<Animator>();
 
 
     }
