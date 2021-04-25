@@ -406,7 +406,6 @@ GameObject:
   - component: {fileID: 1336588436382376084}
   - component: {fileID: 7436437865340927106}
   - component: {fileID: 3242596829020125823}
-  - component: {fileID: 7958599940145956728}
   m_Layer: 0
   m_Name: final boss
   m_TagString: Enemy
@@ -529,6 +528,8 @@ MonoBehaviour:
     type: 3}
   hitBox: {fileID: 6987110950184540185}
   attackPattern: 1
+  isFinalBoss: 1
+  endGameCanvas: {fileID: 0}
 --- !u!50 &7436437865340927106
 Rigidbody2D:
   serializedVersion: 4
@@ -593,21 +594,6 @@ PolygonCollider2D:
       - {x: 0.4414673, y: -1.1555786}
       - {x: 0.5147705, y: -0.76293945}
       - {x: 0.546875, y: -0.5}
---- !u!114 &7958599940145956728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336588436382376085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65b89e2452def8d459f0408991fe6e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 1336588436382376085}
-  funnyFire: {fileID: 4806543975181118572, guid: ae3d7842729ba5140aeaed6675559504,
-    type: 3}
 --- !u!1 &1336588436396696778
 GameObject:
   m_ObjectHideFlags: 0

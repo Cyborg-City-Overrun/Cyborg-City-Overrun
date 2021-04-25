@@ -40,6 +40,8 @@ public class enemy_control : MonoBehaviour
 
     private float stunTime;
 
+    public bool isFinalBoss = false;
+
 
     private void Start()
     {
@@ -239,7 +241,7 @@ public class enemy_control : MonoBehaviour
 
         if (myHealth <= 0)
         {
-            myTarget.GetComponent<player_control>().Transaction(Random.Range(deathRewardMin, deathRewardMax + 1));            
+            myTarget.GetComponent<player_control>().Transaction(Random.Range(deathRewardMin, deathRewardMax + 1));
 
             Destroy(gameObject);
 
@@ -249,6 +251,12 @@ public class enemy_control : MonoBehaviour
             if (randomItemIndex >= 0)
             {
                 drop = Instantiate(drops[randomItemIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y - 1, -1), Quaternion.identity);
+            }
+
+            if (isFinalBoss)
+            {
+                GameObject endGameCanvas = GameObject.FindGameObjectWithTag("Menu").transform.GetChild(0).gameObject;
+                endGameCanvas.SetActive(true);
             }
         }
     }

@@ -18,6 +18,7 @@ TagManager:
   - KeyManager
   - ControlList
   - KeyChest
+  - EndMenu
   layers:
   - Default
   - TransparentFX
