@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySpeed: 7
-  myPower: 10
+  myPower: 25
   drops: []
   myFollowRange: 5
   myAttackRange: 0.75
