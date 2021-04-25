@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class enemy_control : MonoBehaviour
 {
@@ -31,7 +32,6 @@ public class enemy_control : MonoBehaviour
 
     public GameObject floatingDamage;
 
-
     public GameObject hitBox; //set to parent that holds hitboxes
     private bool attacked; //used to trigger Attack() call once
 
@@ -41,6 +41,7 @@ public class enemy_control : MonoBehaviour
     private float stunTime;
 
     public bool isFinalBoss = false;
+    public Canvas EndScreen = null;
 
 
     private void Start()
@@ -243,6 +244,14 @@ public class enemy_control : MonoBehaviour
         {
             myTarget.GetComponent<player_control>().Transaction(Random.Range(deathRewardMin, deathRewardMax + 1));
 
+            if (isFinalBoss)
+            {
+                print("Defeated final boss");
+
+                SceneManager.LoadScene(2);
+                EndScreen.gameObject.SetActive(true);
+            }
+
             Destroy(gameObject);
 
             GameObject drop;
@@ -253,11 +262,7 @@ public class enemy_control : MonoBehaviour
                 drop = Instantiate(drops[randomItemIndex].gameObject, new Vector3(this.transform.position.x, this.transform.position.y - 1, -1), Quaternion.identity);
             }
 
-            if (isFinalBoss)
-            {
-                GameObject endGameCanvas = GameObject.FindGameObjectWithTag("Menu").transform.GetChild(0).gameObject;
-                endGameCanvas.SetActive(true);
-            }
+            
         }
     }
 
