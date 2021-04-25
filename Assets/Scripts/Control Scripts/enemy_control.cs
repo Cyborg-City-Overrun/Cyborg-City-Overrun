@@ -226,9 +226,6 @@ public class enemy_control : MonoBehaviour
                 }
                 break;
         }
-
-        
-        
     }
 
     public void TakeDamage(float damage) //called when enemy is hit by players attack

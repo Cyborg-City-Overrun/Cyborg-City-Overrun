@@ -409,8 +409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a695d925557240b4d9626eb538bfaabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySpeed: 3
-  myPower: 10
+  mySpeed: 4.5
+  myPower: 30
   drops: []
   myFollowRange: 5
   myAttackRange: 0.75
