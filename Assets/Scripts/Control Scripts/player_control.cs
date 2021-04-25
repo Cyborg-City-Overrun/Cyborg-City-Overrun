@@ -67,6 +67,7 @@ public class player_control : MonoBehaviour
     private GameObject keyManager;
     private KeyBindScript keyScript;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,7 +115,6 @@ public class player_control : MonoBehaviour
         {
             myAnim.GetComponent<Animator>().Play("Idle", 0);
         }
-
     }
 
     void FixedUpdate()
