@@ -606,7 +606,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 1336588436382376085}
-  funnyFire: {fileID: 0}
+  funnyFire: {fileID: 4806543975181118572, guid: ae3d7842729ba5140aeaed6675559504,
+    type: 3}
 --- !u!1 &1336588436396696778
 GameObject:
   m_ObjectHideFlags: 0
