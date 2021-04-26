@@ -38,6 +38,33 @@ TextureImporter:
   - first:
       213: -8541207492877505880
     second: final boss attack_50
+  - first:
+      213: -4898659229298508050
+    second: final boss attack_47
+  - first:
+      213: -7226223600480765207
+    second: final boss attack_62
+  - first:
+      213: -5731575105966741582
+    second: final boss attack_64
+  - first:
+      213: 2704202919039552887
+    second: final boss attack_65
+  - first:
+      213: 9079994065160947370
+    second: final boss attack_67
+  - first:
+      213: 3268092717344620503
+    second: final boss attack_73
+  - first:
+      213: -7961349656413341682
+    second: final boss attack_75
+  - first:
+      213: -571741826681846463
+    second: final boss attack_77
+  - first:
+      213: 2877701980820576619
+    second: final boss attack_78
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,12 +157,12 @@ TextureImporter:
       name: final boss attack_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 248
+        x: 59
+        y: 564
         width: 41
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,12 +178,12 @@ TextureImporter:
       name: final boss attack_2
       rect:
         serializedVersion: 2
-        x: 88
-        y: 248
-        width: 41
+        x: 163
+        y: 563
+        width: 42
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,12 +199,12 @@ TextureImporter:
       name: final boss attack_5
       rect:
         serializedVersion: 2
-        x: 147
-        y: 248
+        x: 299
+        y: 561
         width: 29
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,12 +220,12 @@ TextureImporter:
       name: final boss attack_6
       rect:
         serializedVersion: 2
-        x: 211
-        y: 247
+        x: 363
+        y: 560
         width: 33
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -214,12 +241,12 @@ TextureImporter:
       name: final boss attack_23
       rect:
         serializedVersion: 2
-        x: 23
-        y: 141
+        x: 58
+        y: 457
         width: 42
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -235,12 +262,12 @@ TextureImporter:
       name: final boss attack_24
       rect:
         serializedVersion: 2
-        x: 88
-        y: 141
+        x: 163
+        y: 456
         width: 42
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -256,12 +283,12 @@ TextureImporter:
       name: final boss attack_27
       rect:
         serializedVersion: 2
-        x: 146
-        y: 141
+        x: 298
+        y: 454
         width: 30
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,12 +304,12 @@ TextureImporter:
       name: final boss attack_28
       rect:
         serializedVersion: 2
-        x: 211
-        y: 140
+        x: 363
+        y: 453
         width: 34
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -298,12 +325,12 @@ TextureImporter:
       name: final boss attack_45
       rect:
         serializedVersion: 2
-        x: 24
-        y: 36
-        width: 42
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 16
+        y: 293
+        width: 83
+        height: 128
+      alignment: 9
+      pivot: {x: 0.74224883, y: 0.6428025}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -319,12 +346,12 @@ TextureImporter:
       name: final boss attack_46
       rect:
         serializedVersion: 2
-        x: 89
-        y: 36
-        width: 43
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 162
+        y: 327
+        width: 65
+        height: 100
+      alignment: 9
+      pivot: {x: 0.31721213, y: 0.4817209}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -340,12 +367,12 @@ TextureImporter:
       name: final boss attack_49
       rect:
         serializedVersion: 2
-        x: 146
-        y: 36
-        width: 31
+        x: 376
+        y: 322
+        width: 119
         height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.14671262, y: 0.49999902}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -358,22 +385,190 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final boss attack_50
+      name: final boss attack_47
       rect:
         serializedVersion: 2
-        x: 212
-        y: 35
-        width: 35
+        x: 231
+        y: 323
+        width: 110
         height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.8655756, y: 0.48034504}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8aaa12ad909877980800000000000000
-      internalID: -8541207492877505880
+      spriteID: eee39f99267740cb0800000000000000
+      internalID: -4898659229298508050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final boss attack_62
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 146
+        width: 60
+        height: 133
+      alignment: 9
+      pivot: {x: 0.6523231, y: 0.64430594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eabcc9ebeb47bb90800000000000000
+      internalID: -7226223600480765207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final boss attack_64
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 185
+        width: 57
+        height: 114
+      alignment: 9
+      pivot: {x: 0.59620374, y: 0.4518976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7616deeca5570b0800000000000000
+      internalID: -5731575105966741582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final boss attack_65
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 182
+        width: 90
+        height: 92
+      alignment: 9
+      pivot: {x: 0.82495594, y: 0.46026328}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d4de53a32478520800000000000000
+      internalID: 2704202919039552887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final boss attack_67
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 180
+        width: 94
+        height: 93
+      alignment: 9
+      pivot: {x: 0.19859444, y: 0.4901725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa6c2909e7e920e70800000000000000
+      internalID: 9079994065160947370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final boss attack_73
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 17
+        width: 77
+        height: 122
+      alignment: 9
+      pivot: {x: 0.26261327, y: 0.6123694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dffd56e2099a5d20800000000000000
+      internalID: 3268092717344620503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final boss attack_75
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 45
+        width: 61
+        height: 102
+      alignment: 9
+      pivot: {x: 0.61986077, y: 0.49103972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e08fdc42baa938190800000000000000
+      internalID: -7961349656413341682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final boss attack_77
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 40
+        width: 64
+        height: 94
+      alignment: 9
+      pivot: {x: 0.7427645, y: 0.48055422}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145456d76d3c018f0800000000000000
+      internalID: -571741826681846463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final boss attack_78
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 36
+        width: 78
+        height: 97
+      alignment: 9
+      pivot: {x: 0.23050514, y: 0.49999976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b699f3074b6afe720800000000000000
+      internalID: 2877701980820576619
       vertices: []
       indices: 
       edges: []

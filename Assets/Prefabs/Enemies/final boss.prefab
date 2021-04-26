@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1113430937595077788
+--- !u!1 &1084043698998585542
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3937941073207209948}
-  - component: {fileID: 43779891464449953}
+  - component: {fileID: 8430105214604560971}
+  - component: {fileID: 8832237208494241534}
   m_Layer: 0
-  m_Name: Hitbox
+  m_Name: AttackHitBoxLeft
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3937941073207209948
+--- !u!4 &8430105214604560971
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113430937595077788}
+  m_GameObject: {fileID: 1084043698998585542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3782926035526675538}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &43779891464449953
-BoxCollider2D:
+--- !u!60 &8832237208494241534
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113430937595077788}
+  m_GameObject: {fileID: 1084043698998585542}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.038406372, y: -0.019195557}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -54,9 +54,15 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.588913, y: 3.1380005}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -3.0528488, y: 0.13033295}
+      - {x: -2.578786, y: 1.1858959}
+      - {x: -0.66090685, y: 2.3083112}
+      - {x: -0.06112045, y: 2.5269089}
+      - {x: 0.32054627, y: 1.2751791}
+      - {x: 0.41216755, y: 0.028785706}
+      - {x: 0.16077995, y: -0.008983672}
 --- !u!1 &1336588434508728478
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +412,6 @@ GameObject:
   - component: {fileID: 1336588436382376084}
   - component: {fileID: 7436437865340927106}
   - component: {fileID: 3242596829020125823}
-  - component: {fileID: 7958599940145956728}
   m_Layer: 0
   m_Name: final boss
   m_TagString: Enemy
@@ -428,7 +433,6 @@ Transform:
   - {fileID: 1336588434508728465}
   - {fileID: 1336588434961001346}
   - {fileID: 3782926035526675538}
-  - {fileID: 6283939011681139628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -593,20 +597,6 @@ PolygonCollider2D:
       - {x: 0.4414673, y: -1.1555786}
       - {x: 0.5147705, y: -0.76293945}
       - {x: 0.546875, y: -0.5}
---- !u!114 &7958599940145956728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336588436382376085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65b89e2452def8d459f0408991fe6e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 1336588436382376085}
-  funnyFire: {fileID: 0}
 --- !u!1 &1336588436396696778
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +672,138 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2698160997910631376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8435091989574190417}
+  - component: {fileID: 2113288260723564624}
+  m_Layer: 0
+  m_Name: AttackHitBoxDown
+  m_TagString: EnemyAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8435091989574190417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698160997910631376}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -12.573072}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3782926035526675538}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &2113288260723564624
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698160997910631376}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.1583633, y: -2.6322021}
+      - {x: -1.4004822, y: -2.407402}
+      - {x: -1.994545, y: -2.001709}
+      - {x: -0.89026356, y: 0.7590313}
+      - {x: -0.74463946, y: 1.0283277}
+      - {x: -0.39132065, y: 1.3238754}
+      - {x: 0.49856293, y: 1.0648215}
+      - {x: 0.81656647, y: 0.42185974}
+      - {x: 1.0328875, y: -0.06415558}
+      - {x: 1.8473568, y: -2.233593}
+--- !u!1 &2865681167930031233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5313919245357800722}
+  - component: {fileID: 4063321707813480681}
+  m_Layer: 0
+  m_Name: AttackHitBoxUp
+  m_TagString: EnemyAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5313919245357800722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2865681167930031233}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3782926035526675538}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &4063321707813480681
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2865681167930031233}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.72322845, y: -1.4563599}
+      - {x: -0.446167, y: -1.5298233}
+      - {x: -0.8603792, y: -1.2490559}
+      - {x: -1.20504, y: -0.74028015}
+      - {x: -1.2385206, y: -0.5409472}
+      - {x: -1.1697631, y: 1.4693985}
+      - {x: 0.040641785, y: 1.7299194}
+      - {x: 1.2321521, y: 1.5089438}
+      - {x: 1.4264269, y: 0.5987778}
+      - {x: 1.2257214, y: -1.3795891}
 --- !u!1 &6987110950184540185
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,11 +831,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3937941073207209948}
+  - {fileID: 5313919245357800722}
+  - {fileID: 8435091989574190417}
+  - {fileID: 4794827028638282022}
+  - {fileID: 8430105214604560971}
   m_Father: {fileID: 1336588436382376169}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7104211199627835784
+--- !u!1 &8562597001682263453
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -721,43 +846,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6283939011681139628}
-  - component: {fileID: 134969587093683358}
+  - component: {fileID: 4794827028638282022}
+  - component: {fileID: 2038129780288153181}
   m_Layer: 0
-  m_Name: flame spot
-  m_TagString: Untagged
+  m_Name: AttackHitBoxRight
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6283939011681139628
+--- !u!4 &4794827028638282022
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7104211199627835784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 8562597001682263453}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1336588436382376169}
-  m_RootOrder: 3
+  m_Father: {fileID: 3782926035526675538}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &134969587093683358
-BoxCollider2D:
+--- !u!60 &2038129780288153181
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7104211199627835784}
+  m_GameObject: {fileID: 8562597001682263453}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00504303, y: 0.11105347}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -767,6 +892,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.50527954, y: 0.45477295}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.1964722, y: -1.4595413}
+      - {x: 2.6173124, y: -0.3567524}
+      - {x: 0.6359071, y: 0.7281263}
+      - {x: 0.23008728, y: 1.0834198}
+      - {x: -0.04826492, y: 1.0669327}
+      - {x: -0.24563873, y: 1.0559866}
+      - {x: -0.21318054, y: 0.6052551}
+      - {x: -0.21235943, y: 0.40644073}
+      - {x: -0.5117588, y: -1.51791}
