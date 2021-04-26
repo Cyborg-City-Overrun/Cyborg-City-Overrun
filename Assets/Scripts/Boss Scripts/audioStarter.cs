@@ -31,6 +31,7 @@ public class audioStarter : MonoBehaviour
         if(boss.getMyHealth() <= 0 || player.getMyHealth() <= 0)
         {
             audio.Stop();
+            Destroy(this);
         }
     }
 }
