@@ -5,14 +5,15 @@ using UnityEngine;
 public class boss_shootFire : MonoBehaviour
 {
 
-    private Animator myAnim;
+    public GameObject boss;
     public GameObject funnyFire;
     private bool fired = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        myAnim = GetComponent<Animator>();
+
+
     }
 
     // Update is called once per frame
