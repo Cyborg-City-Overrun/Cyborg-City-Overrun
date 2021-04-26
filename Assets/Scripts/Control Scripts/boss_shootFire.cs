@@ -7,7 +7,7 @@ public class boss_shootFire : MonoBehaviour
 
     public GameObject boss;
     public GameObject funnyFire;
-    private bool fired = false;
+    private bool flaming = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,81 +17,43 @@ public class boss_shootFire : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void startFlame()
     {
-        Attack();
-    }
-
-    private void Attack()
-    {
-        if (fired)
+        if (flaming == false)
         {
-            if (!myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+            flaming = true;
+            while (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
             {
-                fired = false;
+                if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("Attack") == true && boss.GetComponent<Animator>().GetFloat("moveX") == 1)
+                {
+                    Instantiate(funnyFire.gameObject, new Vector3(boss.GetComponent<GameObject>().transform.GetChild(3).position.x, boss.GetComponent<GameObject>().transform.GetChild(3).position.y, -1), Quaternion.identity);
+                    funnyFire.GetComponent<Animator>().Play("Right");
+                }
+                else if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("Attack") == true && boss.GetComponent<Animator>().GetFloat("moveX") == -1)
+                {
+                    Instantiate(funnyFire.gameObject, new Vector3(boss.GetComponent<GameObject>().transform.GetChild(3).position.x, boss.GetComponent<GameObject>().transform.GetChild(3).position.y, -1), Quaternion.identity);
+                    funnyFire.GetComponent<Animator>().Play("Left");
+                }
+                else if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("Attack") == true && boss.GetComponent<Animator>().GetFloat("moveY") == 1)
+                {
+                    Instantiate(funnyFire.gameObject, new Vector3(boss.GetComponent<GameObject>().transform.GetChild(3).position.x, boss.GetComponent<GameObject>().transform.GetChild(3).position.y, -1), Quaternion.identity);
+                    funnyFire.GetComponent<Animator>().Play("Up");
+                }
+                else if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("Attack") == true && boss.GetComponent<Animator>().GetFloat("moveY") == -1)
+                {
+                    Instantiate(funnyFire.gameObject, new Vector3(boss.GetComponent<GameObject>().transform.GetChild(3).position.x, boss.GetComponent<GameObject>().transform.GetChild(3).position.y, -1), Quaternion.identity);
+                    funnyFire.GetComponent<Animator>().Play("Down");
+                }
+                else
+                {
+
+                }
             }
+            flaming = false;
         }
         else
         {
-            if(myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
-            {
 
-                if (myAnim.GetFloat("moveX") == 1)
-                {
-                    Instantiate(funnyFire, new Vector3(transform.GetChild(3).position.x, transform.GetChild(3).position.y, -1), Quaternion.identity);
-
-                }
-                else if (myAnim.GetFloat("moveX") == -1)
-                {
-                    Instantiate(funnyFire, new Vector3(transform.GetChild(3).position.x, transform.GetChild(3).position.y, -1), Quaternion.identity);
-
-                }
-                else if (myAnim.GetFloat("moveY") == 1)
-                {
-                    Instantiate(funnyFire, new Vector3(transform.GetChild(3).position.x, transform.GetChild(3).position.y, -1), Quaternion.identity);
-
-                }
-                else if (myAnim.GetFloat("moveY") == -1)
-                {
-                    Instantiate(funnyFire, new Vector3(transform.GetChild(3).position.x, transform.GetChild(3).position.y, -1), Quaternion.identity);
-
-                }
-
-
-
-                fired = true;
-            }
         }
     }
 }
-
-/*
-while (myAnim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
-{
-    if (!fired)
-    {
-        fired = true;
-        if (myAnim.GetFloat("moveX") == 1)
-        {
-            GameObject ff = Instantiate(funnyFire.gameObject, new Vector3(transform.GetChild(3).position.x, transform.GetChild(3).position.y, -1), Quaternion.identity);
-            ff.GetComponent<Animator>().Play("Right");
-        }
-        else if (myAnim.GetFloat("moveX") == -1)
-        {
-            GameObject ff = Instantiate(funnyFire.gameObject, new Vector3(transform.GetChild(3).position.x, transform.GetChild(3).position.y, -1), Quaternion.identity);
-            ff.GetComponent<Animator>().Play("Left");
-        }
-        else if (myAnim.GetFloat("moveY") == 1)
-        {
-            GameObject ff = Instantiate(funnyFire.gameObject, new Vector3(transform.GetChild(3).position.x, transform.GetChild(3).position.y, -1), Quaternion.identity);
-            ff.GetComponent<Animator>().Play("Up");
-        }
-        else if (myAnim.GetFloat("moveY") == -1)
-        {
-            GameObject ff = Instantiate(funnyFire.gameObject, new Vector3(transform.GetChild(3).position.x, transform.GetChild(3).position.y, -1), Quaternion.identity);
-            ff.GetComponent<Animator>().Play("Down");
-        }
-    }
-}
-fired = false;
-*/
