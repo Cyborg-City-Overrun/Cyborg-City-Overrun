@@ -20,6 +20,7 @@ TagManager:
   - KeyChest
   - EndMenu
   - Menu
+  - Audio
   layers:
   - Default
   - TransparentFX

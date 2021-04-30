@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour{
     public Canvas ControlsMenu;
     public Canvas CreditsMenu;
     public Canvas MainMenuCanvas;
+    public Canvas OptionsMenu;
     //Function to load the game
    public void NewGame()
     {
@@ -26,19 +27,17 @@ public class MainMenu : MonoBehaviour{
     public void Controls()
     {
         //open the controls menu
-        MainMenuCanvas.gameObject.SetActive(false);
         ControlsMenu.gameObject.SetActive(true);
     }
 
     public void Options()
     {
         //open the options menu
-        print("This tab isnt set up yet");
+        OptionsMenu.gameObject.SetActive(true);
     }
     public void Creadits()
     {
         //open the credits menu
-        MainMenuCanvas.gameObject.SetActive(false);
         CreditsMenu.gameObject.SetActive(true);
     }
 

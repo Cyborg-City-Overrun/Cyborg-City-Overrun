@@ -67,6 +67,7 @@ public class player_control : MonoBehaviour
     private GameObject keyManager;
     private KeyBindScript keyScript;
 
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -92,6 +93,7 @@ public class player_control : MonoBehaviour
 
         keyManager = GameObject.FindGameObjectWithTag("KeyManager");
         keyScript = keyManager.GetComponent<KeyBindScript>();
+
     }
 
     private void Update()
@@ -115,6 +117,13 @@ public class player_control : MonoBehaviour
         {
             myAnim.GetComponent<Animator>().Play("Idle", 0);
         }
+
+        UpdateAudio();
+    }
+
+    void UpdateAudio()
+    {
+        audioSource.volume = PlayerPrefs.GetFloat("Volume");
     }
 
     void FixedUpdate()
