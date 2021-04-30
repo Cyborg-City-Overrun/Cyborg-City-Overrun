@@ -24,7 +24,6 @@ public class Saver : MonoBehaviour
         setUpgradeMatrix();
 
         loadUpgrades();
-
     }
 
     // Update is called once per frame
@@ -84,6 +83,8 @@ public class Saver : MonoBehaviour
     
     public void newGame()
     {
+
+        PlayerPrefs.SetFloat("Volume", .5f);
 
         setUpgradeMatrix();
 

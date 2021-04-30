@@ -9,23 +9,23 @@ public class optionPanel : MonoBehaviour
     public AudioSource audio;
     public Image speaker;
     public Sprite[] speakerSprites;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Slider slider;
 
-    // Update is called once per frame
-    void Update()
+
+
+    void OnEnable()
     {
-        
+        slider.value = PlayerPrefs.GetFloat("Volume");
     }
 
     public void adjustVolume(float value)
     {
-        audio.volume = value;
-        
-        if(value==0)
+        PlayerPrefs.SetFloat("Volume", value);
+
+        audio.volume = PlayerPrefs.GetFloat("Volume");
+
+
+        if (value==0)
         {
             speaker.sprite = speakerSprites[0];
         }
