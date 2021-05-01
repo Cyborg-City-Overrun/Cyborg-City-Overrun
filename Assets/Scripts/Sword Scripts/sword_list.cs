@@ -34,25 +34,25 @@ public class sword_list : MonoBehaviour
         //int size, int price, bool unlocked) size is 0, 1, or 2
 
         //starter sword
-        starterUpgradeDamage = new upgrade_class(new float[] { 1, 2, 3 }, new int[] { 10, 20, 30 });
-        starterUpgradeEnergy = new upgrade_class(new float[] { -1, -2 }, new int[] { 30, 50 });
-        starterUpgradeCrit = new upgrade_class(new float[] { 1, 2, 3 }, new int[] { 30, 50, 70 });
+        starterUpgradeDamage = new upgrade_class(new float[] { 1, 1, 2, 2, 3, 3 }, new int[] { 10, 12, 15, 20, 22, 25 });
+        starterUpgradeEnergy = new upgrade_class(new float[] { -1, -1, -1, -2, -2 }, new int[] { 30, 50, 80, 120, 150 });
+        starterUpgradeCrit = new upgrade_class(new float[] { 1, 2, 3, 3, 3 }, new int[] { 30, 40, 50, 80, 120 });
 
         starterSword = new sword_class(0, "Starter Sword", 4f, 10f, 1, true, 0, starterUpgradeDamage, starterUpgradeEnergy, starterUpgradeCrit);
 
         //great sword
-        greatSwordUpgradeDamage = new upgrade_class(new float[] { 3, 4, 5 }, new int[] { 50, 70, 90 });
-        greatSwordUpgradeEnergy = new upgrade_class(new float[] { -3, -3, -3 }, new int[] { 60, 80, 100 });
+        greatSwordUpgradeDamage = new upgrade_class(new float[] { 2, 3, 4, 5, 5, 5 }, new int[] { 50, 80, 120, 150, 175, 200 });
+        greatSwordUpgradeEnergy = new upgrade_class(new float[] { -2, -2, -2, -3, -3 }, new int[] { 100, 120, 135, 180, 225 });
         greatSwordUpgradeCrit = new upgrade_class(new float[] { 2, 4, 6 }, new int[] { 50, 100, 150 });
 
         greatSword = new sword_class(1, "Great Sword", 12f, 20f, 2, false, 300, greatSwordUpgradeDamage, greatSwordUpgradeEnergy, greatSwordUpgradeCrit);
 
         //dagger
-        daggerUpgradeDamage = new upgrade_class(new float[] { 1, 1, 1, 2, 2, 2 }, new int[] { 30, 30, 30, 40, 40, 40 });
-        daggerUpgradeEnergy = new upgrade_class(new float[] { -1, -1 }, new int[] { 40, 60 });
-        daggerUpgradeCrit = new upgrade_class(new float[] { 3, 3, 3, 3 }, new int[] { 60, 100, 140, 180 });
+        daggerUpgradeDamage = new upgrade_class(new float[] { 1, 1, 1, 2, 2, 2 }, new int[] { 40, 50, 60, 80, 100, 120 });
+        daggerUpgradeEnergy = new upgrade_class(new float[] { -1, -1, -1, -1 }, new int[] { 60, 100, 140, 200 });
+        daggerUpgradeCrit = new upgrade_class(new float[] { 3, 3, 3, 3, 3 }, new int[] { 60, 100, 140, 180, 220 });
 
-        dagger = new sword_class(2, "Dagger", 3f, 6f, 0, false, 200, daggerUpgradeDamage, daggerUpgradeEnergy, daggerUpgradeCrit);
+        dagger = new sword_class(2, "Dagger", 3f, 8f, 0, false, 200, daggerUpgradeDamage, daggerUpgradeEnergy, daggerUpgradeCrit);
 
 
 
