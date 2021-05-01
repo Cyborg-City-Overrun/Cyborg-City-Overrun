@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class door_random : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class door_random : MonoBehaviour
     private Saver save;
     public AudioSource audio;
     public AudioClip dungeonMusic;
+    public bool isFinal = false;
 
     private void Start()
     {
@@ -27,6 +29,12 @@ public class door_random : MonoBehaviour
 
             }
             save.saveGame();
+
+            if(isFinal)
+            {
+                SceneManager.LoadScene(2);
+            }
+
             int roomNum = Random.Range(0, roomSet.transform.childCount);
             player.transform.position = roomSet.transform.GetChild(roomNum).GetChild(0).transform.position; //teleport the player to the spawnpoint of the random
             //make sure that the spawn point of each room is the first child of the room

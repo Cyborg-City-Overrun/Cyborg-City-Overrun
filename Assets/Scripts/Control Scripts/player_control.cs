@@ -69,6 +69,9 @@ public class player_control : MonoBehaviour
 
     public AudioSource audioSource;
 
+    private Saver save;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,12 +90,14 @@ public class player_control : MonoBehaviour
         swordList = GetComponent<sword_list>();
         myMoney = PlayerPrefs.GetInt("MoneyAmt");
         treeList = GetComponent<tree_list>();
-        mySkillPointsRed = 10;
-        mySkillPointsGreen = 10;
-        mySkillPointsYellow = 10;
+        mySkillPointsRed = 0;
+        mySkillPointsGreen = 0;
+        mySkillPointsYellow = 0;
 
         keyManager = GameObject.FindGameObjectWithTag("KeyManager");
         keyScript = keyManager.GetComponent<KeyBindScript>();
+
+        save = FindObjectOfType<Saver>();
 
     }
 
@@ -154,12 +159,12 @@ public class player_control : MonoBehaviour
 
         if (Input.GetKey(KeyCode.K)) //just for testing, restores all health and energy
         {
-            RestoreHealth(10000);
-            RestoreEnergy(10000);
+            //RestoreHealth(10000);
+            //RestoreEnergy(10000);
         }
         if (Input.GetKey(KeyCode.L)) //just for testing, gives money
         {
-            Transaction(100);
+            //Transaction(100);
         }
     }
 
@@ -305,6 +310,8 @@ public class player_control : MonoBehaviour
         myHealth -= damage;
         if (myHealth <= 0)
         {
+            save.saveGame();
+
             DeathMenu.gameObject.SetActive(true);
         }
         HealthBar.SetHealth(myHealth);

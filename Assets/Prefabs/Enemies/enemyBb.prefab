@@ -398,17 +398,19 @@ MonoBehaviour:
   mySpeed: 7
   myPower: 12
   drops: []
-  myFollowRange: 4
+  myFollowRange: 5
   myAttackRange: 0.6
   myAttackCooldown: 0.2
-  myMaxHealth: 25
+  myMaxHealth: 65
   myHealthBar: {fileID: 40618513051173525}
-  deathRewardMin: 10
-  deathRewardMax: 20
+  deathRewardMin: 25
+  deathRewardMax: 50
   floatingDamage: {fileID: 5029739836458082092, guid: 9ce279d4ba5cbbe4c8acc4b14afba600,
     type: 3}
   hitBox: {fileID: 2873825684500862660}
   attackPattern: 2
+  isFinalBoss: 0
+  EndScreen: {fileID: 0}
 --- !u!50 &5381191886544735990
 Rigidbody2D:
   serializedVersion: 4

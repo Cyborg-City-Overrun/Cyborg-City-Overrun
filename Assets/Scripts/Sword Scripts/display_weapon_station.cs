@@ -24,6 +24,7 @@ public class display_weapon_station : MonoBehaviour
     public GameObject statEnergy;
     public GameObject statCrit;
 
+
     private void Start()
     {
         myPlayer = GameObject.FindGameObjectWithTag("Player");
