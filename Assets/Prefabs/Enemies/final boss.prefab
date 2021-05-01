@@ -520,21 +520,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySpeed: 5
-  myPower: 20
+  myPower: 30
   drops: []
   myFollowRange: 7
   myAttackRange: 2
-  myAttackCooldown: 0.4
-  myMaxHealth: 100
+  myAttackCooldown: 0.7
+  myMaxHealth: 200
   myHealthBar: {fileID: 1336588435564195923}
   deathRewardMin: 200
   deathRewardMax: 350
   floatingDamage: {fileID: 5029739836458082092, guid: 9ce279d4ba5cbbe4c8acc4b14afba600,
     type: 3}
   hitBox: {fileID: 6987110950184540185}
-  attackPattern: 1
+  attackPattern: 2
   isFinalBoss: 1
-  endGameCanvas: {fileID: 0}
+  EndScreen: {fileID: 0}
 --- !u!50 &7436437865340927106
 Rigidbody2D:
   serializedVersion: 4

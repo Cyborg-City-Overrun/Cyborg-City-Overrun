@@ -12,7 +12,6 @@ public class weapon_station : MonoBehaviour
     public void Start()
     {
         gameObject.SetActive(true);
-        menu.gameObject.SetActive(false);
         myPlayer = GameObject.FindGameObjectWithTag("Player");
     }
 

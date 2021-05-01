@@ -20,20 +20,20 @@ public class locked_door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt("keyAmt") == 4) {
-            if (collision.tag == "Interact")
+        if (collision.tag == "Interact")
+        {
+            if (PlayerPrefs.GetInt("keyAmt") >= 1)
             {
                 save.saveGame();
                 int roomNum = Random.Range(0, roomSet.transform.childCount);
                 player.transform.position = roomSet.transform.GetChild(roomNum).GetChild(0).transform.position; //teleport the player to the spawnpoint of the random
-                                                                                                                //make sure that the spawn point of each room is the first child of the room
             }
-        }
-        else
-        {
-            nENotif.text = "You don't have enough keys to unlock the door...";
-            notEnoughNotif.SetActive(true);
-            show();
+            else
+            {
+                nENotif.text = "You don't have enough keys to unlock the door...";
+                notEnoughNotif.SetActive(true);
+                show();
+            }
         }
     }
 
