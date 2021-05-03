@@ -159,12 +159,12 @@ public class player_control : MonoBehaviour
 
         if (Input.GetKey(KeyCode.K)) //just for testing, restores all health and energy
         {
-            RestoreHealth(10000);
-            RestoreEnergy(10000);
+            //RestoreHealth(10000);
+            //RestoreEnergy(10000);
         }
         if (Input.GetKey(KeyCode.L)) //just for testing, gives money
         {
-            Transaction(100);
+            //Transaction(100);
         }
     }
 

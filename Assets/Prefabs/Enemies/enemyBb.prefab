@@ -401,7 +401,7 @@ MonoBehaviour:
   myFollowRange: 5
   myAttackRange: 0.6
   myAttackCooldown: 0.2
-  myMaxHealth: 65
+  myMaxHealth: 55
   myHealthBar: {fileID: 40618513051173525}
   deathRewardMin: 25
   deathRewardMax: 50

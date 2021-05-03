@@ -414,7 +414,7 @@ MonoBehaviour:
   myFollowRange: 5
   myAttackRange: 0.75
   myAttackCooldown: 0.5
-  myMaxHealth: 30
+  myMaxHealth: 35
   myHealthBar: {fileID: 8034214247537582892}
   deathRewardMin: 8
   deathRewardMax: 20
@@ -422,6 +422,8 @@ MonoBehaviour:
     type: 3}
   hitBox: {fileID: 186316744715813666}
   attackPattern: 1
+  isFinalBoss: 0
+  EndScreen: {fileID: 0}
 --- !u!1 &4124061329829617727
 GameObject:
   m_ObjectHideFlags: 0

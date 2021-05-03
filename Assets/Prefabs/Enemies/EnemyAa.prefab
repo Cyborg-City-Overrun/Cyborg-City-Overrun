@@ -626,7 +626,7 @@ MonoBehaviour:
   myFollowRange: 5
   myAttackRange: 0.75
   myAttackCooldown: 0.8
-  myMaxHealth: 50
+  myMaxHealth: 60
   myHealthBar: {fileID: 5423166070178558033}
   deathRewardMin: 30
   deathRewardMax: 60
@@ -634,6 +634,8 @@ MonoBehaviour:
     type: 3}
   hitBox: {fileID: 7427559168309924540}
   attackPattern: 2
+  isFinalBoss: 0
+  EndScreen: {fileID: 0}
 --- !u!50 &3683663526252442583
 Rigidbody2D:
   serializedVersion: 4
