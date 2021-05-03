@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySpeed: 4
-  myPower: 25
+  myPower: 20
   drops:
   - {fileID: -6813998838189736089, guid: 04c5f418a73fb4c46bd7b27f350f0b8e, type: 3}
   - {fileID: 8856838488872990314, guid: 76bea0028627109498eea6a99fc23ae6, type: 3}
